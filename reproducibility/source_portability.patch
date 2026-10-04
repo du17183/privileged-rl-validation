@@ -1,3 +1,16 @@
+--- original/configs/setup_isaac.sh
++++ portable/configs/setup_isaac.sh
+@@ -2,8 +2,9 @@
+ set -euo pipefail
+ 
+ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
++export UV_LINK_MODE=copy
+ UV="$(command -v uv)"
+-"$UV" venv --python /usr/local/bin/python3.11 --seed "$ROOT/.venv"
++"$UV" venv --python "${PYTHON_BIN:-3.11}" --seed "$ROOT/.venv"
+ "$UV" pip install --python "$ROOT/.venv/bin/python" \
+   'isaacsim[all,extscache]==5.1.0' --extra-index-url https://pypi.nvidia.com
+ "$UV" pip install --python "$ROOT/.venv/bin/python" \
 --- original/pi05/model.py
 +++ portable/pi05/model.py
 @@ -6,7 +6,8 @@
@@ -19,56 +32,87 @@
  
  class StateOnlyPi05(PI0Pytorch):
      def _preprocess_observation(self,observation,*,train=True):
-
---- original/pi05/state_adapter/__init__.py
-+++ portable/pi05/state_adapter/__init__.py
-@@ -1,8 +1,9 @@
- """All39 measured features enter the pi05 discrete state prefix."""
- from pathlib import Path
-+from runtime_paths import PI05_TOKENIZER
- import numpy as np,sentencepiece
- 
--TOKENIZER=Path('/home/xiaolong/.cache/openpi/big_vision/paligemma_tokenizer.model')
-+TOKENIZER=PI05_TOKENIZER
- FEATURE_COUNT=39
- PROMPT='open the door'
- 
-
---- original/pi05/train/__init__.py
-+++ portable/pi05/train/__init__.py
-@@ -2,7 +2,7 @@
- import argparse,csv,json,math,time,os
- from pathlib import Path
- import numpy as np,torch
--from pi05.model import build,observation,learned_state
-+from pi05.model import build,observation,learned_state,BASE
- from pi05.data_adapter import DATA,ROOT
- 
- def main(a):
-@@ -47,7 +47,7 @@
-                 payload=dict(learned=learned_state(net),variant=a.arm,seed=a.seed,update=step,mode='full',input_dim=39,
-                     data_manifest=m['original_manifest'],mean=m['mean'],std=m['std'],model='official_openpi_pi05_state_only_lora16',
-                     images_used=False,chunk_horizon=10,execute_steps=5,flow_steps=10,trainable=sum(p.numel() for p in params),
--                    parameters=sum(p.numel() for p in net.parameters()),base_checkpoint='/home/xiaolong/pi05_peg_lwd/checkpoints/pi05_base/model.safetensors',
-+                    parameters=sum(p.numel() for p in net.parameters()),base_checkpoint=str(BASE),
-                     target_angle=1.,normalization='Phase14.2 train-S z stats then intrinsic atan/discrete pi05 state adaptor',
-                     batch=b,lr_peak=1e-4,selected_by_test=False,rl_updates=0,padding_recipe='full32_zero_target_v2')
-                 dest=output/f'{a.arm}_seed{a.seed}_step{step}.pt';tmp=dest.with_suffix('.tmp');torch.save(payload,tmp);os.replace(tmp,dest)
-
---- original/experiments/phase14_3_pi05_bc/run.py
-+++ portable/experiments/phase14_3_pi05_bc/run.py
-@@ -1,8 +1,9 @@
- """Authorized staged run: pilot closed-loop gate, then paired five-seed fits."""
- import argparse,json,os,subprocess,time,sys
- from pathlib import Path
-+from runtime_paths import PI05_PYTHON
- ROOT=Path(__file__).resolve().parents[2];R=ROOT/'results/phase14_3_pi05_bc';L=ROOT/'logs/phase14_3_pi05_bc';C=ROOT/'checkpoints/phase14_3_pi05_bc'
--ISAAC=str(ROOT/'.venv/bin/python');PI='/home/xiaolong/rlinf_pi05_maniskill/vendor/RLinf/.venv/bin/python'
-+ISAAC=str(ROOT/'.venv/bin/python');PI=PI05_PYTHON
- TESTS=['fixed','random','ee_offset','contact_loss','door_regression','stagnation','natural_severe']
- PROCS={};JOBS=json.loads((R/'lifecycle.json').read_text()) if (R/'lifecycle.json').exists() else {}
- 
-
+--- original/experiments/door_privileged_ablation/launch.sh
++++ portable/experiments/door_privileged_ablation/launch.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Five paired waves, one run per B300. Existing Phase 2 paths are never touched.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p results/door_privileged_ablation logs/door_privileged_ablation checkpoints/door_privileged_ablation
+ status=results/door_privileged_ablation/launch_status.csv
+--- original/experiments/door_privileged_ablation/launch_e2.sh
++++ portable/experiments/door_privileged_ablation/launch_e2.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Targeted follow-up: auxiliary GT prediction only during the first 100k steps.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/door_privileged_ablation/launch_e2_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/door_privileged_ablation/launch_e3.sh
++++ portable/experiments/door_privileged_ablation/launch_e3.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Targeted follow-up: GT prediction in the original BC budget only.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/door_privileged_ablation/launch_e3_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/door_privileged_ablation/launch_heldout.sh
++++ portable/experiments/door_privileged_ablation/launch_heldout.sh
+@@ -1,6 +1,7 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/door_privileged_ablation/heldout_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/door_privileged_ablation/launch_heldout_e2.sh
++++ portable/experiments/door_privileged_ablation/launch_heldout_e2.sh
+@@ -1,6 +1,7 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/door_privileged_ablation/heldout_e2_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/door_privileged_ablation/launch_heldout_e3.sh
++++ portable/experiments/door_privileged_ablation/launch_heldout_e3.sh
+@@ -1,6 +1,7 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/door_privileged_ablation/heldout_e3_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/door_privileged_ablation/launch_tail.sh
++++ portable/experiments/door_privileged_ablation/launch_tail.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Five paired waves, one run per B300. Existing Phase 2 paths are never touched.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p results/door_privileged_ablation logs/door_privileged_ablation checkpoints/door_privileged_ablation
+ status=results/door_privileged_ablation/launch_tail_status.csv
 --- original/experiments/phase14_3_pi05_bc/finalize.py
 +++ portable/experiments/phase14_3_pi05_bc/finalize.py
 @@ -1,8 +1,9 @@
@@ -82,7 +126,6 @@
  
  def command(name,args,gpu=None):
      env=os.environ.copy();env.update(OMP_NUM_THREADS='4',MKL_NUM_THREADS='4')
-
 --- original/experiments/phase14_3_pi05_bc/provenance.py
 +++ portable/experiments/phase14_3_pi05_bc/provenance.py
 @@ -1,6 +1,7 @@
@@ -109,95 +152,19 @@
          d['pretrained_base']=dict(path=str(weights),bytes=weights.stat().st_size,sha256=sha(weights),scope='task-independent pretrained pi05 base; no peg task fine-tuned weights')
          from transformers import modeling_utils
          tf=Path(modeling_utils.__file__).parent
-
---- original/experiments/door_privileged_ablation/launch.sh
-+++ portable/experiments/door_privileged_ablation/launch.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Five paired waves, one run per B300. Existing Phase 2 paths are never touched.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p results/door_privileged_ablation logs/door_privileged_ablation checkpoints/door_privileged_ablation
- status=results/door_privileged_ablation/launch_status.csv
-
---- original/experiments/door_privileged_ablation/launch_e2.sh
-+++ portable/experiments/door_privileged_ablation/launch_e2.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Targeted follow-up: auxiliary GT prediction only during the first 100k steps.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/door_privileged_ablation/launch_e2_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/door_privileged_ablation/launch_e3.sh
-+++ portable/experiments/door_privileged_ablation/launch_e3.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Targeted follow-up: GT prediction in the original BC budget only.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/door_privileged_ablation/launch_e3_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/door_privileged_ablation/launch_heldout.sh
-+++ portable/experiments/door_privileged_ablation/launch_heldout.sh
-@@ -1,6 +1,7 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/door_privileged_ablation/heldout_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/door_privileged_ablation/launch_heldout_e2.sh
-+++ portable/experiments/door_privileged_ablation/launch_heldout_e2.sh
-@@ -1,6 +1,7 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/door_privileged_ablation/heldout_e2_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/door_privileged_ablation/launch_heldout_e3.sh
-+++ portable/experiments/door_privileged_ablation/launch_heldout_e3.sh
-@@ -1,6 +1,7 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/door_privileged_ablation/heldout_e3_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/door_privileged_ablation/launch_tail.sh
-+++ portable/experiments/door_privileged_ablation/launch_tail.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Five paired waves, one run per B300. Existing Phase 2 paths are never touched.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p results/door_privileged_ablation logs/door_privileged_ablation checkpoints/door_privileged_ablation
- status=results/door_privileged_ablation/launch_tail_status.csv
-
+--- original/experiments/phase14_3_pi05_bc/run.py
++++ portable/experiments/phase14_3_pi05_bc/run.py
+@@ -1,8 +1,9 @@
+ """Authorized staged run: pilot closed-loop gate, then paired five-seed fits."""
+ import argparse,json,os,subprocess,time,sys
+ from pathlib import Path
++from runtime_paths import PI05_PYTHON
+ ROOT=Path(__file__).resolve().parents[2];R=ROOT/'results/phase14_3_pi05_bc';L=ROOT/'logs/phase14_3_pi05_bc';C=ROOT/'checkpoints/phase14_3_pi05_bc'
+-ISAAC=str(ROOT/'.venv/bin/python');PI='/home/xiaolong/rlinf_pi05_maniskill/vendor/RLinf/.venv/bin/python'
++ISAAC=str(ROOT/'.venv/bin/python');PI=PI05_PYTHON
+ TESTS=['fixed','random','ee_offset','contact_loss','door_regression','stagnation','natural_severe']
+ PROCS={};JOBS=json.loads((R/'lifecycle.json').read_text()) if (R/'lifecycle.json').exists() else {}
+ 
 --- original/experiments/phase6_stable_online_rl/launch.sh
 +++ portable/experiments/phase6_stable_online_rl/launch.sh
 @@ -1,7 +1,8 @@
@@ -206,11 +173,10 @@
  # Six unique Phase 6 recipes x five paired seeds; B0 is the same run as A2.
  set -u
 -cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
++cd "$PROJECT_ROOT"
  source configs/runtime_env.sh
  mkdir -p results/phase6_stable_online_rl logs/phase6_stable_online_rl checkpoints/phase6_stable_online_rl
  status=results/phase6_stable_online_rl/launch_status.csv
-
 --- original/experiments/phase6_stable_online_rl/launch_heldout.sh
 +++ portable/experiments/phase6_stable_online_rl/launch_heldout.sh
 @@ -1,8 +1,9 @@
@@ -220,11 +186,10 @@
  # selected stochastic exploration checks. Run after launch.sh finishes.
  set -u
 -cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
++cd "$PROJECT_ROOT"
  source configs/runtime_env.sh
  mkdir -p logs/phase6_stable_online_rl results/phase6_stable_online_rl
  jobs=()
-
 --- original/experiments/phase6_stable_online_rl/launch_noise_sweep.sh
 +++ portable/experiments/phase6_stable_online_rl/launch_noise_sweep.sh
 @@ -1,7 +1,8 @@
@@ -233,11 +198,10 @@
  # Read-only actor execution sensitivity: same best checkpoint, no optimizer.
  set -u
 -cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
++cd "$PROJECT_ROOT"
  source configs/runtime_env.sh
  jobs=()
  for cap in 0.135 0.05 0.01; do
-
 --- original/experiments/phase7_stable_policy/eval_matrix.sh
 +++ portable/experiments/phase7_stable_policy/eval_matrix.sh
 @@ -1,7 +1,8 @@
@@ -246,11 +210,10 @@
  # Run only after phase7 launch.sh has finished; no training GPU is shared.
  set -u
 -cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
++cd "$PROJECT_ROOT"
  source configs/runtime_env.sh
  mkdir -p logs/phase7_stable_policy/robustness results/phase7_stable_policy/robustness
  status=results/phase7_stable_policy/robustness_status.csv
-
 --- original/experiments/phase7_stable_policy/launch.sh
 +++ portable/experiments/phase7_stable_policy/launch.sh
 @@ -1,6 +1,7 @@
@@ -258,11 +221,10 @@
 +PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
  set -u
 -cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
++cd "$PROJECT_ROOT"
  source configs/runtime_env.sh
  mkdir -p results/phase7_stable_policy logs/phase7_stable_policy checkpoints/phase7_stable_policy
  status=results/phase7_stable_policy/launch_status.csv
-
 --- original/experiments/phase7_stable_policy/launch_low_alpha.sh
 +++ portable/experiments/phase7_stable_policy/launch_low_alpha.sh
 @@ -1,7 +1,8 @@
@@ -271,11 +233,10 @@
  # Corrected E1/E2 entropy-coefficient intervention; preserve exploratory runs.
  set -u
 -cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
++cd "$PROJECT_ROOT"
  source configs/runtime_env.sh
  until [[ -f results/phase7_stable_policy/launch_status.csv ]] && \
        [[ $(wc -l < results/phase7_stable_policy/launch_status.csv) -ge 41 ]]; do
-
 --- original/experiments/phase7_stable_policy/postprocess.sh
 +++ portable/experiments/phase7_stable_policy/postprocess.sh
 @@ -1,7 +1,8 @@
@@ -284,182 +245,10 @@
  # Sequentially verify the 40 training runs before occupying GPUs with eval.
  set -euo pipefail
 -cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
++cd "$PROJECT_ROOT"
  source configs/runtime_env.sh
  status=results/phase7_stable_policy/launch_status.csv
  until [[ -f "$status" ]] && [[ $(wc -l < "$status") -ge 41 ]]; do
-
---- original/experiments/stable_privileged_rl/launch.sh
-+++ portable/experiments/stable_privileged_rl/launch.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Isolated Phase 4 matrix: 10 variants x 5 seeds x 500k interactions.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p results/stable_privileged_rl logs/stable_privileged_rl checkpoints/stable_privileged_rl
- status=results/stable_privileged_rl/launch_status.csv
-
---- original/experiments/stable_privileged_rl/launch_followup.sh
-+++ portable/experiments/stable_privileged_rl/launch_followup.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Exploratory, separately labeled follow-up to the original rollback rule.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/stable_privileged_rl/launch_followup_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code,start_utc,end_utc\n' > "$status"; fi
-
---- original/experiments/stable_privileged_rl/launch_heldout.sh
-+++ portable/experiments/stable_privileged_rl/launch_heldout.sh
-@@ -1,6 +1,7 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/stable_privileged_rl/heldout_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/stable_privileged_rl/launch_heldout_early.sh
-+++ portable/experiments/stable_privileged_rl/launch_heldout_early.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Use idle GPU 7 for completed runs while the final training wave occupies 0–6.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/stable_privileged_rl/heldout_early_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/stable_privileged_rl/launch_heldout_early2.sh
-+++ portable/experiments/stable_privileged_rl/launch_heldout_early2.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Continue independent checkpoint replays on GPU 7 while final runs train.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/stable_privileged_rl/heldout_early2_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/stable_privileged_rl/launch_heldout_early3.sh
-+++ portable/experiments/stable_privileged_rl/launch_heldout_early3.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Use GPUs 0–1 after the QV training wave exits; R1 still trains on 2–6.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- status=results/stable_privileged_rl/heldout_early3_status.csv
- if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
-
---- original/experiments/value_calibration/launch_collect.sh
-+++ portable/experiments/value_calibration/launch_collect.sh
-@@ -1,8 +1,9 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # 5 source-policy seeds x 8 frozen policies x 125 episodes = 5,000 trajectories.
- # No optimizer or replay update occurs in collect_frozen.py.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p results/value_calibration/frozen_rollouts logs/value_calibration
- status=results/value_calibration/collection_status.csv
-
---- original/experiments/value_calibration/launch_heldout_pilot.sh
-+++ portable/experiments/value_calibration/launch_heldout_pilot.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Twenty independent best/final actor checks; no RL updates.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p logs/value_calibration/online_pilot
- status=results/value_calibration/online_pilot/heldout_status.csv
-
---- original/experiments/value_calibration/launch_offline_gate.sh
-+++ portable/experiments/value_calibration/launch_offline_gate.sh
-@@ -1,8 +1,9 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Direct bounded quality weighting after its separate frozen-policy gate passed.
- # Exploratory transfer test; uses the same five completed uniform controls.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p logs/value_calibration/online_pilot
- status=results/value_calibration/online_pilot/offline_gate_status.csv
-
---- original/experiments/value_calibration/launch_offline_models.sh
-+++ portable/experiments/value_calibration/launch_offline_models.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Independent offline calibration only. Never steps the environment or updates a policy.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p logs/value_calibration results/value_calibration
- status=results/value_calibration/offline_model_status.csv
-
---- original/experiments/value_calibration/launch_online_pilot.sh
-+++ portable/experiments/value_calibration/launch_online_pilot.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Gate-controlled 2 arms x 5 paired seeds x 100k interactions, one job/GPU.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p logs/value_calibration/online_pilot results/value_calibration/online_pilot
- test -s results/value_calibration/online_pilot/offline_gate_passed.json || exit 2
-
---- original/experiments/value_calibration/launch_prefix_models.sh
-+++ portable/experiments/value_calibration/launch_prefix_models.sh
-@@ -1,7 +1,8 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Prefix prediction controls: fixed first 50 and 100 environment steps.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p logs/value_calibration
- status=results/value_calibration/prefix_model_status.csv
-
---- original/experiments/value_calibration/launch_return_gate.sh
-+++ portable/experiments/value_calibration/launch_return_gate.sh
-@@ -1,8 +1,9 @@
- #!/usr/bin/env bash
-+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
- # Exploratory follow-up after success-gated replay could not activate.
- # Reuses the completed, matching uniform runs; only quality_return is new.
- set -u
--cd /home/xiaolong/privileged_rl_validation
-+cd ${PROJECT_ROOT}
- source configs/runtime_env.sh
- mkdir -p logs/value_calibration/online_pilot
- status=results/value_calibration/online_pilot/return_gate_status.csv
-
 --- original/experiments/phase8_progress_rl/finalize_report.py
 +++ portable/experiments/phase8_progress_rl/finalize_report.py
 @@ -1,10 +1,11 @@
@@ -475,7 +264,77 @@
  
  
  def main():
-
+--- original/experiments/stable_privileged_rl/launch.sh
++++ portable/experiments/stable_privileged_rl/launch.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Isolated Phase 4 matrix: 10 variants x 5 seeds x 500k interactions.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p results/stable_privileged_rl logs/stable_privileged_rl checkpoints/stable_privileged_rl
+ status=results/stable_privileged_rl/launch_status.csv
+--- original/experiments/stable_privileged_rl/launch_followup.sh
++++ portable/experiments/stable_privileged_rl/launch_followup.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Exploratory, separately labeled follow-up to the original rollback rule.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/stable_privileged_rl/launch_followup_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code,start_utc,end_utc\n' > "$status"; fi
+--- original/experiments/stable_privileged_rl/launch_heldout.sh
++++ portable/experiments/stable_privileged_rl/launch_heldout.sh
+@@ -1,6 +1,7 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/stable_privileged_rl/heldout_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/stable_privileged_rl/launch_heldout_early.sh
++++ portable/experiments/stable_privileged_rl/launch_heldout_early.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Use idle GPU 7 for completed runs while the final training wave occupies 0–6.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/stable_privileged_rl/heldout_early_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/stable_privileged_rl/launch_heldout_early2.sh
++++ portable/experiments/stable_privileged_rl/launch_heldout_early2.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Continue independent checkpoint replays on GPU 7 while final runs train.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/stable_privileged_rl/heldout_early2_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
+--- original/experiments/stable_privileged_rl/launch_heldout_early3.sh
++++ portable/experiments/stable_privileged_rl/launch_heldout_early3.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Use GPUs 0–1 after the QV training wave exits; R1 still trains on 2–6.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ status=results/stable_privileged_rl/heldout_early3_status.csv
+ if [[ ! -e "$status" ]]; then printf 'variant,seed,gpu,exit_code\n' > "$status"; fi
 --- original/experiments/stable_privileged_rl/test_two_envs.py
 +++ portable/experiments/stable_privileged_rl/test_two_envs.py
 @@ -1,4 +1,5 @@
@@ -493,25 +352,123 @@
  try:
      marker.write_text('before_first\n')
      one=create_env(make_cfg(2,device=args.device or 'cuda:0',seed=100))
-
---- original/configs/setup_isaac.sh
-+++ portable/configs/setup_isaac.sh
-@@ -3,7 +3,7 @@
+--- original/experiments/value_calibration/launch_collect.sh
++++ portable/experiments/value_calibration/launch_collect.sh
+@@ -1,8 +1,9 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # 5 source-policy seeds x 8 frozen policies x 125 episodes = 5,000 trajectories.
+ # No optimizer or replay update occurs in collect_frozen.py.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p results/value_calibration/frozen_rollouts logs/value_calibration
+ status=results/value_calibration/collection_status.csv
+--- original/experiments/value_calibration/launch_heldout_pilot.sh
++++ portable/experiments/value_calibration/launch_heldout_pilot.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Twenty independent best/final actor checks; no RL updates.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p logs/value_calibration/online_pilot
+ status=results/value_calibration/online_pilot/heldout_status.csv
+--- original/experiments/value_calibration/launch_offline_gate.sh
++++ portable/experiments/value_calibration/launch_offline_gate.sh
+@@ -1,8 +1,9 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Direct bounded quality weighting after its separate frozen-policy gate passed.
+ # Exploratory transfer test; uses the same five completed uniform controls.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p logs/value_calibration/online_pilot
+ status=results/value_calibration/online_pilot/offline_gate_status.csv
+--- original/experiments/value_calibration/launch_offline_models.sh
++++ portable/experiments/value_calibration/launch_offline_models.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Independent offline calibration only. Never steps the environment or updates a policy.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p logs/value_calibration results/value_calibration
+ status=results/value_calibration/offline_model_status.csv
+--- original/experiments/value_calibration/launch_online_pilot.sh
++++ portable/experiments/value_calibration/launch_online_pilot.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Gate-controlled 2 arms x 5 paired seeds x 100k interactions, one job/GPU.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p logs/value_calibration/online_pilot results/value_calibration/online_pilot
+ test -s results/value_calibration/online_pilot/offline_gate_passed.json || exit 2
+--- original/experiments/value_calibration/launch_prefix_models.sh
++++ portable/experiments/value_calibration/launch_prefix_models.sh
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Prefix prediction controls: fixed first 50 and 100 environment steps.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p logs/value_calibration
+ status=results/value_calibration/prefix_model_status.csv
+--- original/experiments/value_calibration/launch_return_gate.sh
++++ portable/experiments/value_calibration/launch_return_gate.sh
+@@ -1,8 +1,9 @@
+ #!/usr/bin/env bash
++PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+ # Exploratory follow-up after success-gated replay could not activate.
+ # Reuses the completed, matching uniform runs; only quality_return is new.
+ set -u
+-cd /home/xiaolong/privileged_rl_validation
++cd "$PROJECT_ROOT"
+ source configs/runtime_env.sh
+ mkdir -p logs/value_calibration/online_pilot
+ status=results/value_calibration/online_pilot/return_gate_status.csv
+--- original/pi05/state_adapter/__init__.py
++++ portable/pi05/state_adapter/__init__.py
+@@ -1,8 +1,9 @@
+ """All39 measured features enter the pi05 discrete state prefix."""
+ from pathlib import Path
++from runtime_paths import PI05_TOKENIZER
+ import numpy as np,sentencepiece
  
- ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
- UV="$(command -v uv)"
--"$UV" venv --python /usr/local/bin/python3.11 --seed "$ROOT/.venv"
-+"$UV" venv --python "${PYTHON_BIN:-3.11}" --seed "$ROOT/.venv"
- "$UV" pip install --python "$ROOT/.venv/bin/python" \
-   'isaacsim[all,extscache]==5.1.0' --extra-index-url https://pypi.nvidia.com
- "$UV" pip install --python "$ROOT/.venv/bin/python" \
-
---- original/.gitattributes
-+++ portable/.gitattributes
-@@ -9,3 +9,6 @@
- *.model binary
- *.png binary
- *.pdf binary
-+
-+# Keep archived metrics byte-identical for SHA256 verification.
-+results/** -text
+-TOKENIZER=Path('/home/xiaolong/.cache/openpi/big_vision/paligemma_tokenizer.model')
++TOKENIZER=PI05_TOKENIZER
+ FEATURE_COUNT=39
+ PROMPT='open the door'
+ 
+--- original/pi05/train/__init__.py
++++ portable/pi05/train/__init__.py
+@@ -2,7 +2,7 @@
+ import argparse,csv,json,math,time,os
+ from pathlib import Path
+ import numpy as np,torch
+-from pi05.model import build,observation,learned_state
++from pi05.model import build,observation,learned_state,BASE
+ from pi05.data_adapter import DATA,ROOT
+ 
+ def main(a):
+@@ -47,7 +47,7 @@
+                 payload=dict(learned=learned_state(net),variant=a.arm,seed=a.seed,update=step,mode='full',input_dim=39,
+                     data_manifest=m['original_manifest'],mean=m['mean'],std=m['std'],model='official_openpi_pi05_state_only_lora16',
+                     images_used=False,chunk_horizon=10,execute_steps=5,flow_steps=10,trainable=sum(p.numel() for p in params),
+-                    parameters=sum(p.numel() for p in net.parameters()),base_checkpoint='/home/xiaolong/pi05_peg_lwd/checkpoints/pi05_base/model.safetensors',
++                    parameters=sum(p.numel() for p in net.parameters()),base_checkpoint=str(BASE),
+                     target_angle=1.,normalization='Phase14.2 train-S z stats then intrinsic atan/discrete pi05 state adaptor',
+                     batch=b,lr_peak=1e-4,selected_by_test=False,rl_updates=0,padding_recipe='full32_zero_target_v2')
+                 dest=output/f'{a.arm}_seed{a.seed}_step{step}.pt';tmp=dest.with_suffix('.tmp');torch.save(payload,tmp);os.replace(tmp,dest)

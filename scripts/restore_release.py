@@ -51,7 +51,8 @@ def download(url, path, expected):
     if path.exists() and path.stat().st_size == expected['bytes'] and digest(path) == expected['sha256']:
         return
     temporary = path.with_name(path.name + '.download')
-    request = urllib.request.Request(url, headers=headers())
+    # Public asset downloads redirect to a signed CDN URL; never forward a PAT.
+    request = urllib.request.Request(url, headers={'User-Agent':'privileged-rl-validation-restore'})
     with urllib.request.urlopen(request, timeout=120) as response, temporary.open('wb') as output:
         shutil.copyfileobj(response, output, length=8 << 20)
     if temporary.stat().st_size != expected['bytes'] or digest(temporary) != expected['sha256']:
