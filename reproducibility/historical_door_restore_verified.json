@@ -1,0 +1,225 @@
+{
+  "tag": "historical-door-weights-20261005",
+  "release": "https://github.com/du17183/privileged-rl-validation/releases/tag/historical-door-weights-20261005",
+  "anonymous_public_release_download": true,
+  "restored_models": 30,
+  "all_model_size_sha256_verified": true,
+  "all_correct_model_classes_loaded_strictly": true,
+  "synthetic_forward_device": "cpu",
+  "cuda_allocations_requested": false,
+  "training_launched": false,
+  "simulation_evaluation_performed": false,
+  "torch_version": "2.7.0+cu128",
+  "files": [
+    {
+      "path": "checkpoints/door/B_seed0/step_50016.pt",
+      "bytes": 3426037,
+      "sha256": "32b9d700cc120a6b79d1db590c4016ab75d1402a278b35eb53c21f2c5965355b",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed0/step_500000.pt",
+      "bytes": 3426131,
+      "sha256": "2ca064cd42084944d8fad5641e2c960430845b6d179b3ac1122757c1154b576e",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed1/step_275008.pt",
+      "bytes": 3426131,
+      "sha256": "29e5626d9b87056a482fa58ffd80df5b2d7ce889d1d7e3546379a877a80d8fbf",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed1/step_500000.pt",
+      "bytes": 3426131,
+      "sha256": "97147050aed63106701d4b1ea82036687652dc6c0bbb1e1eb7bae8eb2840ff09",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed2/step_100000.pt",
+      "bytes": 3426131,
+      "sha256": "1d24632e50c1149cd5b7a35083701a79268db4d4a85bee19e6eb59ec9f9535cc",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed2/step_500000.pt",
+      "bytes": 3426131,
+      "sha256": "34012bc6e9ae64a93552d8104aad9109a7e3e59b71a8539c947a3f1bc1dc11f1",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed3/step_175008.pt",
+      "bytes": 3426131,
+      "sha256": "2c6e389647bcd2d382228b096d0021959cf1a0a19226a425446059703debc7b6",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed3/step_500000.pt",
+      "bytes": 3426131,
+      "sha256": "cc009549fa0a978049fdf67935f6e3597768bb9d8219aa7f5f8581e61e457333",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed4/step_400000.pt",
+      "bytes": 3426131,
+      "sha256": "74ef3ff79e291371db0292431c2f1e8d3ca052c2fc013a503a1ba9751c03044c",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/B_seed4/step_500000.pt",
+      "bytes": 3426131,
+      "sha256": "9b9817128a18b7b015285e91835d4d7ef53a45ebb4f5c7441f4cf6d2547fff07",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed0/step_75008.pt",
+      "bytes": 3335925,
+      "sha256": "e01ef1cb0c0363637b4bae20676046648111659b8b458d40eca7932de6bd28f0",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed0/step_500000.pt",
+      "bytes": 3336019,
+      "sha256": "57f685914335b19afa3bb2d75dbc7de24239f8adb5a1ebaefc56851d61f77249",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed1/step_425024.pt",
+      "bytes": 3336019,
+      "sha256": "814714402e8b80779141ca411c732418d55eb28af5960687bc6febb51e83a825",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed1/step_500000.pt",
+      "bytes": 3336019,
+      "sha256": "1b6cab655bc4057e2450dd8820fc82c99c219e5c9245776d349c9977bd7fae44",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed2/step_450016.pt",
+      "bytes": 3336019,
+      "sha256": "aa9e115d380d5908aab98924234830a7e4e9b62e1d0833bf74f21d59a8852d48",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed2/step_500000.pt",
+      "bytes": 3336019,
+      "sha256": "4dffaf53d9afa1161dbea15bef821dda61a09d5bbcc2c11eeebb3bd23e1fcec2",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed3/step_150016.pt",
+      "bytes": 3336019,
+      "sha256": "df7f6d0e693611ddf6b5e94de0a235a1260480ce1ab64f88c4af830ae0040fb7",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed3/step_500000.pt",
+      "bytes": 3336019,
+      "sha256": "0f5ccdf003333902a0b3263524817b33eabd46bc3b42516924c017691ccca10c",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed4/step_375008.pt",
+      "bytes": 3336019,
+      "sha256": "e0ffd007763f78ada70175006fda8800c2a931e439a33a234f9acebb517b89a6",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door/A_seed4/step_500000.pt",
+      "bytes": 3336019,
+      "sha256": "987c4b14eb8288a600751b6d0785cfd872f05a3e208c96063209f7961099a910",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed0/step_100000.pt",
+      "bytes": 3740263,
+      "sha256": "db1672920191f0d367ffe6f4f19b643db93599e4d821011ccf6bf9cc50284549",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed0/step_500000.pt",
+      "bytes": 3740263,
+      "sha256": "2a05196e5c4414506f1d6b58a1d1254516811d9f7f86865c063416449453b706",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed1/step_150016.pt",
+      "bytes": 3740263,
+      "sha256": "5a4435072bdc9bf45fd4c6625dfda57a51dbf23054401c364c782c7ed7a8bbe2",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed1/step_500000.pt",
+      "bytes": 3740263,
+      "sha256": "c7d4e228f8f9d172bb0772e5dc4af11865a42d0262f1765d7002fb05fc4452d6",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed2/step_75008.pt",
+      "bytes": 3740153,
+      "sha256": "770731e1f18d3935601c426d30c35a9910063cc8cc9a310f6509b98a05cbd172",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed2/step_500000.pt",
+      "bytes": 3740263,
+      "sha256": "fdd8c86338edcbc63d9e05788ae5fcbe28266ecb581414d0ac28ffdde2ff7e03",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed3/step_125024.pt",
+      "bytes": 3740263,
+      "sha256": "5104217515666fc99a3ef2cbeec91cfc79d8a2f667cb0651d71eb3dd9da1dcdd",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed3/step_500000.pt",
+      "bytes": 3740263,
+      "sha256": "73ce7381aa05a5ceb2050fb184fffb5507096c283414f4b21f60d375eca992d7",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed4/step_400000.pt",
+      "bytes": 3740263,
+      "sha256": "692e3676233bd7378d87cf80315ba9d70c44158a24e101e950cac8f9120ae9ad",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    },
+    {
+      "path": "checkpoints/door_privileged_ablation/E2_seed4/step_500000.pt",
+      "bytes": 3740263,
+      "sha256": "47cfb2ee4cdb96a5ee7593cf70d33ce4ca2012e4d9598df04f091095b975ffec",
+      "strict_actor_critic_target_load": true,
+      "synthetic_cpu_forward_finite": true
+    }
+  ]
+}

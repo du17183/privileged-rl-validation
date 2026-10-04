@@ -186,6 +186,7 @@
   "reproducibility/github_upload_verified.json": "3b5827900a7f4cb5ffaacc5d9646664e413eb2131bc0f1b805a831a9f7c431c5",
   "reproducibility/historical_door_checkpoint_metadata.json": "c496d3fe7182a3832f8720dcd0e5168cb9ce11debee8a20b4ef437f502c16cf3",
   "reproducibility/historical_door_metrics.csv": "f857990954b8063cfbbb42f26122aa1e05a6502e6bfea9a6922a1a765105cb08",
+  "reproducibility/historical_door_restore_verified.json": "1ad498b7fcdf8907a0460bd75909dedc5f312cfdc2949612bf51028bbea8b374",
   "reproducibility/historical_door_upload_verified.json": "8e353887f18dc1ae28a41b9cee456ed6ecb4d24c5a1196e13d3caf9b79b519ab",
   "reproducibility/historical_door_weights_catalog.jsonl": "9435b68a750d5d72c85248114157d1d5eb65edb355a658e2e31028e81a95c976",
   "reproducibility/historical_door_weights_manifest.json": "54754d49c06b48ff139609f49b394bf06cfc3334cf3af02d899928f4235b70c2",
