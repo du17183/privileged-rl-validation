@@ -1,0 +1,35 @@
+{
+  "chosen": {
+    "seed": 1,
+    "success": 0.75,
+    "validation_mse": 0.0019369375659152865
+  },
+  "candidates": [
+    {
+      "seed": 0,
+      "success": 0.21875,
+      "validation_mse": 0.0017416205955669284
+    },
+    {
+      "seed": 1,
+      "success": 0.75,
+      "validation_mse": 0.0019369375659152865
+    },
+    {
+      "seed": 2,
+      "success": 0.546875,
+      "validation_mse": 0.0018445879686623812
+    },
+    {
+      "seed": 3,
+      "success": 0.28125,
+      "validation_mse": 0.0019602514803409576
+    },
+    {
+      "seed": 4,
+      "success": 0.375,
+      "validation_mse": 0.0018538300646468997
+    }
+  ],
+  "sha256": "dfb0051d15b9c5a637c48222e69c0f6e600b1aa489c3ab3b7a36c7fff83c08ec"
+}

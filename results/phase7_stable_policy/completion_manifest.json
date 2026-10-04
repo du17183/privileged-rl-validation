@@ -1,0 +1,267 @@
+{
+  "verified_at_utc": "2026-09-30T03:07:59.009386+00:00",
+  "valid_new_runs": 50,
+  "training_steps_per_run": 300000,
+  "reused_control_curves": 10,
+  "independent_tests": 275,
+  "independent_episodes": 17600,
+  "immutable_sha256": {
+    "door_dataset/door_expert_1000.h5": "a17c857eb760517bd0d59e266c4f008c5fcf980faf8b8052d4343b57c7b069a8",
+    "door_env/door.py": "b9e710e6195d5cfba46fffc23afd8896871e2b70a6c1ae6d8185625dbe68fb69",
+    "door_env/isaac_env.py": "d5efaf1041361547bc6e865ffebca801556eebfcf4306b1bcb3001aad3b80fa6"
+  },
+  "runs": [
+    {
+      "run": "P7E1_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E3_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E3_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E3_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E3_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E3_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L001_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L001_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L001_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L001_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L001_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L005_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L005_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L005_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L005_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L005_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L010_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L010_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L010_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L010_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L010_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L050_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L050_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L050_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L050_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7L050_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7G1_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7G1_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7G1_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7G1_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7G1_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1L_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1L_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1L_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1L_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E1L_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2L_seed0",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2L_seed1",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2L_seed2",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2L_seed3",
+      "training_steps": 300000,
+      "eval_points": 31
+    },
+    {
+      "run": "P7E2L_seed4",
+      "training_steps": 300000,
+      "eval_points": 31
+    }
+  ],
+  "audit_note": "G1 seed 1/2 duplicate launch rows and early checkpoints retained separately; formal CSV repaired.",
+  "learning_goal_achieved": false
+}

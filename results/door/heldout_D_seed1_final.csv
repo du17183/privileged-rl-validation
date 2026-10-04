@@ -1,0 +1,2 @@
+variant,seed,mode,selected_steps,selection_success_rate,heldout_success_rate,heldout_mean_return,heldout_contact_rate,episodes,eval_env_steps
+D,1,final,500000,0.0,0.0,2.770019866526127,0.0,64,38400

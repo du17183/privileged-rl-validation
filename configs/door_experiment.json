@@ -1,0 +1,36 @@
+{
+  "protocol": "door_primary_v1",
+  "task": "PandaSektionDoorRight-v0",
+  "robot": "Franka Panda",
+  "variants": {
+    "A": "robot actor + robot critic; uniform online replay",
+    "B": "robot actor + robot/GT critic; uniform online replay",
+    "C": "robot/GT actor + robot/GT critic; uniform online replay",
+    "D": "robot actor + robot/GT critic; trajectory-value weighted online replay"
+  },
+  "seed_list": [0, 1, 2, 3, 4],
+  "expert_file": "door_dataset/door_expert_1000.h5",
+  "expert_successful_trajectories": 1000,
+  "expert_collection_interactions": 277184,
+  "bc_updates": 3000,
+  "offline_critic_updates": 1000,
+  "online_steps_per_run": 500000,
+  "parallel_envs_per_run": 32,
+  "sac_updates_per_vector_step": 4,
+  "sac_batch_size": 256,
+  "offline_replay_fraction": 0.25,
+  "actor_bc_weight": 10.0,
+  "evaluation_interval_online_steps": 25000,
+  "evaluation_episodes_per_checkpoint": 64,
+  "success_threshold_rad": 1.0,
+  "max_episode_steps": 600,
+  "weighted_replay": {
+    "critic_score": "trajectory mean min(Q1,Q2)",
+    "score_standardization_window_trajectories": 256,
+    "score_clip_z": [-2.0, 2.0],
+    "temperature": 1.0,
+    "uniform_sampling_fraction": 0.2,
+    "offline_sampling_unchanged": true,
+    "success_label_in_priority": false
+  }
+}

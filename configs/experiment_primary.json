@@ -1,0 +1,28 @@
+{
+  "protocol": "drawer_primary_v2",
+  "task": "Isaac-Open-Drawer-Franka-IK-Rel-v0",
+  "robot": "Franka Panda",
+  "seed_list": [0, 1, 2, 3, 4, 5, 6, 7],
+  "variants": {
+    "A": "robot observation actor and critic",
+    "B": "robot observation actor, robot plus fixture GT critic",
+    "C": "robot plus fixture GT actor and critic"
+  },
+  "expert_dataset": "datasets/drawer_expert_1000.h5",
+  "successful_expert_episodes": 1000,
+  "expert_collection_interactions_including_failures": 308256,
+  "dagger_augmentation_used": false,
+  "bc_updates": 3000,
+  "offline_critic_updates": 1000,
+  "online_training_interactions_per_run": 200000,
+  "parallel_environments_per_run": 32,
+  "sac_updates_per_vector_step": 4,
+  "sac_batch_size": 256,
+  "offline_replay_fraction": 0.25,
+  "actor_bc_weight": 10.0,
+  "actor_bc_weight_anneal_steps": 0,
+  "evaluation_interval_training_steps": 10000,
+  "evaluation_episodes_per_checkpoint": 64,
+  "drawer_success_threshold_m": 0.3,
+  "contact_assisted_success_reported_separately": true
+}

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "task": "Panda Door Opening",
+  "primary_variants": ["A", "B", "C", "D"],
+  "seeds": [0, 1, 2, 3, 4],
+  "steps": 300000,
+  "parallel_envs": 32,
+  "bc_updates": 3000,
+  "online_bc_raw_weight": 10.0,
+  "expert_fraction": 0.5,
+  "updates_per_vector_step": 4,
+  "learning_rate": 0.0003,
+  "entropy": "Historical automatic temperature; target entropy = -7",
+  "rollout_distribution": "Unmodified SAC squashed Gaussian",
+  "actor_update_distribution": "Same SAC squashed Gaussian",
+  "evaluation_distribution": ["deterministic", "added pre-tanh Gaussian std 0.01"],
+  "evaluation_episodes": 64,
+  "evaluation_period": 10000,
+  "progress_features": ["angle_rad", "angular_velocity_divided_by_5", "target_angle_rad", "progress_0_to_1", "bilateral_handle_contact"],
+  "reward_intervention": "Replace 20*positive_velocity*dt with 20*signed_angle_delta; retain reach, bilateral grasp and terminal bonus",
+  "failure_rules": "Measured stall/regression/contact-loss diagnostics; unchanged success/timeout termination and physical reset for A-D",
+  "progress_guard": {
+    "rollback_success_drop": 0.25,
+    "rollback_progress_drop": 0.15,
+    "rollback_regression_increase_rad": 0.1,
+    "replace_best_success_tolerance": 0.05,
+    "replace_best_progress_tolerance": 0.05
+  },
+  "curriculum_gate_D": {
+    "mean_raw_final_success_min": 0.8,
+    "minimum_seed_raw_final_success_min": 0.6,
+    "mean_raw_best_final_gap_max": 0.1,
+    "minimum_online_successes_each_seed": 5
+  },
+  "conditional_curriculum_targets_deg": [10, 30, 50, 57.2957795],
+  "curriculum_promotion": "Two consecutive measured stage evaluations at success >= 0.8",
+  "conditional_extensions": "Curriculum, 500k continuation, mild randomization and Drawer follow only after Door full scheme passes stability gate",
+  "statistics": "Five-seed t 95% CI and paired exact two-sided sign-flip; primary normalized success AUC 0-300k; report raw and protected curves separately"
+}

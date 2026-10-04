@@ -1,0 +1,15 @@
+# Phase 5 value calibration protocol
+
+Run from `/home/xiaolong/privileged_rl_validation` on b300-2 after sourcing `configs/runtime_env.sh`.
+
+1. `bash experiments/value_calibration/launch_collect.sh` evaluates frozen Phase 4 actors only. It writes 40 HDF5 files with 5,000 Door episodes and does not update the policy.
+2. `.venv/bin/python experiments/value_calibration/build_dataset.py` creates source-seed-disjoint train, validation, primary test and stress test arrays. `.venv/bin/python value_analysis/split_audit.py` checks exact feature overlap and fixed-window termination.
+3. `.venv/bin/python value_analysis/q_return_correlation.py` scores existing Phase 3/4 critic checkpoints without fitting. `bash experiments/value_calibration/launch_offline_models.sh` trains five offline seeds of MC/TD0/TDMC/full-trajectory quality. `bash experiments/value_calibration/launch_prefix_models.sh` trains fixed first-50/100-step quality predictors.
+4. `.venv/bin/python trajectory_quality/ranking_eval.py`, `.venv/bin/python trajectory_quality/replay_eval.py`, and `.venv/bin/python value_analysis/compare_methods.py` produce locked ranking, Top-k, replay-proxy and paired-contrast CSVs.
+5. `.venv/bin/python experiments/value_calibration/verify_offline_gate.py` writes `results/value_calibration/online_pilot/offline_gate_passed.json`. The 100k-step pilot refuses to run if the locked gate is missing. `bash experiments/value_calibration/launch_online_pilot.sh` runs five paired uniform/quality seeds on isolated Phase 5 paths.
+6. If the outcome gate cannot activate because online exploration has no successes, first run `.venv/bin/python experiments/value_calibration/online_distribution_audit.py`. The explicitly exploratory `bash experiments/value_calibration/launch_return_gate.sh` adds five quality-return runs while reusing the matched uniform runs; it uses a recent online score/return correlation gate. `bash experiments/value_calibration/launch_offline_gate.sh` tests direct bounded weighting after the separate frozen-policy gate, again reusing those same uniform controls; this tests whether offline ranking transfers to online updates.
+7. `bash experiments/value_calibration/launch_heldout_pilot.sh` checks best and final actors from all four arms on 64 independent episodes each. `analyze_online_pilot.py`, `analyze_heldout_pilot.py`, `plot_online_pilot.py`, and `evaluation/verify_phase5.py` generate and validate compact results.
+
+The Door scene, reset, reward, robot configuration, expert file and prior baseline outputs are never changed. SAC Actor and Critic both use robot observation only. Privileged information supervises the frozen quality representation and is not an Actor input. `replay/quality_weighted_replay.py` exposes the trajectory schema and bounded, source-normalized sampling interface for later LWD/DIVL work; it does not implement LWD or QAM.
+
+The historical percentage-prefix exploratory metrics are preserved in `results/value_calibration/invalid_fraction_prefix/` because the slice used future episode length. Only fixed elapsed-time prefix models are valid for early prediction.

@@ -1,0 +1,27 @@
+{
+  "primary_gate_unchanged": false,
+  "rationale": "All five paired GT improvements positive and paired t CI above zero, but mean-success engineering gate failed; user permits new BC+GT anchor if clearly better. Separate operational selection addresses the chosen deployed model, not five-seed training stability.",
+  "selection": {
+    "candidates": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "episodes": 64,
+    "common_reset_seed": 14101,
+    "criterion": "highest success; then lower offline validation MSE; then seed id"
+  },
+  "independent_retest": {
+    "cohort_seeds": [
+      14201,
+      14202,
+      14203
+    ],
+    "deterministic_episodes_each": 128,
+    "stochastic_episodes_each": 64
+  },
+  "gate": "Each deterministic cohort >=60%, pooled deterministic Wilson lower bound >60%, stochastic mean >=60% and every stochastic cohort >=50%. No re-selection if this retest fails.",
+  "clarification": "Retest cohorts are evaluation replicates for one selected model, not five independent training seeds. Does not establish superiority over historical Phase12 recipe."
+}

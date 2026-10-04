@@ -1,0 +1,594 @@
+{
+  "variants": {
+    "A": {
+      "seeds": {
+        "0": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 434.5455235792324
+        },
+        "1": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 443.97063192073256
+        },
+        "2": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 436.7531887209043
+        },
+        "3": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 458.3925685551949
+        },
+        "4": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 442.0493261991069
+        },
+        "5": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 448.00704877078533
+        },
+        "6": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 422.18876602873206
+        },
+        "7": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.00039125,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 447.6536381803453
+        }
+      },
+      "count": 8
+    },
+    "B": {
+      "seeds": {
+        "0": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 461.3878298359923
+        },
+        "1": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 447.45283731631935
+        },
+        "2": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 443.91762579092756
+        },
+        "3": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 443.64497567806393
+        },
+        "4": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 462.392187402118
+        },
+        "5": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 462.46708884928375
+        },
+        "6": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 457.49381517386064
+        },
+        "7": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.00039125,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 455.24558477289975
+        }
+      },
+      "count": 8
+    },
+    "C": {
+      "seeds": {
+        "0": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 472.6410498940386
+        },
+        "1": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 462.77774707693607
+        },
+        "2": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 479.3116531809792
+        },
+        "3": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 452.7032855376601
+        },
+        "4": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 455.6890430948697
+        },
+        "5": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 449.4042129511945
+        },
+        "6": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.00117125,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 446.3170213662088
+        },
+        "7": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 469.05926573462784
+        }
+      },
+      "count": 8
+    }
+  },
+  "paired_comparisons": {
+    "B_minus_A": {
+      "shared_seeds_with_same_checkpoints": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mean_success_auc_gain": 0.0,
+      "exact_two_sided_sign_flip_p": 1.0,
+      "n": 8
+    },
+    "C_minus_A": {
+      "shared_seeds_with_same_checkpoints": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mean_success_auc_gain": 9.75e-05,
+      "exact_two_sided_sign_flip_p": 1.0,
+      "n": 8
+    },
+    "C_minus_B": {
+      "shared_seeds_with_same_checkpoints": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "mean_success_auc_gain": 9.75e-05,
+      "exact_two_sided_sign_flip_p": 1.0,
+      "n": 8
+    }
+  }
+}

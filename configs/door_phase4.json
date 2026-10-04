@@ -1,0 +1,52 @@
+{
+  "protocol": "door_phase4_stable_privileged_v2_independent_evaluation",
+  "inherits": "configs/door_phase3.json",
+  "task": "PandaSektionDoorRight-v0",
+  "expert_data": "door_dataset/door_expert_1000.h5",
+  "seeds": [0, 1, 2, 3, 4],
+  "online_steps_per_run": 500000,
+  "parallel_environments": 32,
+  "sac_updates_per_vector_step": 4,
+  "batch_size": 256,
+  "bc_updates": 3000,
+  "offline_critic_updates": 1000,
+  "offline_fraction": 0.25,
+  "actor_bc_weight": 10.0,
+  "evaluation_interval": 10000,
+  "evaluation_episodes": 32,
+  "evaluation_process": "persistent independent Isaac Lab process on the same GPU; training environment never reset by validation",
+  "independent_heldout_episodes": 64,
+  "auxiliary_weight": 0.1,
+  "rollback": {
+    "threshold_absolute_success_rate": 0.25,
+    "minimum_best_success_rate": 0.5,
+    "consecutive_bad_evaluations": 2,
+    "restores": "actor, critic, target critic, optimizer states, entropy temperature",
+    "retains": "online replay buffer"
+  },
+  "rollback_followup": {
+    "variant": "E100R1",
+    "status": "exploratory post-hoc follow-up after E100RB failures",
+    "threshold_absolute_success_rate": 0.125,
+    "consecutive_bad_evaluations": 1
+  },
+  "replay": {
+    "value_rank_correlation_minimum": 0.2,
+    "calibration_window_episodes": 256,
+    "minimum_episodes": 64,
+    "weight_bounds": [0.5, 2.0]
+  },
+  "variants": {
+    "E0": "No GT auxiliary; original robot-only critic",
+    "E25": "GT auxiliary until approximately 25k online steps",
+    "E50": "GT auxiliary until 50k online steps",
+    "E100": "GT auxiliary until 100k online steps; Phase 3 E2 timing",
+    "E200": "GT auxiliary until 200k online steps",
+    "E100RB": "E100 with online complete-agent rollback",
+    "E100R1": "Exploratory E100 with immediate 0.125-drop rollback",
+    "E100M": "E100 with separate angle and contact prediction heads",
+    "Q0": "Shared robot-only encoder for policy and critic, no GT auxiliary",
+    "QGT": "Q0 with GT auxiliary until 100k, uniform replay",
+    "QV": "QGT with calibrated value-weighted trajectory replay"
+  }
+}

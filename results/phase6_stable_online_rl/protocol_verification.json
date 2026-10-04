@@ -1,0 +1,8 @@
+{
+  "paired_initialization_checks": 60,
+  "all_initial_weights_identical_within_control_families": true,
+  "available_runs": 30,
+  "complete_training_runs": 30,
+  "evaluation_episodes_per_checkpoint": 64,
+  "actor_observation_route": "robot-only; SAC checkpoint variant A"
+}

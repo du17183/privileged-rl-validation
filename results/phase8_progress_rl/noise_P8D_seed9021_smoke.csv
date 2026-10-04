@@ -1,0 +1,2 @@
+env_steps,max_angle,final_angle,cumulative_increase,regression_amount,progress,success,regression_event,stalled,lost_contact,episode_steps,return,episodes,eval_env_steps
+1000,0.03138726365796174,-1.2137411853352376e-08,0.03820201034977799,0.038202033247216605,0.0,0.0,0.125,1.0,1.0,600.0,5.834933578968048,8,4800

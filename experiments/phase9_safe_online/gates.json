@@ -1,0 +1,13 @@
+{
+  "recorded_before_formal_endpoints": true,
+  "engineering_gate": {
+    "online_success_each_seed": ">0 and at least 3 distinct 10k windows",
+    "independent_final_stochastic_mean": ">=0.90",
+    "independent_best_final_gap": "mean <=0.05, each seed <=0.10",
+    "rejection_fraction_each_seed": "<=0.20",
+    "independent_light_noise_final_mean": ">=0.90",
+    "perturbation_final_mean_each_condition_and_mode": ">=0.80"
+  },
+  "policy_improvement": "Separate from engineering stability: paired 95% CI of final stochastic success minus cap-matched frozen-anchor success must have lower bound >0 to assert improvement",
+  "interpretation": "Maintaining a near-ceiling frozen anchor and generating successes alone does not establish online policy improvement. Thresholds are operational targets, not a physical robot safety certification."
+}

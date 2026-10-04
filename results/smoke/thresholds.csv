@@ -1,0 +1,4 @@
+variant,seed,success_threshold,train_env_steps,total_interactions_including_evaluation,wall_time_s
+B,99,0.5,,,
+B,99,0.8,,,
+B,99,0.9,,,

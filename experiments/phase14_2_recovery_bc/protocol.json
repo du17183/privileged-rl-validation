@@ -1,0 +1,15 @@
+{
+  "task": "unchanged Panda Door Level2, Progress Reward, reset and controller",
+  "rl_updates": 0,
+  "seeds": [0, 1, 2, 3, 4],
+  "bc": {"updates": 20000, "batch": 512, "optimizer": "Adam", "lr": 0.0003, "loss": "continuous action MSE", "network": "39-256-256-7 ReLU/tanh, same Phase13 Policy", "target_angle": 1.0},
+  "arms": {"A": ["S", "robot"], "B": ["S", "full"], "C": ["S+R", "robot"], "D": ["S+R", "full"], "E": ["S+N", "robot"], "F": ["S+N", "full"], "D_no_handle": ["S+R", "no_handle"]},
+  "data": {"S": "original 300 trajectories and original 200/50/50 split", "R": "484 formal_v1 valid successful corrections, exclude injection/policy prefixes and natural crosscheck", "N": "484 normal reset successes using the same Phase14.1 expert, no injection", "added_sampling": "256 S + 256 R/N per update, fixed total 10240000 examples per arm; A/B 512 S", "split": "whole trajectories, stratified by recovery type, 70/15/15 for added sources"},
+  "normalization": "frozen Phase13 train-S means/stds; replace constant target-angle slot with velocity train-S mean/std; all arms same; masks after normalization",
+  "checkpoint_selection": "minimum common source-balanced validation MSE every 1000 updates, no evaluation success selection",
+  "primary": "heldout random success, D-B/D-F/D-C/F-B paired seed differences; t95CI + exact signflip + Holm adjusted paired t",
+  "evaluation": {"clones": 32, "fixed": 64, "random": 128, "artificial_per_case": 64, "natural_severe": 64, "reset_seed": 142501, "cohort_seed": 142601, "reference_prefix": "frozen Phase13 candidate, fresh test seeds, same recorded physical action prefixes for every learned policy", "natural": "unperturbed reference rollout at tick169, EEF-handle 0.10-0.20m, no task success; fresh states, excluded from all training"},
+  "stage_metrics": {"approach": "distance<0.06m sustained6ticks", "contact": "both finger contacts sustained3ticks", "grasp_proxy": "both contacts, distance<0.06m, action gripper<0, width 0.005-0.079m sustained3ticks; proxy not full force closure", "progress_resumed": "angle>handoff_angle+0.05rad sustained30ticks", "success": "terminal angle>1rad; original 600-tick episode budget including prefix"},
+  "anchor_gate": "D better than B/F/C in all5 paired seeds with paired t95CI lower>0, random mean>0.80, artificial improvement over B, fixed no loss>5pp relative B, random seed SD<0.10; independent untouched test required",
+  "pose_boundary": "fullGT assumes calibrated handle pose can be measured; hardware not demonstrated; D_no_handle additionally evaluated"
+}

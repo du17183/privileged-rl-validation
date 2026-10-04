@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "B": {
+      "seeds": {
+        "99": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "last_env_step": 256,
+          "checkpoints": 3,
+          "last_eval_env_steps": 11520,
+          "last_wall_time_s": 43.4363779569976
+        }
+      },
+      "count": 1
+    }
+  },
+  "paired_comparisons": {}
+}

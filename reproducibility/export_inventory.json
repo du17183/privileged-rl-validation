@@ -1,0 +1,14 @@
+{
+  "group_bytes_before_compression": {
+    "historical_and_door_data": 217749104,
+    "datasets": 9333433966,
+    "checkpoints": 786805,
+    "logs": 98127032,
+    "results": 7609519726,
+    "third_party": 48227474
+  },
+  "file_count": 57615,
+  "original_project": "/DATA/disk1/home/xiaolong/privileged_rl_validation",
+  "excluded_runtime_and_weights": true,
+  "created": 1791087675.7967713
+}

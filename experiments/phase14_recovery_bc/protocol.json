@@ -1,0 +1,74 @@
+{
+  "phase": 14,
+  "task": "Existing Panda Door, Isaac Lab, Progress Reward, reset and robot unchanged",
+  "randomization": {
+    "existing_level": 2,
+    "angle_deg": [
+      0,
+      5
+    ],
+    "rigid_xyz_m": [
+      -0.01,
+      0.01
+    ],
+    "limitation": "Initial door angle settles; audit instantaneous and takeover angle, do not claim persistent-angle generalization"
+  },
+  "recovery": {
+    "prefix": "Phase13 independently selected BC+GT candidate, deterministic",
+    "validation_triggered_episodes": 160,
+    "gate": "Expert successes / all completed triggered recoveries >0.90; no BC before passing",
+    "collection_successful_trajectories": 200,
+    "no_reset_or_teleport": true,
+    "failed_recoveries_retained": true,
+    "formal_recipe": "v13 stable local planner plus actual close-command/handle proximity check; strict late deviation rules and wrist-limit safeguard, seed14101 held out of development"
+  },
+  "bc": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "updates": 20000,
+    "batch": 512,
+    "optimizer": "Adam lr3e-4",
+    "network": "same Phase13 Policy39->256->256->7",
+    "normalization": "same frozen Phase13 base train mean/std for every arm",
+    "arms": {
+      "A": "base success, robot only",
+      "B": "base success, robot+GT",
+      "C": "base+recovery, robot only",
+      "D": "base+recovery, robot+GT",
+      "E": "base+additional ordinary success, robot only",
+      "F": "base+additional ordinary success, robot+GT"
+    },
+    "sampling": "A/B base512; other arms same base256 + added256; same within-pair indices; trajectory split70/15/15 for both new datasets",
+    "checkpoint": "common validation base+recovery+additional-success, equal source-weighted MSE each1000 updates",
+    "heldout": "128 random episodes per arm/seed; 64 fixed; 64 per physical perturbation type; common reset seeds and32 clones",
+    "ordinary_control": "Same frozen Phase14 recovery planner used from normal initial state"
+  },
+  "statistics": "five paired training seeds, seed SD, t95% CI, paired t and exact sign-flip; disclose exact minimum p0.0625",
+  "rl": {
+    "conditional": "D improves over B on paired random tests and independent selected-anchor validation confirms stable random success >=0.80 and physical recovery >=0.80; user requested80-90% readiness, absolute performance not achieved by model selection alone",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "steps": 50016,
+    "arms": [
+      "frozen anchor",
+      "KL-constrained RL",
+      "Residual RL"
+    ],
+    "no_automatic_budget_expansion": true
+  },
+  "prohibited": [
+    "LWD",
+    "DIVL",
+    "quality replay",
+    "changes or deletion to Phase1-13 results",
+    "large fixed-task RL expansion"
+  ]
+}

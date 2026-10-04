@@ -1,0 +1,2 @@
+variant,seed,env_steps,success_rate,mean_return,eval_episodes,eval_env_steps,wall_time_s
+A,96,0,0.0,0.6171259507536888,8,3840,41.64372044522315

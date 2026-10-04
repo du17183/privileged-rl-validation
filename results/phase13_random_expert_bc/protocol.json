@@ -1,0 +1,118 @@
+{
+  "phase": 13,
+  "task": "Panda Door Opening; existing Isaac Lab physics, reset, robot and Progress Reward B unchanged",
+  "randomization": {
+    "initial_angle_degrees": [
+      0,
+      5
+    ],
+    "rigid_cabinet_translation_xyz_m": [
+      -0.01,
+      0.01
+    ],
+    "friction_scale": 1,
+    "existing_code_level": 2
+  },
+  "expert": {
+    "pilot": {
+      "episodes": 64,
+      "seed": 13001,
+      "num_envs": 16
+    },
+    "independent_validation": {
+      "episodes": 256,
+      "seed": 13101,
+      "num_envs": 32
+    },
+    "gate": "Unselected validation success strictly greater than 90%; report Wilson 95% CI and all failures. No BC before this gate.",
+    "collection": {
+      "successful_trajectories": 300,
+      "max_attempts": 600,
+      "seed": 13201,
+      "num_envs": 32,
+      "action_noise_std": 0
+    },
+    "split": {
+      "train": 200,
+      "validation": 50,
+      "offline_test": 50,
+      "seed": 13301,
+      "unit": "whole trajectory; no transition leakage"
+    }
+  },
+  "bc": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "input_dim_both": 39,
+    "A": "26 robot channels + 13 constant zero channels",
+    "B": "same 26 robot channels + measured angle, target, progress, remaining, two contacts, handle xyz and quaternion wxyz",
+    "capacity": "Identical two 256-unit ReLU layers, tanh 7-action head; paired initial weights",
+    "normalization": "Train trajectories only; same robot normalization in both models; B measured environment features normalized, A padded with exact zeros",
+    "optimizer": "Adam lr=0.0003",
+    "batch_size": 512,
+    "updates": 20000,
+    "sampling": "Same seeded transition minibatch indices for A and B",
+    "checkpoint_selection": "Lowest validation action MSE evaluated each 1000 updates; final also retained",
+    "primary_evaluation": "Deterministic actions; 128 independent randomized episodes per model and seed; same resets and clone layout; fresh process per model",
+    "secondary_evaluation": "Normal action std=0.01 before tanh; independent fixed evaluation cohort",
+    "metrics": [
+      "success",
+      "action_MSE",
+      "max_angle",
+      "final_angle",
+      "bilateral_contact_seen"
+    ],
+    "statistics": "Mean, seed SD and Student t 95% CI; paired differences with t CI, paired t test, exact sign-flip test; disclose n=5 resolution and assumptions",
+    "anchor_gate": "B mean success >50%, B-A mean >=10 percentage points, paired t 95% difference CI lower bound >0 and at least 4/5 positive seeds. Gate is tested on primary heldout cohort only."
+  },
+  "diagnostics": {
+    "action_sensitivity": "Offline heldout robot states fixed; perturb angle within legal range and recompute progress/remaining coherently; also raw angle-only diagnostic",
+    "masking": [
+      "angle_only",
+      "coherent_angle_progress_remaining",
+      "handle_pose",
+      "contact",
+      "all_environment",
+      "none",
+      "none_repeat"
+    ],
+    "mask_value": "Train mean (zero after normalization); fresh process and same reset seed for each condition",
+    "interpretation": "Masking is an out-of-distribution intervention; require null/repeat reproducibility and distinguish redundant parameter channels"
+  },
+  "rl": {
+    "status": "Conditional on expert and BC anchor gates; not yet authorized by gate evidence",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "steps": 50000,
+    "max_steps": 100000,
+    "arms": [
+      "frozen BC evaluation",
+      "BC + RL",
+      "BC + RL + small-update constraint"
+    ],
+    "fixed": [
+      "same new randomized BC anchor",
+      "Progress Reward",
+      "std <=0.01",
+      "randomized door reset distribution",
+      "same expert data"
+    ],
+    "guard": "Log raw candidates separately from any recovery; never count protected recovery as learned improvement"
+  },
+  "prohibited": [
+    "LWD",
+    "DIVL",
+    "QAM",
+    "quality replay",
+    "privileged critic",
+    "changes to Phase 1-12 artifacts or task"
+  ]
+}

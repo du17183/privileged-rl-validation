@@ -1,0 +1,117 @@
+{
+  "num_envs": 32,
+  "batch_size": 256,
+  "updates_per_vector_step": 4,
+  "lr": 0.0003,
+  "steps": 300000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "expert_fraction": 0.5,
+  "bc_weight": 10.0,
+  "std_cap": 0.01,
+  "guard_interval": 10000,
+  "source": "Phase9 C final",
+  "anchor": "Phase8 B best",
+  "task_success_angle": 1.0,
+  "full_randomization_from_first_episode": true,
+  "curriculum_enabled": false,
+  "train_distribution": "door initial U(0,5 deg); cabinet/handle rigid XYZ each U(-.01,.01 m); nominal friction",
+  "anchor_strengths": {
+    "strong": 1.0,
+    "medium": 0.1,
+    "weak": 0.01,
+    "none": 0.0
+  },
+  "variants": [
+    [
+      "A",
+      "strong"
+    ],
+    [
+      "B",
+      "strong"
+    ],
+    [
+      "C",
+      "strong"
+    ],
+    [
+      "D",
+      "strong"
+    ],
+    [
+      "B",
+      "medium"
+    ],
+    [
+      "B",
+      "weak"
+    ],
+    [
+      "B",
+      "none"
+    ],
+    [
+      "D",
+      "medium"
+    ],
+    [
+      "D",
+      "weak"
+    ],
+    [
+      "D",
+      "none"
+    ]
+  ],
+  "observation_dims": {
+    "A": 26,
+    "B": 31,
+    "C": 33,
+    "D": 36
+  },
+  "primary_evaluation": "stochastic capped policy; fixed full Level2 heldout distribution",
+  "normalization": "angle/target/remaining rad; velocity rad/s; progress [0,1]; contact2 binary; handle centered/0.1m",
+  "guard": "Original SafeUpdate threshold .10, common nominal+full-Level2 deterministic and stochastic tests",
+  "primary_contrasts": [
+    "B_strong-A_strong",
+    "C_strong-B_strong",
+    "D_strong-C_strong",
+    "D_strong-A_strong"
+  ],
+  "masking": "Unconditional best/final input removal. Individual masks plus coherent angle-family and all-feedback masks; evaluation intervention, not retraining.",
+  "inference": "seed-level paired t95 CI; exact sign-flip; Holm within predefined families; n=5 minimum exact two-sided p=.0625",
+  "extension_gate": "B/D versus A: paired final t95 lower>0, Holm paired t p<.05 across 8 B/D candidates, >=4/5 favorable, mean gain>=.05, abs mean best-final gap<=.05, rejection fraction<=.20. Gate is model-based exploratory, not exact-test confirmation.",
+  "extension_budget": "Only qualifying B/D and matched A: continue from300k to500k, no new architecture/data/reward.",
+  "created_at": "2026-10-01T06:32:05.868502+00:00",
+  "handle_center": [
+    0.45379728078842163,
+    -0.025699710473418236,
+    0.4552677571773529
+  ],
+  "expert_sha256": "a17c857eb760517bd0d59e266c4f008c5fcf980faf8b8052d4343b57c7b069a8",
+  "source_hashes": {
+    "source_0": "e87219ec54223d378d5485f1aa71acf46037da0d7a80465a2aa8c46b5ce4684d",
+    "anchor_0": "3d1efb4e5a1fce55e2e2d6276d70ce5246afec99bad6c661b606a83d823d4259",
+    "source_1": "2ccc813e63b91a70b931b0a83d017640153107aa172b156c1b12346158f4b31b",
+    "anchor_1": "ebb0ba7662403e8a171ee2fe8d3e2deb69174b9e0bf531b269efa4967edd5bc6",
+    "source_2": "f675fb540521da9f35b83f9dba1178ac8ffe9a09a149fdac2dcab4886801a823",
+    "anchor_2": "dd07191a170dc0478baa8c7c0473470e129c689fbdaedd18491124ad7317b41d",
+    "source_3": "f8af39960a5b400c657531d4677c1bd699b54df386019dd90d860ef62bf69311",
+    "anchor_3": "9bb4f7a5b859af52a946b6712ba32540a1dc2709e7ae6e3bc4774683f0509767",
+    "source_4": "5c472405704b5c4897a65a0dd968e0f878aeff2e7637292bb6140037ee188a69",
+    "anchor_4": "10b301ac4c6235733ba5078a6064b00a4e97f8ab541c3f9c3bb9a00e77b7f136"
+  },
+  "robot_observation": "Existing 26D q9/qd9/EE XYZ3/quaternion4/clock1 retained in all arms; gripper joints included",
+  "contact": "Two independent finger filtered contact force >0.5N; measured binary signals",
+  "handle_pose": "Rigid cabinet translation; workspace handle XYZ; orientation excluded",
+  "parameter_diagnostics": "Individual masking cannot isolate redundant angle/progress/remaining; coherent family masking additionally required; not retrained feature ablation",
+  "phase11_difference": "Phase11 trained adaptively;19/20 stopped atLevel1. Phase12 uses fullLevel2 always and adds velocity/remaining.",
+  "deployment": "Inputs assumed available from encoders/contact/fixture calibration; handle sensing needs real hardware validation",
+  "costs": "300k additional per run, inherited expert and source-policy training separately disclosed"
+}

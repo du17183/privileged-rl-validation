@@ -1,0 +1,925 @@
+{
+  "variants": {
+    "A": {
+      "seeds": {
+        "0": {
+          "threshold_steps": {
+            "0.5": 60000,
+            "0.8": 60000,
+            "0.9": 60000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 275040,
+            "0.8": 275040,
+            "0.9": 275040
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 583296,
+            "0.8": 583296,
+            "0.9": 583296
+          },
+          "threshold_wall_time_s": {
+            "0.5": 168.09722001105547,
+            "0.8": 168.09722001105547,
+            "0.9": 168.09722001105547
+          },
+          "success_auc": 0.050785,
+          "peak_success_rate": 0.9375,
+          "peak_at_train_steps": 60000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 491.9769911840558
+        },
+        "1": {
+          "threshold_steps": {
+            "0.5": 30016,
+            "0.8": 30016,
+            "0.9": 30016
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 145920,
+            "0.8": 145920,
+            "0.9": 145920
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 454176,
+            "0.8": 454176,
+            "0.9": 454176
+          },
+          "threshold_wall_time_s": {
+            "0.5": 89.88604614511132,
+            "0.8": 89.88604614511132,
+            "0.9": 89.88604614511132
+          },
+          "success_auc": 0.20039125,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 30016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 610048,
+          "last_wall_time_s": 451.3607218582183
+        },
+        "2": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.00625,
+          "peak_success_rate": 0.09375,
+          "peak_at_train_steps": 30016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 476.79304859414697
+        },
+        "3": {
+          "threshold_steps": {
+            "0.5": 90016,
+            "0.8": 90016,
+            "0.9": 90016
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 386272,
+            "0.8": 386272,
+            "0.9": 386272
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 694528,
+            "0.8": 694528,
+            "0.9": 694528
+          },
+          "threshold_wall_time_s": {
+            "0.5": 232.3010183707811,
+            "0.8": 232.3010183707811,
+            "0.9": 232.3010183707811
+          },
+          "success_auc": 0.228125,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 90016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 599936,
+          "last_wall_time_s": 474.38496820488945
+        },
+        "4": {
+          "threshold_steps": {
+            "0.5": 120000,
+            "0.8": 120000,
+            "0.9": 120000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 519360,
+            "0.8": 519360,
+            "0.9": 519360
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 827616,
+            "0.8": 827616,
+            "0.9": 827616
+          },
+          "threshold_wall_time_s": {
+            "0.5": 299.56919331196696,
+            "0.8": 299.56919331196696,
+            "0.9": 299.56919331196696
+          },
+          "success_auc": 0.2015625,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 130016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 612800,
+          "last_wall_time_s": 470.39307276764885
+        },
+        "5": {
+          "threshold_steps": {
+            "0.5": 40000,
+            "0.8": 40000,
+            "0.9": 40000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 182976,
+            "0.8": 182976,
+            "0.9": 182976
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 491232,
+            "0.8": 491232,
+            "0.9": 491232
+          },
+          "threshold_wall_time_s": {
+            "0.5": 109.55631297081709,
+            "0.8": 109.55631297081709,
+            "0.9": 109.55631297081709
+          },
+          "success_auc": 0.470275,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 40000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 579136,
+          "last_wall_time_s": 453.3403302459046
+        },
+        "6": {
+          "threshold_steps": {
+            "0.5": 30016,
+            "0.8": 30016,
+            "0.9": 30016
+          },
+          "retained_threshold_steps": {
+            "0.5": 120000,
+            "0.8": 120000,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 145472,
+            "0.8": 145472,
+            "0.9": 145472
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 453728,
+            "0.8": 453728,
+            "0.9": 453728
+          },
+          "threshold_wall_time_s": {
+            "0.5": 89.4255074239336,
+            "0.8": 89.4255074239336,
+            "0.9": 89.4255074239336
+          },
+          "success_auc": 0.709335,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 30016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 520384,
+          "last_wall_time_s": 433.5229041320272
+        },
+        "7": {
+          "threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0,
+          "peak_success_rate": 0.0,
+          "peak_at_train_steps": 0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 445.3280775011517
+        }
+      },
+      "count": 8
+    },
+    "B": {
+      "seeds": {
+        "0": {
+          "threshold_steps": {
+            "0.5": 40000,
+            "0.8": 40000,
+            "0.9": 40000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 188032,
+            "0.8": 188032,
+            "0.9": 188032
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 496288,
+            "0.8": 496288,
+            "0.9": 496288
+          },
+          "threshold_wall_time_s": {
+            "0.5": 114.85126462671906,
+            "0.8": 114.85126462671906,
+            "0.9": 114.85126462671906
+          },
+          "success_auc": 0.464065,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 40000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 564480,
+          "last_wall_time_s": 454.7965152449906
+        },
+        "1": {
+          "threshold_steps": {
+            "0.5": 20000,
+            "0.8": 20000,
+            "0.9": 20000
+          },
+          "retained_threshold_steps": {
+            "0.5": 170016,
+            "0.8": 170016,
+            "0.9": 170016
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 105888,
+            "0.8": 105888,
+            "0.9": 105888
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 414144,
+            "0.8": 414144,
+            "0.9": 414144
+          },
+          "threshold_wall_time_s": {
+            "0.5": 71.69672676268965,
+            "0.8": 71.69672676268965,
+            "0.9": 71.69672676268965
+          },
+          "success_auc": 0.27066375,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 20000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 594496,
+          "last_wall_time_s": 467.6644996199757
+        },
+        "2": {
+          "threshold_steps": {
+            "0.5": 50016,
+            "0.8": 50016,
+            "0.9": 50016
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 225120,
+            "0.8": 225120,
+            "0.9": 225120
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 533376,
+            "0.8": 533376,
+            "0.9": 533376
+          },
+          "threshold_wall_time_s": {
+            "0.5": 127.12585469800979,
+            "0.8": 127.12585469800979,
+            "0.9": 127.12585469800979
+          },
+          "success_auc": 0.05,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 50016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 635904,
+          "last_wall_time_s": 447.95478286920115
+        },
+        "3": {
+          "threshold_steps": {
+            "0.5": 60000,
+            "0.8": null,
+            "0.9": null
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 275040,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 583296,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": 165.85811255592853,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.034375,
+          "peak_success_rate": 0.6875,
+          "peak_at_train_steps": 60000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 506.4471394321881
+        },
+        "4": {
+          "threshold_steps": {
+            "0.5": 80000,
+            "0.8": 80000,
+            "0.9": 80000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 347136,
+            "0.8": 347136,
+            "0.9": 347136
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 655392,
+            "0.8": 655392,
+            "0.9": 655392
+          },
+          "threshold_wall_time_s": {
+            "0.5": 207.6774008772336,
+            "0.8": 207.6774008772336,
+            "0.9": 207.6774008772336
+          },
+          "success_auc": 0.215625,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 80000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 606336,
+          "last_wall_time_s": 472.5768982912414
+        },
+        "5": {
+          "threshold_steps": {
+            "0.5": 20000,
+            "0.8": 20000,
+            "0.9": 20000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 105696,
+            "0.8": 105696,
+            "0.9": 105696
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 413952,
+            "0.8": 413952,
+            "0.9": 413952
+          },
+          "threshold_wall_time_s": {
+            "0.5": 66.50921421824023,
+            "0.8": 66.50921421824023,
+            "0.9": 66.50921421824023
+          },
+          "success_auc": 0.3453125,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 20000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 598528,
+          "last_wall_time_s": 451.6245723539032
+        },
+        "6": {
+          "threshold_steps": {
+            "0.5": 50016,
+            "0.8": 70016,
+            "0.9": 70016
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 234336,
+            "0.8": 306816,
+            "0.9": 306816
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 542592,
+            "0.8": 615072,
+            "0.9": 615072
+          },
+          "threshold_wall_time_s": {
+            "0.5": 137.12329097883776,
+            "0.8": 179.8699348079972,
+            "0.9": 179.8699348079972
+          },
+          "success_auc": 0.221835,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 70016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 602560,
+          "last_wall_time_s": 457.6791463489644
+        },
+        "7": {
+          "threshold_steps": {
+            "0.5": 90016,
+            "0.8": 90016,
+            "0.9": 90016
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 386528,
+            "0.8": 386528,
+            "0.9": 386528
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 694784,
+            "0.8": 694784,
+            "0.9": 694784
+          },
+          "threshold_wall_time_s": {
+            "0.5": 219.76466837292537,
+            "0.8": 219.76466837292537,
+            "0.9": 219.76466837292537
+          },
+          "success_auc": 0.0984375,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 90016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 634432,
+          "last_wall_time_s": 459.06057731388137
+        }
+      },
+      "count": 8
+    },
+    "C": {
+      "seeds": {
+        "0": {
+          "threshold_steps": {
+            "0.5": 0,
+            "0.8": null,
+            "0.9": null
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 30720,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 338976,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_wall_time_s": {
+            "0.5": 27.840662600006908,
+            "0.8": null,
+            "0.9": null
+          },
+          "success_auc": 0.0179975,
+          "peak_success_rate": 0.71875,
+          "peak_at_train_steps": 0,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 500.79075108701363
+        },
+        "1": {
+          "threshold_steps": {
+            "0.5": 30016,
+            "0.8": 30016,
+            "0.9": 30016
+          },
+          "retained_threshold_steps": {
+            "0.5": 170016,
+            "0.8": 170016,
+            "0.9": 170016
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 148224,
+            "0.8": 148224,
+            "0.9": 148224
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 456480,
+            "0.8": 456480,
+            "0.9": 456480
+          },
+          "threshold_wall_time_s": {
+            "0.5": 93.33047674503177,
+            "0.8": 93.33047674503177,
+            "0.9": 93.33047674503177
+          },
+          "success_auc": 0.6577725,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 30016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 515328,
+          "last_wall_time_s": 432.6185240461491
+        },
+        "2": {
+          "threshold_steps": {
+            "0.5": 50016,
+            "0.8": 60000,
+            "0.9": 60000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 234336,
+            "0.8": 265440,
+            "0.9": 265440
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 542592,
+            "0.8": 573696,
+            "0.9": 573696
+          },
+          "threshold_wall_time_s": {
+            "0.5": 140.34800592204556,
+            "0.8": 158.8506370652467,
+            "0.9": 158.8506370652467
+          },
+          "success_auc": 0.2734025,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 60000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 603456,
+          "last_wall_time_s": 459.71940587926656
+        },
+        "3": {
+          "threshold_steps": {
+            "0.5": 0,
+            "0.8": 70016,
+            "0.9": 70016
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 30720,
+            "0.8": 305984,
+            "0.9": 305984
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 338976,
+            "0.8": 614240,
+            "0.9": 614240
+          },
+          "threshold_wall_time_s": {
+            "0.5": 26.737290870398283,
+            "0.8": 184.5340915513225,
+            "0.9": 184.5340915513225
+          },
+          "success_auc": 0.28166625,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 70016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 603968,
+          "last_wall_time_s": 471.05348717421293
+        },
+        "4": {
+          "threshold_steps": {
+            "0.5": 20000,
+            "0.8": 20000,
+            "0.9": 20000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 105824,
+            "0.8": 105824,
+            "0.9": 105824
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 414080,
+            "0.8": 414080,
+            "0.9": 414080
+          },
+          "threshold_wall_time_s": {
+            "0.5": 74.72149611730129,
+            "0.8": 74.72149611730129,
+            "0.9": 74.72149611730129
+          },
+          "success_auc": 0.4109375,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 20000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 597952,
+          "last_wall_time_s": 494.2538884682581
+        },
+        "5": {
+          "threshold_steps": {
+            "0.5": 60000,
+            "0.8": 60000,
+            "0.9": 60000
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 275040,
+            "0.8": 275040,
+            "0.9": 275040
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 583296,
+            "0.8": 583296,
+            "0.9": 583296
+          },
+          "threshold_wall_time_s": {
+            "0.5": 173.42076155915856,
+            "0.8": 173.42076155915856,
+            "0.9": 173.42076155915856
+          },
+          "success_auc": 0.0609375,
+          "peak_success_rate": 0.96875,
+          "peak_at_train_steps": 60000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 645120,
+          "last_wall_time_s": 499.88852446200326
+        },
+        "6": {
+          "threshold_steps": {
+            "0.5": 0,
+            "0.8": 0,
+            "0.9": 0
+          },
+          "retained_threshold_steps": {
+            "0.5": null,
+            "0.8": null,
+            "0.9": null
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 30720,
+            "0.8": 30720,
+            "0.9": 30720
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 338976,
+            "0.8": 338976,
+            "0.9": 338976
+          },
+          "threshold_wall_time_s": {
+            "0.5": 26.55038473708555,
+            "0.8": 26.55038473708555,
+            "0.9": 26.55038473708555
+          },
+          "success_auc": 0.2039025,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 10016,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 619840,
+          "last_wall_time_s": 476.3404084611684
+        },
+        "7": {
+          "threshold_steps": {
+            "0.5": 80000,
+            "0.8": 80000,
+            "0.9": 80000
+          },
+          "retained_threshold_steps": {
+            "0.5": 150016,
+            "0.8": 150016,
+            "0.9": 150016
+          },
+          "threshold_total_interactions_including_evaluation": {
+            "0.5": 346176,
+            "0.8": 346176,
+            "0.9": 346176
+          },
+          "threshold_total_interactions_including_conditioning_and_evaluation": {
+            "0.5": 654432,
+            "0.8": 654432,
+            "0.9": 654432
+          },
+          "threshold_wall_time_s": {
+            "0.5": 199.13068152125925,
+            "0.8": 199.13068152125925,
+            "0.9": 199.13068152125925
+          },
+          "success_auc": 0.4218375,
+          "peak_success_rate": 1.0,
+          "peak_at_train_steps": 80000,
+          "last_env_step": 200000,
+          "checkpoints": 21,
+          "last_eval_env_steps": 572160,
+          "last_wall_time_s": 449.3663804559037
+        }
+      },
+      "count": 8
+    }
+  },
+  "paired_comparisons": {
+    "B_minus_A": {
+      "shared_seeds_with_same_checkpoints": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "per_seed_success_auc_gain": {
+        "0": 0.41328,
+        "1": 0.07027249999999999,
+        "2": 0.043750000000000004,
+        "3": -0.19374999999999998,
+        "4": 0.014062500000000006,
+        "5": -0.12496249999999998,
+        "6": -0.48750000000000004,
+        "7": 0.0984375
+      },
+      "mean_success_auc_gain": -0.02080125,
+      "paired_bootstrap_95pct_ci": [
+        -0.1925735546875,
+        0.14588812499999998
+      ],
+      "exact_two_sided_sign_flip_p": 0.796875,
+      "n": 8
+    },
+    "C_minus_A": {
+      "shared_seeds_with_same_checkpoints": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "per_seed_success_auc_gain": {
+        "0": -0.0327875,
+        "1": 0.45738124999999996,
+        "2": 0.2671525,
+        "3": 0.05354125000000001,
+        "4": 0.209375,
+        "5": -0.4093375,
+        "6": -0.5054325000000001,
+        "7": 0.4218375
+      },
+      "mean_success_auc_gain": 0.05771624999999998,
+      "paired_bootstrap_95pct_ci": [
+        -0.18235515625000004,
+        0.27336421874999994
+      ],
+      "exact_two_sided_sign_flip_p": 0.6484375,
+      "n": 8
+    },
+    "C_minus_B": {
+      "shared_seeds_with_same_checkpoints": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "per_seed_success_auc_gain": {
+        "0": -0.4460675,
+        "1": 0.38710875,
+        "2": 0.2234025,
+        "3": 0.24729125000000002,
+        "4": 0.1953125,
+        "5": -0.28437500000000004,
+        "6": -0.017932500000000018,
+        "7": 0.32339999999999997
+      },
+      "mean_success_auc_gain": 0.07851749999999999,
+      "paired_bootstrap_95pct_ci": [
+        -0.13124312500000002,
+        0.25562091015625
+      ],
+      "exact_two_sided_sign_flip_p": 0.4765625,
+      "n": 8
+    }
+  },
+  "shared_conditioning_interactions": 308256
+}

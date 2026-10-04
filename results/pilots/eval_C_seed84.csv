@@ -1,0 +1,2 @@
+variant,seed,env_steps,success_rate,mean_return,grasp_rate,contact_assisted_success_rate,eval_episodes,eval_env_steps,wall_time_s
+C,84,0,0.0,9.535713098943233,0.546875,0.0,64,30720,24.731579495128244

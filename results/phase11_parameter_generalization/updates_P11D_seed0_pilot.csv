@@ -1,0 +1,2 @@
+env_steps,optimizer_steps,accepted,reasons,rejections,level,nominal_candidate_success,curriculum_candidate_success,critic_loss,actor_loss,bc_loss,anchor_kl,alpha,anchor_kl_reference,std,added_actor_weight_norm,added_critic_weight_norm
+10016,1252,0,curriculum2/policy:max_angle,1,2,0.75,0.3125,0.1442876250554507,4.093400123591621,0.004862006745872478,6.797774929136704,1.277747856401432e-05,0.0808374285697937,0.009999999776482582,0.0,0.0

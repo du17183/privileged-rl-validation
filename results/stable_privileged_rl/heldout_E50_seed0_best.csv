@@ -1,0 +1,2 @@
+variant,seed,mode,selected_steps,selection_success_rate,heldout_success_rate,heldout_mean_return,heldout_contact_rate,heldout_final_angle_rad,episodes,eval_env_steps,angle_prediction_mae_rad,contact_prediction_accuracy
+E50,0,best,90016,1.0,0.796875,29.864452125504613,0.796875,0.7995487560760663,64,38400,0.06529542638454586,0.9278645833333333

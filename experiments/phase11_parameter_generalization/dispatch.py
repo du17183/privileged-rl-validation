@@ -1,0 +1,12 @@
+"""Detach one explicitly named Phase11 process with its own log."""
+import argparse
+import os
+import subprocess
+from experiments.phase11_parameter_generalization.protocol import ROOT, LOG
+p = argparse.ArgumentParser();p.add_argument('module', choices=('launch', 'finish'));args = p.parse_args()
+path = LOG/f'{args.module}.log'
+with path.open('x') as log:
+    proc = subprocess.Popen([str(ROOT/'.venv/bin/python'), '-u', '-m', f'experiments.phase11_parameter_generalization.{args.module}'],
+        cwd=ROOT, env=dict(os.environ, OMP_NUM_THREADS='4', MKL_NUM_THREADS='4'), stdin=subprocess.DEVNULL,
+        stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+print(proc.pid)

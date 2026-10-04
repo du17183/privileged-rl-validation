@@ -1,0 +1,27 @@
+{
+  "variants": [
+    "A0",
+    "A1",
+    "A2",
+    "B1",
+    "B2",
+    "B3"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "training_steps_per_run": 500000,
+  "total_training_env_steps": 15000000,
+  "total_fixed_evaluation_env_steps": 58081184,
+  "evaluation_episodes_per_checkpoint": 64,
+  "B0_equivalent": "A2",
+  "complete_runs": 30,
+  "heldout_best_final_records": 60,
+  "ci": "two-sided Student-t across five paired seeds",
+  "ci_bounds": "rate intervals clipped to [0,1]; paired rate differences clipped to [-1,1]",
+  "test": "exact two-sided sign-flip over all 2^5 sign vectors"
+}

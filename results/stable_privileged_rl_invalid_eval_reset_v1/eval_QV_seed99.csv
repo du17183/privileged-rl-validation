@@ -1,0 +1,3 @@
+variant,seed,env_steps,success_rate,mean_return,contact_rate,eval_episodes,eval_env_steps,wall_time_s,pre_rollback_success,rollback,rollback_count,best_seen_success,value_rank_rho,weighted_replay_active
+QV,99,0,0.0,1.7170342486351728,0.0,32,19200,62.06836593011394,0.0,0,0,0.0,nan,0
+QV,99,320,0.0,1.038677103817463,0.0,32,38400,77.84648938803002,0.0,0,0,nan,nan,0

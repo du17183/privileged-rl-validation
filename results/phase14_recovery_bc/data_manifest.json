@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-01T23:37:22.562264+00:00",
+  "source": "Independent live-policy recovery verification; this is validation data, not a qualified BC training collection",
+  "dataset_files": {
+    "trajectories.h5": {
+      "sha256": "03b3b1a140688ab061e12a834eb8888ea2e71fdc045f2c1adcee276231717361",
+      "bytes": 33747433
+    },
+    "failed_trajectories.h5": {
+      "sha256": "685b336d9b95bfc16fbbc93345a713e0c3a1eaaea419a238ce4e26fb97c294cd",
+      "bytes": 6034779
+    },
+    "attempts.csv": {
+      "sha256": "454dcda1649a1efc69c3e9a08d18252bd063306e1482c441b529c9643c1c5257",
+      "bytes": 85179
+    },
+    "summary.json": {
+      "sha256": "4a8fb496200b7194d335d30c07a34fbddaabd7917fc49ea703dae81eca7f103a",
+      "bytes": 1046
+    }
+  },
+  "successful_trajectories": 138,
+  "failed_trajectories": 22,
+  "expert_gate_passed": false,
+  "bc_permitted": false,
+  "formal_source_archive": {
+    "path": "phase14_formal_v1.tar",
+    "sha256": "0e140c35e3f8711b803118b06ea6dffc65fb19f3cc623417c358745bd85fae53"
+  },
+  "prefix_checkpoint": {
+    "path": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+    "sha256": "dfb0051d15b9c5a637c48222e69c0f6e600b1aa489c3ab3b7a36c7fff83c08ec"
+  },
+  "source_expert_dataset": {
+    "path": "datasets/random_door_expert/collection_v1/trajectories.h5",
+    "sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+  },
+  "note": "Successful and failed expert actions executed through original Cartesian/DLS interface; policy prefixes retained separately, physical clock and joints unchanged at takeover"
+}

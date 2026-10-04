@@ -1,0 +1,1866 @@
+{
+  "updated_utc": "2026-10-01T23:46:10.118048+00:00",
+  "status": "expert_gate_not_passed",
+  "formal_validation": {
+    "mode": "validate",
+    "seed": 14101,
+    "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+    "episodes": 491,
+    "recovery_attempts": 160,
+    "recovery_successes": 138,
+    "recovery_success_rate": 0.8625,
+    "recovery_95_wilson": [
+      0.8005890571519036,
+      0.9074124513487551
+    ],
+    "saved_trajectories": 138,
+    "untriggered_episodes": 331,
+    "trigger_counts": {
+      "contact_loss": 107,
+      "angle_regression": 11,
+      "ee_offset": 16,
+      "stagnation": 21,
+      "joint_limit_risk": 5
+    },
+    "failures_by_trigger": {
+      "contact_loss": 3,
+      "angle_regression": 1,
+      "ee_offset": 15,
+      "stagnation": 3,
+      "joint_limit_risk": 0
+    },
+    "interactions": 203296,
+    "vector_steps": 6353,
+    "elapsed_s": 769.3453606930561,
+    "takeover_resets": 0,
+    "robot_or_door_teleports": 0,
+    "num_envs": 32,
+    "physical_reset_checks": 523,
+    "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive."
+  },
+  "pilots": [
+    {
+      "mode": "validate",
+      "seed": 14001,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 32,
+      "recovery_attempts": 32,
+      "recovery_successes": 29,
+      "recovery_success_rate": 0.90625,
+      "recovery_95_wilson": [
+        0.7578184527161212,
+        0.9675984487016337
+      ],
+      "saved_trajectories": 0,
+      "untriggered_episodes": 0,
+      "trigger_counts": {
+        "contact_loss": 5,
+        "angle_regression": 0,
+        "ee_offset": 4,
+        "stagnation": 23
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 3,
+        "stagnation": 0
+      },
+      "interactions": 19200,
+      "vector_steps": 600,
+      "elapsed_s": 44.34391527902335,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 64,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v1"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 199,
+      "recovery_attempts": 64,
+      "recovery_successes": 51,
+      "recovery_success_rate": 0.796875,
+      "recovery_95_wilson": [
+        0.6828636426898583,
+        0.8772658218081634
+      ],
+      "saved_trajectories": 51,
+      "untriggered_episodes": 135,
+      "trigger_counts": {
+        "contact_loss": 36,
+        "angle_regression": 4,
+        "ee_offset": 16,
+        "stagnation": 8
+      },
+      "failures_by_trigger": {
+        "contact_loss": 1,
+        "angle_regression": 0,
+        "ee_offset": 12,
+        "stagnation": 0
+      },
+      "interactions": 267648,
+      "vector_steps": 8364,
+      "elapsed_s": 725.6004968099296,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 708,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v2"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 192,
+      "recovery_attempts": 64,
+      "recovery_successes": 51,
+      "recovery_success_rate": 0.796875,
+      "recovery_95_wilson": [
+        0.6828636426898583,
+        0.8772658218081634
+      ],
+      "saved_trajectories": 51,
+      "untriggered_episodes": 128,
+      "trigger_counts": {
+        "contact_loss": 35,
+        "angle_regression": 5,
+        "ee_offset": 16,
+        "stagnation": 8
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 13,
+        "stagnation": 0
+      },
+      "interactions": 80864,
+      "vector_steps": 2527,
+      "elapsed_s": 220.68312490684912,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 224,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v4"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 192,
+      "recovery_attempts": 64,
+      "recovery_successes": 51,
+      "recovery_success_rate": 0.796875,
+      "recovery_95_wilson": [
+        0.6828636426898583,
+        0.8772658218081634
+      ],
+      "saved_trajectories": 51,
+      "untriggered_episodes": 128,
+      "trigger_counts": {
+        "contact_loss": 36,
+        "angle_regression": 4,
+        "ee_offset": 16,
+        "stagnation": 8
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 13,
+        "stagnation": 0
+      },
+      "interactions": 83488,
+      "vector_steps": 2609,
+      "elapsed_s": 249.1443701381795,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 224,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v5"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 193,
+      "recovery_attempts": 64,
+      "recovery_successes": 47,
+      "recovery_success_rate": 0.734375,
+      "recovery_95_wilson": [
+        0.6151712627143486,
+        0.8270362092577739
+      ],
+      "saved_trajectories": 47,
+      "untriggered_episodes": 129,
+      "trigger_counts": {
+        "contact_loss": 36,
+        "angle_regression": 4,
+        "ee_offset": 16,
+        "stagnation": 8
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 15,
+        "stagnation": 2
+      },
+      "interactions": 85152,
+      "vector_steps": 2661,
+      "elapsed_s": 253.7721234438941,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 225,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v6"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 200,
+      "recovery_attempts": 64,
+      "recovery_successes": 48,
+      "recovery_success_rate": 0.75,
+      "recovery_95_wilson": [
+        0.631837235413303,
+        0.8398507346902941
+      ],
+      "saved_trajectories": 48,
+      "untriggered_episodes": 136,
+      "trigger_counts": {
+        "contact_loss": 36,
+        "angle_regression": 4,
+        "ee_offset": 16,
+        "stagnation": 8
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 14,
+        "stagnation": 2
+      },
+      "interactions": 87584,
+      "vector_steps": 2737,
+      "elapsed_s": 271.6991955637932,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 232,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v7"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 65,
+      "recovery_attempts": 64,
+      "recovery_successes": 52,
+      "recovery_success_rate": 0.8125,
+      "recovery_95_wilson": [
+        0.7002563943589847,
+        0.8893535682705119
+      ],
+      "saved_trajectories": 52,
+      "untriggered_episodes": 1,
+      "trigger_counts": {
+        "contact_loss": 2,
+        "angle_regression": 0,
+        "ee_offset": 3,
+        "stagnation": 1,
+        "joint_limit_risk": 58
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 3,
+        "stagnation": 1,
+        "joint_limit_risk": 8
+      },
+      "interactions": 44288,
+      "vector_steps": 1384,
+      "elapsed_s": 135.67688727099448,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 97,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v8"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 196,
+      "recovery_attempts": 64,
+      "recovery_successes": 49,
+      "recovery_success_rate": 0.765625,
+      "recovery_95_wilson": [
+        0.6486674241743136,
+        0.8525010440607586
+      ],
+      "saved_trajectories": 49,
+      "untriggered_episodes": 132,
+      "trigger_counts": {
+        "contact_loss": 35,
+        "angle_regression": 5,
+        "ee_offset": 11,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 11,
+        "stagnation": 2,
+        "joint_limit_risk": 2
+      },
+      "interactions": 85376,
+      "vector_steps": 2668,
+      "elapsed_s": 268.67545658396557,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 228,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v9"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 194,
+      "recovery_attempts": 64,
+      "recovery_successes": 48,
+      "recovery_success_rate": 0.75,
+      "recovery_95_wilson": [
+        0.631837235413303,
+        0.8398507346902941
+      ],
+      "saved_trajectories": 48,
+      "untriggered_episodes": 130,
+      "trigger_counts": {
+        "contact_loss": 36,
+        "angle_regression": 4,
+        "ee_offset": 11,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 10,
+        "stagnation": 1,
+        "joint_limit_risk": 5
+      },
+      "interactions": 84704,
+      "vector_steps": 2647,
+      "elapsed_s": 273.5362866227515,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 226,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v10"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 192,
+      "recovery_attempts": 64,
+      "recovery_successes": 49,
+      "recovery_success_rate": 0.765625,
+      "recovery_95_wilson": [
+        0.6486674241743136,
+        0.8525010440607586
+      ],
+      "saved_trajectories": 49,
+      "untriggered_episodes": 128,
+      "trigger_counts": {
+        "contact_loss": 35,
+        "angle_regression": 5,
+        "ee_offset": 11,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 11,
+        "stagnation": 2,
+        "joint_limit_risk": 2
+      },
+      "interactions": 84864,
+      "vector_steps": 2652,
+      "elapsed_s": 282.8377129510045,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 224,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v11"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 194,
+      "recovery_attempts": 64,
+      "recovery_successes": 49,
+      "recovery_success_rate": 0.765625,
+      "recovery_95_wilson": [
+        0.6486674241743136,
+        0.8525010440607586
+      ],
+      "saved_trajectories": 49,
+      "untriggered_episodes": 130,
+      "trigger_counts": {
+        "contact_loss": 36,
+        "angle_regression": 4,
+        "ee_offset": 11,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 11,
+        "stagnation": 2,
+        "joint_limit_risk": 2
+      },
+      "interactions": 85152,
+      "vector_steps": 2661,
+      "elapsed_s": 280.606858078856,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 226,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v12"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 195,
+      "recovery_attempts": 64,
+      "recovery_successes": 51,
+      "recovery_success_rate": 0.796875,
+      "recovery_95_wilson": [
+        0.6828636426898583,
+        0.8772658218081634
+      ],
+      "saved_trajectories": 51,
+      "untriggered_episodes": 131,
+      "trigger_counts": {
+        "contact_loss": 35,
+        "angle_regression": 5,
+        "ee_offset": 11,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 11,
+        "stagnation": 2,
+        "joint_limit_risk": 0
+      },
+      "interactions": 85376,
+      "vector_steps": 2668,
+      "elapsed_s": 278.75097052007914,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 227,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v13"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 194,
+      "recovery_attempts": 64,
+      "recovery_successes": 51,
+      "recovery_success_rate": 0.796875,
+      "recovery_95_wilson": [
+        0.6828636426898583,
+        0.8772658218081634
+      ],
+      "saved_trajectories": 51,
+      "untriggered_episodes": 130,
+      "trigger_counts": {
+        "contact_loss": 35,
+        "angle_regression": 5,
+        "ee_offset": 11,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 11,
+        "stagnation": 2,
+        "joint_limit_risk": 0
+      },
+      "interactions": 85248,
+      "vector_steps": 2664,
+      "elapsed_s": 288.52526285964996,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 226,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v14"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 192,
+      "recovery_attempts": 64,
+      "recovery_successes": 50,
+      "recovery_success_rate": 0.78125,
+      "recovery_95_wilson": [
+        0.6656721604337418,
+        0.8649768059328052
+      ],
+      "saved_trajectories": 50,
+      "untriggered_episodes": 128,
+      "trigger_counts": {
+        "contact_loss": 34,
+        "angle_regression": 0,
+        "ee_offset": 17,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 12,
+        "stagnation": 2,
+        "joint_limit_risk": 0
+      },
+      "interactions": 84800,
+      "vector_steps": 2650,
+      "elapsed_s": 270.41131818294525,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 224,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v17"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 190,
+      "recovery_attempts": 64,
+      "recovery_successes": 49,
+      "recovery_success_rate": 0.765625,
+      "recovery_95_wilson": [
+        0.6486674241743136,
+        0.8525010440607586
+      ],
+      "saved_trajectories": 49,
+      "untriggered_episodes": 126,
+      "trigger_counts": {
+        "contact_loss": 34,
+        "angle_regression": 0,
+        "ee_offset": 17,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 13,
+        "stagnation": 2,
+        "joint_limit_risk": 0
+      },
+      "interactions": 84416,
+      "vector_steps": 2638,
+      "elapsed_s": 286.60509661305696,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 222,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v20"
+    },
+    {
+      "mode": "validate",
+      "seed": 14002,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "episodes": 188,
+      "recovery_attempts": 64,
+      "recovery_successes": 47,
+      "recovery_success_rate": 0.734375,
+      "recovery_95_wilson": [
+        0.6151712627143486,
+        0.8270362092577739
+      ],
+      "saved_trajectories": 47,
+      "untriggered_episodes": 124,
+      "trigger_counts": {
+        "contact_loss": 35,
+        "angle_regression": 0,
+        "ee_offset": 16,
+        "stagnation": 8,
+        "joint_limit_risk": 5
+      },
+      "failures_by_trigger": {
+        "contact_loss": 0,
+        "angle_regression": 0,
+        "ee_offset": 12,
+        "stagnation": 2,
+        "joint_limit_risk": 3
+      },
+      "interactions": 83488,
+      "vector_steps": 2609,
+      "elapsed_s": 321.7061219662428,
+      "takeover_resets": 0,
+      "robot_or_door_teleports": 0,
+      "num_envs": 32,
+      "physical_reset_checks": 220,
+      "limitation": "Trigger is a deviation proxy; successful untriggered policy episodes excluded from recovery denominator. Initial angle can settle under inherited door drive.",
+      "name": "recovery_pilot_v21"
+    }
+  ],
+  "controlled_expert_tests": [
+    {
+      "name": "recovery_controlled_pilot_v4",
+      "case": "contact_loss",
+      "expert": true,
+      "checkpoint": null,
+      "seed": 14003,
+      "episodes": 32,
+      "attempted": 33,
+      "perturbation_valid_fraction": 0.9696969696969697,
+      "success": 0.9375,
+      "success_wilson95": [
+        0.7985287685584542,
+        0.982689432968359
+      ],
+      "recontact": 0.9375,
+      "mean_final_angle": 0.9404067115803303,
+      "interactions": 35840,
+      "elapsed_s": 107.59068548073992,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    },
+    {
+      "name": "controlled_v13_door_regression",
+      "case": "door_regression",
+      "expert": true,
+      "checkpoint": null,
+      "seed": 14120,
+      "episodes": 64,
+      "attempted": 68,
+      "perturbation_valid_fraction": 0.9411764705882353,
+      "success": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.05662405979280534
+      ],
+      "recontact": 1.0,
+      "mean_final_angle": 0.5818160640774295,
+      "interactions": 57600,
+      "elapsed_s": 209.01357818301767,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    },
+    {
+      "name": "controlled_v16_door_regression",
+      "case": "door_regression",
+      "expert": true,
+      "checkpoint": null,
+      "seed": 14120,
+      "episodes": 64,
+      "attempted": 69,
+      "perturbation_valid_fraction": 0.927536231884058,
+      "success": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.05662405979280534
+      ],
+      "recontact": 1.0,
+      "mean_final_angle": 0.5818377956748009,
+      "interactions": 57600,
+      "elapsed_s": 210.76364441029727,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    },
+    {
+      "name": "controlled_v17_ee_offset",
+      "case": "ee_offset",
+      "expert": true,
+      "checkpoint": null,
+      "seed": 14120,
+      "episodes": 64,
+      "attempted": 72,
+      "perturbation_valid_fraction": 0.8888888888888888,
+      "success": 0.953125,
+      "success_wilson95": [
+        0.8710034625990631,
+        0.983930983213707
+      ],
+      "recontact": 1.0,
+      "mean_final_angle": 0.9978628065437078,
+      "interactions": 56064,
+      "elapsed_s": 192.28942779777572,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    },
+    {
+      "name": "controlled_v18_door_regression",
+      "case": "door_regression",
+      "expert": true,
+      "checkpoint": null,
+      "seed": 14120,
+      "episodes": 64,
+      "attempted": 69,
+      "perturbation_valid_fraction": 0.927536231884058,
+      "success": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.05662405979280534
+      ],
+      "recontact": 1.0,
+      "mean_final_angle": 0.6588242133148015,
+      "interactions": 57600,
+      "elapsed_s": 199.05022454774007,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    }
+  ],
+  "frozen_candidate_tests": [
+    {
+      "name": "baseline_contact_loss",
+      "case": "contact_loss",
+      "expert": false,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "seed": 14120,
+      "episodes": 64,
+      "attempted": 68,
+      "perturbation_valid_fraction": 0.9411764705882353,
+      "success": 0.984375,
+      "success_wilson95": [
+        0.9166589839990573,
+        0.9972364580766624
+      ],
+      "recontact": 0.984375,
+      "mean_final_angle": 0.9873875064149246,
+      "interactions": 41600,
+      "elapsed_s": 90.64120511384681,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    },
+    {
+      "name": "baseline_door_regression",
+      "case": "door_regression",
+      "expert": false,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "seed": 14120,
+      "episodes": 64,
+      "attempted": 69,
+      "perturbation_valid_fraction": 0.927536231884058,
+      "success": 0.984375,
+      "success_wilson95": [
+        0.9166589839990573,
+        0.9972364580766624
+      ],
+      "recontact": 1.0,
+      "mean_final_angle": 0.9874629397465996,
+      "interactions": 43840,
+      "elapsed_s": 130.88180362572894,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    },
+    {
+      "name": "baseline_ee_offset",
+      "case": "ee_offset",
+      "expert": false,
+      "checkpoint": "checkpoints/phase13_random_expert_bc/randomized_gt_candidate_anchor.pt",
+      "seed": 14120,
+      "episodes": 64,
+      "attempted": 82,
+      "perturbation_valid_fraction": 0.7804878048780488,
+      "success": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.05662405979280534
+      ],
+      "recontact": 0.0,
+      "mean_final_angle": 7.91419348111777e-09,
+      "interactions": 96000,
+      "elapsed_s": 251.12712351698428,
+      "num_envs": 32,
+      "no_joint_teleport": true,
+      "no_reset_at_handoff": true,
+      "invalid_attempts_reported": true
+    }
+  ],
+  "invalid_test_interruptions": [
+    {
+      "name": "controlled_v13_ee_offset.interrupted",
+      "status": "interrupted_invalid_perturbation",
+      "pids": [
+        3172305
+      ],
+      "attempted": 224,
+      "valid": 0,
+      "reason": "12 ticks did not release gripper and displace EE >2cm; no valid test population, repair physical perturbation before evaluation"
+    },
+    {
+      "name": "controlled_v15_ee_offset.interrupted",
+      "status": "interrupted_invalid_perturbation",
+      "pids": [
+        3277983
+      ],
+      "attempted": 96,
+      "valid": 1,
+      "reason": "Door followed small normal-axis retreat; use fixed vertical displacement target and verify actual >2cm displacement"
+    },
+    {
+      "name": "recovery_pilot_v23.interrupted",
+      "status": "interrupted_futility",
+      "pids": [
+        4063014
+      ],
+      "completed_triggered": 50,
+      "successes": 5,
+      "untriggered": 111,
+      "target": 64,
+      "maximum_possible_success_at_target": 0.296875,
+      "reason": "Too many completed failures to attain >90% at the fixed64 pilot target; preserve all evidence, no BC"
+    }
+  ],
+  "recovery_data_audit": {
+    "successful_trajectories": 138,
+    "failed_trajectories": 22,
+    "expert_transitions": 50080,
+    "failed_transitions": 8720,
+    "prefix_transitions": 27309,
+    "issues": [],
+    "failures": [
+      {
+        "trajectory": "failure_00021",
+        "trigger": "contact_loss",
+        "takeover_tick": 350,
+        "start_q": [
+          0.006748662330210209,
+          -0.6290222406387329,
+          -0.6552934050559998,
+          -2.2572832107543945,
+          0.03246393799781799,
+          1.7799718379974365,
+          -0.3426706790924072
+        ],
+        "end_q": [
+          -0.220540389418602,
+          -0.6945596933364868,
+          0.15135836601257324,
+          -2.6243386268615723,
+          0.3498365581035614,
+          2.5597310066223145,
+          0.5045639276504517
+        ],
+        "start_ee": [
+          0.32311129570007324,
+          -0.24490725994110107,
+          0.45458757877349854
+        ],
+        "end_ee": [
+          0.44655561447143555,
+          -0.020504474639892578,
+          0.4506758153438568
+        ],
+        "max_angle": 0.8823517560958862,
+        "final_angle": 7.913876665099906e-09,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 72,
+          "2": 25,
+          "3": 35,
+          "7": 15,
+          "8": 17,
+          "9": 71
+        }
+      },
+      {
+        "trajectory": "failure_00022",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.06169373169541359,
+          -1.2407658100128174,
+          -0.6443765759468079,
+          -2.875194787979126,
+          -0.43815523386001587,
+          1.6304006576538086,
+          0.6567127108573914
+        ],
+        "end_q": [
+          0.11014091968536377,
+          -1.4294816255569458,
+          -0.7708514332771301,
+          -2.799858331680298,
+          -0.32763850688934326,
+          2.2273457050323486,
+          0.07569067925214767
+        ],
+        "start_ee": [
+          0.18857181072235107,
+          -0.12457440793514252,
+          0.30954545736312866
+        ],
+        "end_ee": [
+          0.2811940312385559,
+          -0.1735801100730896,
+          0.45481395721435547
+        ],
+        "max_angle": 0.6884454488754272,
+        "final_angle": 0.6436319351196289,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 46,
+          "2": 24,
+          "3": 36,
+          "4": 30,
+          "5": 104,
+          "7": 49,
+          "8": 30,
+          "9": 97
+        }
+      },
+      {
+        "trajectory": "failure_00023",
+        "trigger": "ee_offset",
+        "takeover_tick": 229,
+        "start_q": [
+          0.01172611303627491,
+          -0.8802124261856079,
+          -0.42306894063949585,
+          -2.6913652420043945,
+          0.31086254119873047,
+          2.6080472469329834,
+          0.36658957600593567
+        ],
+        "end_q": [
+          0.08754798769950867,
+          -0.9019581079483032,
+          -0.9182679057121277,
+          -2.3003523349761963,
+          0.03267708793282509,
+          1.6078929901123047,
+          -0.6101236939430237
+        ],
+        "start_ee": [
+          0.39595985412597656,
+          -0.1489974409341812,
+          0.48008808493614197
+        ],
+        "end_ee": [
+          0.23717236518859863,
+          -0.25998908281326294,
+          0.44755882024765015
+        ],
+        "max_angle": 0.9449671506881714,
+        "final_angle": 0.9449671506881714,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 32,
+          "2": 28,
+          "3": 49,
+          "4": 30,
+          "5": 170,
+          "7": 9,
+          "8": 25,
+          "9": 13
+        }
+      },
+      {
+        "trajectory": "failure_00044",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.3963629901409149,
+          -1.2964707612991333,
+          -0.6879705786705017,
+          -2.876126766204834,
+          -0.7164843082427979,
+          1.6035064458847046,
+          0.9335361123085022
+        ],
+        "end_q": [
+          0.5628151893615723,
+          -1.6016337871551514,
+          -0.8290137052536011,
+          -2.8426899909973145,
+          -0.9023577570915222,
+          1.3104318380355835,
+          0.9346503019332886
+        ],
+        "start_ee": [
+          0.2258763313293457,
+          -0.11370927840471268,
+          0.3066560924053192
+        ],
+        "end_ee": [
+          0.2059321403503418,
+          -0.14221502840518951,
+          0.3063974976539612
+        ],
+        "max_angle": 0.5597359538078308,
+        "final_angle": 0.533531665802002,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      },
+      {
+        "trajectory": "failure_00046",
+        "trigger": "angle_regression",
+        "takeover_tick": 154,
+        "start_q": [
+          0.15032802522182465,
+          -1.3762212991714478,
+          -0.5328414440155029,
+          -3.0697481632232666,
+          -0.46092405915260315,
+          2.040379285812378,
+          1.1210064888000488
+        ],
+        "end_q": [
+          0.31577447056770325,
+          -1.6469160318374634,
+          -0.918315052986145,
+          -2.6565067768096924,
+          -0.5158353447914124,
+          1.962266206741333,
+          0.10040301829576492
+        ],
+        "start_ee": [
+          0.25614428520202637,
+          -0.05586671829223633,
+          0.3145999610424042
+        ],
+        "end_ee": [
+          0.26093316078186035,
+          -0.20457983016967773,
+          0.4580201804637909
+        ],
+        "max_angle": 0.7289811372756958,
+        "final_angle": 0.7289811372756958,
+        "recontact": true,
+        "phase_ticks": {
+          "1": 10,
+          "2": 25,
+          "3": 44,
+          "4": 30,
+          "5": 133,
+          "9": 36,
+          "10": 168
+        }
+      },
+      {
+        "trajectory": "failure_00058",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.48595020174980164,
+          -1.2969409227371216,
+          -0.6687619686126709,
+          -2.859537124633789,
+          -0.6498409509658813,
+          1.597295880317688,
+          0.8300211429595947
+        ],
+        "end_q": [
+          0.6690967679023743,
+          -1.7160147428512573,
+          -0.8272923231124878,
+          -2.857344150543213,
+          -0.9517652988433838,
+          1.2977409362792969,
+          0.8150521516799927
+        ],
+        "start_ee": [
+          0.23330974578857422,
+          -0.08351385593414307,
+          0.3154626190662384
+        ],
+        "end_ee": [
+          0.22250795364379883,
+          -0.12497901916503906,
+          0.31346291303634644
+        ],
+        "max_angle": 0.5610255002975464,
+        "final_angle": 0.49384114146232605,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      },
+      {
+        "trajectory": "failure_00062",
+        "trigger": "stagnation",
+        "takeover_tick": 209,
+        "start_q": [
+          -0.047371216118335724,
+          -0.752829372882843,
+          -0.1074376329779625,
+          -2.5424211025238037,
+          0.19758634269237518,
+          2.2780559062957764,
+          0.6487205028533936
+        ],
+        "end_q": [
+          0.5760694146156311,
+          -0.916976809501648,
+          -0.6278071999549866,
+          -3.010742425918579,
+          0.2755267024040222,
+          3.75250506401062,
+          0.2618285119533539
+        ],
+        "start_ee": [
+          0.41214418411254883,
+          -0.04227316379547119,
+          0.47455283999443054
+        ],
+        "end_ee": [
+          0.4111591577529907,
+          -0.07365703582763672,
+          0.4830608367919922
+        ],
+        "max_angle": 0.07863893359899521,
+        "final_angle": 0.07769418507814407,
+        "recontact": true,
+        "phase_ticks": {
+          "5": 391
+        }
+      },
+      {
+        "trajectory": "failure_00064",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.39381182193756104,
+          -1.344605565071106,
+          -0.7195064425468445,
+          -2.9209024906158447,
+          -0.692572832107544,
+          1.6733627319335938,
+          0.7785155773162842
+        ],
+        "end_q": [
+          0.4178789258003235,
+          -1.5043525695800781,
+          -0.8062619566917419,
+          -2.918264627456665,
+          -0.777921736240387,
+          1.5669846534729004,
+          0.7360761165618896
+        ],
+        "start_ee": [
+          0.2314189225435257,
+          -0.09401941299438477,
+          0.2986687421798706
+        ],
+        "end_ee": [
+          0.2200777679681778,
+          -0.1097714900970459,
+          0.29949256777763367
+        ],
+        "max_angle": 0.5925540328025818,
+        "final_angle": 0.5187625885009766,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      },
+      {
+        "trajectory": "failure_00067",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.4012134373188019,
+          -1.2691676616668701,
+          -0.6439077854156494,
+          -2.8684890270233154,
+          -0.6163761615753174,
+          1.6335558891296387,
+          0.7830899953842163
+        ],
+        "end_q": [
+          0.74985271692276,
+          -1.4439945220947266,
+          -0.7435896992683411,
+          -2.7229793071746826,
+          -1.0588022470474243,
+          2.091487407684326,
+          1.232143521308899
+        ],
+        "start_ee": [
+          0.230149507522583,
+          -0.09119772911071777,
+          0.3144984841346741
+        ],
+        "end_ee": [
+          0.36646461486816406,
+          -0.0814063549041748,
+          0.46482986211776733
+        ],
+        "max_angle": 0.5703432559967041,
+        "final_angle": 0.2933875322341919,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 158,
+          "2": 23,
+          "3": 29,
+          "4": 30,
+          "5": 44,
+          "7": 49,
+          "8": 49,
+          "9": 34
+        }
+      },
+      {
+        "trajectory": "failure_00084",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.45936504006385803,
+          -1.3040693998336792,
+          -0.7188960909843445,
+          -2.8843817710876465,
+          -0.6899600028991699,
+          1.6867344379425049,
+          0.8516583442687988
+        ],
+        "end_q": [
+          0.5019434094429016,
+          -1.5584228038787842,
+          -0.803977370262146,
+          -2.8546946048736572,
+          -0.8623901605606079,
+          1.3554165363311768,
+          0.9018096327781677
+        ],
+        "start_ee": [
+          0.24524855613708496,
+          -0.08786559104919434,
+          0.3064897358417511
+        ],
+        "end_ee": [
+          0.20183706283569336,
+          -0.14062809944152832,
+          0.30741336941719055
+        ],
+        "max_angle": 0.5792319774627686,
+        "final_angle": 0.5544567108154297,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      },
+      {
+        "trajectory": "failure_00087",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.39961206912994385,
+          -1.3410193920135498,
+          -0.7076478600502014,
+          -2.877796173095703,
+          -0.7021349668502808,
+          1.5646462440490723,
+          0.8713465332984924
+        ],
+        "end_q": [
+          0.5342414975166321,
+          -1.5761042833328247,
+          -0.8150374889373779,
+          -2.8474173545837402,
+          -0.8507626056671143,
+          1.3266067504882812,
+          0.8703656792640686
+        ],
+        "start_ee": [
+          0.2175917625427246,
+          -0.11179733276367188,
+          0.3063299059867859
+        ],
+        "end_ee": [
+          0.20065593719482422,
+          -0.1351780891418457,
+          0.3066007196903229
+        ],
+        "max_angle": 0.574900209903717,
+        "final_angle": 0.5340383052825928,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      },
+      {
+        "trajectory": "failure_00095",
+        "trigger": "stagnation",
+        "takeover_tick": 239,
+        "start_q": [
+          -0.050090666860342026,
+          -0.5267584323883057,
+          -0.207172229886055,
+          -2.2437734603881836,
+          0.2576812207698822,
+          1.852999210357666,
+          0.5613272786140442
+        ],
+        "end_q": [
+          0.1316564977169037,
+          -0.9651938676834106,
+          -0.916681706905365,
+          -2.297597885131836,
+          0.02040332742035389,
+          1.6751841306686401,
+          -0.576221764087677
+        ],
+        "start_ee": [
+          0.41803717613220215,
+          -0.06704592704772949,
+          0.4825422167778015
+        ],
+        "end_ee": [
+          0.2497854232788086,
+          -0.26312685012817383,
+          0.4655598998069763
+        ],
+        "max_angle": 0.9578218460083008,
+        "final_angle": 0.9578218460083008,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 12,
+          "2": 23,
+          "3": 34,
+          "4": 30,
+          "5": 165,
+          "7": 11,
+          "8": 22,
+          "9": 49
+        }
+      },
+      {
+        "trajectory": "failure_00099",
+        "trigger": "ee_offset",
+        "takeover_tick": 217,
+        "start_q": [
+          0.016205109655857086,
+          -0.9602741599082947,
+          -0.469134658575058,
+          -2.783980369567871,
+          0.17799854278564453,
+          2.732142210006714,
+          0.3174602687358856
+        ],
+        "end_q": [
+          0.14222146570682526,
+          -0.885751485824585,
+          -0.9578517079353333,
+          -2.282747507095337,
+          0.03233127295970917,
+          1.6528406143188477,
+          -0.5882170796394348
+        ],
+        "start_ee": [
+          0.3806593418121338,
+          -0.1612071990966797,
+          0.4729316532611847
+        ],
+        "end_ee": [
+          0.2533111572265625,
+          -0.2692594528198242,
+          0.44432467222213745
+        ],
+        "max_angle": 0.9301549196243286,
+        "final_angle": 0.9301549196243286,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 32,
+          "2": 32,
+          "3": 51,
+          "4": 30,
+          "5": 168,
+          "7": 10,
+          "8": 26,
+          "9": 19
+        }
+      },
+      {
+        "trajectory": "failure_00109",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.41303980350494385,
+          -1.2835439443588257,
+          -0.7062384486198425,
+          -2.8793158531188965,
+          -0.6850402355194092,
+          1.6516348123550415,
+          0.9741426706314087
+        ],
+        "end_q": [
+          0.5471038222312927,
+          -1.5419244766235352,
+          -0.8294991254806519,
+          -2.8532183170318604,
+          -0.8570698499679565,
+          1.3983900547027588,
+          0.976757824420929
+        ],
+        "start_ee": [
+          0.23441994190216064,
+          -0.10107541084289551,
+          0.3037773072719574
+        ],
+        "end_ee": [
+          0.21553456783294678,
+          -0.12738919258117676,
+          0.30392712354660034
+        ],
+        "max_angle": 0.5240952968597412,
+        "final_angle": 0.4848596155643463,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      },
+      {
+        "trajectory": "failure_00121",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.5557366609573364,
+          -1.3485016822814941,
+          -0.7305138111114502,
+          -2.8689568042755127,
+          -0.7109124064445496,
+          1.573536992073059,
+          0.8887847065925598
+        ],
+        "end_q": [
+          0.6038753390312195,
+          -1.552924394607544,
+          -0.8024933338165283,
+          -2.8403732776641846,
+          -0.7814309597015381,
+          1.3329418897628784,
+          0.796612024307251
+        ],
+        "start_ee": [
+          0.2359170913696289,
+          -0.08041691780090332,
+          0.3072054386138916
+        ],
+        "end_ee": [
+          0.20554423332214355,
+          -0.1084749698638916,
+          0.3095760643482208
+        ],
+        "max_angle": 0.5365493297576904,
+        "final_angle": 0.4933290481567383,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      },
+      {
+        "trajectory": "failure_00122",
+        "trigger": "ee_offset",
+        "takeover_tick": 222,
+        "start_q": [
+          0.06068077310919762,
+          -0.8705976009368896,
+          -0.4717105031013489,
+          -2.7005321979522705,
+          0.3225514590740204,
+          2.7130796909332275,
+          0.34499892592430115
+        ],
+        "end_q": [
+          0.12756608426570892,
+          -0.8590863347053528,
+          -0.9313062429428101,
+          -2.248445749282837,
+          0.04403126239776611,
+          1.605886459350586,
+          -0.6042221188545227
+        ],
+        "start_ee": [
+          0.40456146001815796,
+          -0.16089989244937897,
+          0.48228392004966736
+        ],
+        "end_ee": [
+          0.249924898147583,
+          -0.2681467831134796,
+          0.45607849955558777
+        ],
+        "max_angle": 0.933112382888794,
+        "final_angle": 0.933112382888794,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 32,
+          "2": 29,
+          "3": 49,
+          "4": 30,
+          "5": 170,
+          "7": 10,
+          "8": 24,
+          "9": 19
+        }
+      },
+      {
+        "trajectory": "failure_00126",
+        "trigger": "contact_loss",
+        "takeover_tick": 255,
+        "start_q": [
+          -0.05703481659293175,
+          -1.0563396215438843,
+          -0.4423177242279053,
+          -2.7468559741973877,
+          0.17106078565120697,
+          2.403374671936035,
+          0.2145787477493286
+        ],
+        "end_q": [
+          0.013507633469998837,
+          -0.9354884028434753,
+          -0.8122236132621765,
+          -2.4134325981140137,
+          0.06345044821500778,
+          1.7746483087539673,
+          -0.5224379301071167
+        ],
+        "start_ee": [
+          0.340840220451355,
+          -0.1445937156677246,
+          0.4739495813846588
+        ],
+        "end_ee": [
+          0.25941240787506104,
+          -0.2387990951538086,
+          0.4498472809791565
+        ],
+        "max_angle": 0.8576536178588867,
+        "final_angle": 0.8576536178588867,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 33,
+          "2": 28,
+          "3": 45,
+          "4": 30,
+          "5": 153,
+          "7": 10,
+          "8": 21,
+          "9": 10
+        }
+      },
+      {
+        "trajectory": "failure_00130",
+        "trigger": "contact_loss",
+        "takeover_tick": 338,
+        "start_q": [
+          0.06424696743488312,
+          -1.063795804977417,
+          -0.8748739957809448,
+          -2.480193853378296,
+          0.11939781159162521,
+          2.0193233489990234,
+          -0.34324178099632263
+        ],
+        "end_q": [
+          -0.21133065223693848,
+          -0.6297321319580078,
+          0.1270575225353241,
+          -2.5802178382873535,
+          0.34178608655929565,
+          2.6199276447296143,
+          0.503967821598053
+        ],
+        "start_ee": [
+          0.2814199924468994,
+          -0.2545194625854492,
+          0.472942054271698
+        ],
+        "end_ee": [
+          0.4677913188934326,
+          -0.0317530632019043,
+          0.45955637097358704
+        ],
+        "max_angle": 0.6776873469352722,
+        "final_angle": 0.004695497918874025,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 66,
+          "2": 25,
+          "3": 40,
+          "4": 30,
+          "5": 2,
+          "7": 12,
+          "8": 18,
+          "9": 54
+        }
+      },
+      {
+        "trajectory": "failure_00139",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.29850563406944275,
+          -1.3413411378860474,
+          -0.6769979000091553,
+          -2.8951897621154785,
+          -0.5858335494995117,
+          1.6241072416305542,
+          0.6978135108947754
+        ],
+        "end_q": [
+          0.24360719323158264,
+          -1.605362892150879,
+          -0.9310155510902405,
+          -2.6521482467651367,
+          -0.42258885502815247,
+          2.0087852478027344,
+          -0.05125250294804573
+        ],
+        "start_ee": [
+          0.21307021379470825,
+          -0.10200846195220947,
+          0.31090983748435974
+        ],
+        "end_ee": [
+          0.25431570410728455,
+          -0.21677005290985107,
+          0.4636799693107605
+        ],
+        "max_angle": 0.7879729866981506,
+        "final_angle": 0.7879729866981506,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 42,
+          "2": 23,
+          "3": 36,
+          "4": 30,
+          "5": 138,
+          "7": 49,
+          "8": 43,
+          "9": 55
+        }
+      },
+      {
+        "trajectory": "failure_00142",
+        "trigger": "stagnation",
+        "takeover_tick": 239,
+        "start_q": [
+          0.016058828681707382,
+          -0.32053694128990173,
+          -0.1517183929681778,
+          -2.1556613445281982,
+          0.20961835980415344,
+          2.012120008468628,
+          0.5846645832061768
+        ],
+        "end_q": [
+          0.07910067588090897,
+          -1.0842801332473755,
+          -0.8633469939231873,
+          -2.4279074668884277,
+          -0.03307103365659714,
+          1.814483642578125,
+          -0.46347618103027344
+        ],
+        "start_ee": [
+          0.49518585205078125,
+          -0.037288665771484375,
+          0.4494935870170593
+        ],
+        "end_ee": [
+          0.2501077651977539,
+          -0.24878978729248047,
+          0.4615512192249298
+        ],
+        "max_angle": 0.8792965412139893,
+        "final_angle": 0.8792965412139893,
+        "recontact": true,
+        "phase_ticks": {
+          "0": 15,
+          "1": 24,
+          "2": 24,
+          "3": 35,
+          "4": 30,
+          "5": 146,
+          "7": 17,
+          "8": 23,
+          "9": 47
+        }
+      },
+      {
+        "trajectory": "failure_00151",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.5186329483985901,
+          -1.4106507301330566,
+          -0.7580034136772156,
+          -2.9001142978668213,
+          -0.7516061663627625,
+          1.6078846454620361,
+          0.8628801107406616
+        ],
+        "end_q": [
+          0.43286553025245667,
+          -1.7288453578948975,
+          -0.8743953704833984,
+          -2.777416229248047,
+          -0.7898294925689697,
+          2.0581414699554443,
+          0.5051868557929993
+        ],
+        "start_ee": [
+          0.23755955696105957,
+          -0.08588743209838867,
+          0.3041177988052368
+        ],
+        "end_ee": [
+          0.2918987274169922,
+          -0.16081571578979492,
+          0.4561091959476471
+        ],
+        "max_angle": 0.5792624950408936,
+        "final_angle": 0.5792624950408936,
+        "recontact": true,
+        "phase_ticks": {
+          "1": 23,
+          "2": 24,
+          "3": 43,
+          "4": 30,
+          "5": 106,
+          "9": 37,
+          "10": 168
+        }
+      },
+      {
+        "trajectory": "failure_00157",
+        "trigger": "ee_offset",
+        "takeover_tick": 169,
+        "start_q": [
+          0.26575568318367004,
+          -1.3426400423049927,
+          -0.6819131374359131,
+          -2.9127490520477295,
+          -0.5837787389755249,
+          1.6251647472381592,
+          0.6811332702636719
+        ],
+        "end_q": [
+          0.24745598435401917,
+          -1.539032220840454,
+          -0.8421284556388855,
+          -2.852424144744873,
+          -0.817031979560852,
+          1.4080824851989746,
+          0.5013809204101562
+        ],
+        "start_ee": [
+          0.20723676681518555,
+          -0.1036534309387207,
+          0.30387356877326965
+        ],
+        "end_ee": [
+          0.1698470115661621,
+          -0.1763678938150406,
+          0.30203649401664734
+        ],
+        "max_angle": 0.7172547578811646,
+        "final_angle": 0.7172547578811646,
+        "recontact": false,
+        "phase_ticks": {
+          "0": 15,
+          "1": 318,
+          "7": 49,
+          "8": 49
+        }
+      }
+    ],
+    "passed": true
+  },
+  "preservation": {
+    "checked_sources": 480,
+    "checked_prior_artifacts": 69152,
+    "checked_phase13_artifacts": 530,
+    "changed": []
+  },
+  "bc_completed": false,
+  "rl_launched": false,
+  "limitations": [
+    "Development pilots reuse a tuning seed and change triggers; not independent replications",
+    "No inference about BC improvement before the expert gate and paired five-seed experiment",
+    "Inherited initial-angle drive settles toward closed; reset-angle buckets are not persistent-angle tests"
+  ]
+}

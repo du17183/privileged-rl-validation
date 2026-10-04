@@ -1,0 +1,2 @@
+variant,seed,mode,selected_steps,selection_success_rate,heldout_success_rate,heldout_mean_return,heldout_contact_rate,heldout_final_angle_rad,episodes,eval_env_steps,angle_prediction_mae_rad,contact_prediction_accuracy
+E100RB,0,best,230016,0.96875,0.75,27.689710410311818,0.859375,0.7520928849693059,64,38400,0.1333584209283193,0.8231770833333333

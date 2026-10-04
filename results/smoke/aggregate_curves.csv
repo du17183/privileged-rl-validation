@@ -1,0 +1,4 @@
+variant,env_steps,seeds,mean_success_rate,sem_success_rate,mean_return,sem_return
+B,0,1,0.0,0.0,0.5656998604536057,0.0
+B,128,1,0.0,0.0,0.5004622153937817,0.0
+B,256,1,0.0,0.0,0.25394245982170105,0.0

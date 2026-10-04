@@ -1,0 +1,50 @@
+{
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "actual_steps_per_run": 50016,
+  "parallel_envs": 32,
+  "arms": {
+    "A": "frozen selected BC policy, online execution only",
+    "B": "BC initialized symmetric SAC + continuous expert BC regularization",
+    "C": "same B + fixed anchor Normal KL weight .1"
+  },
+  "common": {
+    "actor_lr": 3e-05,
+    "critic_lr": 0.0003,
+    "critic_warmup_updates": 1000,
+    "bc_weight": 10.0,
+    "replay": "uniform 50% train expert transitions + 50% online transitions",
+    "action_std": 0.01,
+    "alpha": 0.0001,
+    "update_ratio": "4 minibatches /32 interactions",
+    "robot_and_environment_inputs": "same 39 channels for Actor and Critic",
+    "randomization": "existing Level2: angle0-5deg, XYZ +/-1cm; actuator/reward/reset unchanged",
+    "gradient_noise_seed": "separate from common collecting action-noise seed"
+  },
+  "validation": {
+    "every_steps": 10000,
+    "episodes": 64,
+    "seed": "14401+training_seed",
+    "deterministic": true,
+    "selection": "best checkpoint on validation only; final retained separately",
+    "frozen_baseline": "initial and final evaluation, intermediate checkpoints saved without invented measurements"
+  },
+  "heldout": {
+    "episodes": 128,
+    "seed": "14701+training_seed",
+    "mode": "deterministic",
+    "checkpoints": [
+      "best",
+      "final"
+    ],
+    "identical_policy_reuse": "If all actor tensors and normalizers match, reuse already measured result with explicit audit",
+    "stochastic_check": "C final only, 64 episodes; ongoing training stochastic successes recorded in all arms"
+  },
+  "no_rollback": true,
+  "max_concurrent_training_jobs": 2,
+  "training_steps_total": 450144,
+  "scope": "No LWD/DIVL/QAM/quality selection; selected-model retest does not reclassify original five-BC-seed gate"
+}

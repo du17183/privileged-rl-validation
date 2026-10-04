@@ -1,0 +1,116 @@
+{
+  "A": {
+    "best": {
+      "mean_success": 0.90625,
+      "sd_success": 0.16237976320958225,
+      "mean_reward": 33.90024265088141,
+      "median_selected_online_steps": 375008.0,
+      "eval_env_steps": 129472
+    },
+    "final": {
+      "mean_success": 0.453125,
+      "sd_success": 0.5046173519360982,
+      "mean_reward": 18.43428266234696,
+      "median_selected_online_steps": 500000.0,
+      "eval_env_steps": 149280
+    }
+  },
+  "B": {
+    "best": {
+      "mean_success": 0.69375,
+      "sd_success": 0.39814633969496693,
+      "mean_reward": 29.179852791503073,
+      "median_selected_online_steps": 175008.0,
+      "eval_env_steps": 161152
+    },
+    "final": {
+      "mean_success": 0.0,
+      "sd_success": 0.0,
+      "mean_reward": 9.165481060743332,
+      "median_selected_online_steps": 500000.0,
+      "eval_env_steps": 192000
+    }
+  },
+  "C": {
+    "best": {
+      "mean_success": 0.73125,
+      "sd_success": 0.2917736039080643,
+      "mean_reward": 29.650070881098507,
+      "median_selected_online_steps": 350016.0,
+      "eval_env_steps": 160512
+    },
+    "final": {
+      "mean_success": 0.25,
+      "sd_success": 0.4330127018922193,
+      "mean_reward": 14.44888406349346,
+      "median_selected_online_steps": 500000.0,
+      "eval_env_steps": 160512
+    }
+  },
+  "D": {
+    "best": {
+      "mean_success": 0.565625,
+      "sd_success": 0.45452370331479963,
+      "mean_reward": 23.41236841417849,
+      "median_selected_online_steps": 200000.0,
+      "eval_env_steps": 148576
+    },
+    "final": {
+      "mean_success": 0.165625,
+      "sd_success": 0.3703487587734027,
+      "mean_reward": 10.829211776331068,
+      "median_selected_online_steps": 500000.0,
+      "eval_env_steps": 192000
+    }
+  },
+  "paired_effects": [
+    [
+      "best",
+      "B-A",
+      -0.2125,
+      -0.50625,
+      0.025,
+      0.375
+    ],
+    [
+      "best",
+      "D-B",
+      -0.128125,
+      -0.584375,
+      0.2125,
+      0.75
+    ],
+    [
+      "best",
+      "C-A",
+      -0.175,
+      -0.49375,
+      0.11875,
+      0.4375
+    ],
+    [
+      "final",
+      "B-A",
+      -0.453125,
+      -0.840625,
+      -0.065625,
+      0.125
+    ],
+    [
+      "final",
+      "D-B",
+      0.165625,
+      0.0,
+      0.496875,
+      1.0
+    ],
+    [
+      "final",
+      "C-A",
+      -0.203125,
+      -0.840625,
+      0.4375,
+      0.625
+    ]
+  ]
+}

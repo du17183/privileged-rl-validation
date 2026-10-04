@@ -1,0 +1,16 @@
+{
+  "trajectory_count": 1000,
+  "attempts": 1000,
+  "success_fraction": 1.0,
+  "unique_action_trajectories": 1000,
+  "total_transitions": 271562,
+  "mean_length": 271.562,
+  "min_length": 268,
+  "max_length": 276,
+  "robot_observation_dim": 26,
+  "privileged_state_dim": 11,
+  "action_dim": 7,
+  "ever_both_fingers_contact_fraction": 1.0,
+  "mean_final_angle_rad": 1.003029471039772,
+  "simulator_interactions": 277184
+}

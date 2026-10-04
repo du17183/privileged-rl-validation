@@ -1,0 +1,14 @@
+{
+  "isaaclab_commit": "3c6e67bb5c7ada942a6d1884ab69338f57596f77",
+  "openpi_commit": "215abfb217dbac7d5f1273282331b9b1866c0479",
+  "tokenizer_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+  "nvrtc": "nvidia-cuda-nvrtc-cu12==12.9.86",
+  "libglu": "libglu1-mesa_9.0.2-1.1build1_amd64",
+  "policy_weights_included": false,
+  "pretrained_pi05_base": {
+    "path": "/home/xiaolong/pi05_peg_lwd/checkpoints/pi05_base/model.safetensors",
+    "bytes": 14467165872,
+    "sha256": "0eb11ca9587678c1d2ef8cf32807c29f8ce53a2bfdfc1aa4a4c96f16fca59b0f",
+    "scope": "task-independent pretrained pi05 base; no peg task fine-tuned weights"
+  }
+}

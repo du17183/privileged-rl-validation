@@ -1,0 +1,33 @@
+"""Fixed experiment matrix, without modifying any earlier phase configuration."""
+ARMS = {
+    "A": dict(kl=0.0, std="original", expert=.5, anchor_replay=False),
+    "B": dict(kl=1.0, std="original", expert=.5, anchor_replay=False),
+    "C": dict(kl=1.0, std="bound", expert=.5, anchor_replay=False),
+    "D": dict(kl=1.0, std="bound", expert=.5, anchor_replay=True),
+    "CANN": dict(kl=1.0, std="anneal", expert=.5, anchor_replay=False),
+    "D100": dict(kl=1.0, std="bound", expert=1.0, anchor_replay=True),
+    "D30": dict(kl=1.0, std="bound", expert=.3, anchor_replay=True),
+}
+PROTOCOL = dict(
+    task="Unchanged Panda Door; Phase 8 B signed progress reward and original reset",
+    initialization="Same-seed Phase 8 B best.pt, full SAC state; no new BC",
+    arms=ARMS, primary_arms=["A", "B", "C", "D"], seeds=list(range(5)),
+    training_steps=300000, training_envs=96, updates_per_vector_step=12,
+    batch_size=256, learning_rate=.0003, bc_weight=10.0,
+    safe_update_interval=10000, safe_evaluation_episodes=32,
+    formal_evaluation_interval=10000, formal_evaluation_episodes=64,
+    distribution_modes=["deterministic", "learned stochastic policy", "pre-tanh noise .01"],
+    bound=.01, annealing_start=.1, annealing_end=.01, annealing_duration=100000,
+    collector="Frozen last accepted policy during each candidate block; commit after physical evaluation",
+    std_consistency="Current sigma cap also used in actor loss and target-Q sampling",
+    kl="KL(new||frozen Phase 8 anchor), executed distributions share the current cap",
+    entropy="Original target -7 for A/B; bounded variants target capped anchor entropy minus one nat using deterministic quadrature",
+    replay="D nonexpert half splits equally: frozen-anchor successes and fresh exploration. D100=100% expert; D30=30% expert",
+    anchor_data="64 deterministic episodes/seed generated once, successful trajectories only, immutable and separately counted",
+    success_accounting="Only newly collected learner episodes count as online success; never anchor preload/evaluation",
+    heldout="New processes/seed; best and final; nominal det/policy/.01 plus legal +2.5/+5 deg and handle y +/-1 cm",
+    statistics="Five-seed t95 CI; paired exact two-sided sign flips; report primary and secondary arms separately",
+    acceptance="Compare same cap deterministic+stochastic success/progress/max/final angle drop <=.10; regression-rate increase <=.10",
+    updates="10k transactional candidate block, with 32-episode det/policy acceptance and separate 64-episode formal tests; 1k pilot retained. Small noise only independent best/final",
+    old_results="Phase 1-8 datasets/tasks/checkpoints/results read-only",
+)

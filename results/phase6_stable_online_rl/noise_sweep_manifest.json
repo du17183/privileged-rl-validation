@@ -1,0 +1,7 @@
+{
+  "training_updates": 0,
+  "checkpoint": "B3 best from fixed evaluation",
+  "episodes_per_seed_mode": 64,
+  "total_eval_env_steps": 798112,
+  "interpretation": "Execution-only noise cap; not online RL improvement."
+}

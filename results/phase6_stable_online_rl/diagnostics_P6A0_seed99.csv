@@ -1,0 +1,2 @@
+variant,seed,env_steps,optimizer_steps,critic_loss,actor_loss,bc_loss,q_mean,q_variance,q_disagreement,policy_entropy,alpha,action_drift_mse,expert_action_mse,train_success_rate,train_episodes
+A0,99,1024,128,0.05665223428150057,-0.21830780554046214,0.0,0.1518194079399109,0.002405650680884719,0.02496938779950142,4.208740711212158,0.047742899507284164,0.025632135570049286,0.25167545676231384,nan,0

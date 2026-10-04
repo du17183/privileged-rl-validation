@@ -1,0 +1,36 @@
+{
+  "protocol": "door_phase3_privileged_ablation_v1",
+  "inherits": "configs/door_experiment.json",
+  "unchanged_task": "PandaSektionDoorRight-v0",
+  "unchanged_expert_data": "door_dataset/door_expert_1000.h5",
+  "seeds": [0, 1, 2, 3, 4],
+  "online_steps_per_run": 500000,
+  "parallel_environments": 32,
+  "sac_updates_per_vector_step": 4,
+  "batch_size": 256,
+  "bc_updates": 3000,
+  "offline_critic_updates": 1000,
+  "offline_fraction": 0.25,
+  "actor_bc_weight": 10.0,
+  "evaluation_interval": 25000,
+  "evaluation_episodes": 64,
+  "variants": {
+    "diag_A": "robot actor and robot critic; Phase 2 A architecture",
+    "diag_B": "robot actor and full 11-field fixture critic; B3 and B4 alias",
+    "B1": "robot actor and door-angle-only critic",
+    "B2": "robot actor and angle-plus-velocity critic",
+    "B5": "full fixture critic until 50k, then freeze critic; actor continues",
+    "B6": "full fixture critic until 100k, distill to robot critic for 1000 minibatches, then ordinary SAC",
+    "E0": "robot-only actor and critic with shared policy encoder; no GT auxiliary loss",
+    "E1": "E0 architecture with angle MSE plus two-contact BCE auxiliary loss, weight 0.1",
+    "E2": "targeted follow-up: E1 auxiliary loss during first 100k steps, then disabled; same 500k and 5-seed budget",
+    "E3": "targeted follow-up: same 3000 BC updates with BC plus 0.1 GT prediction loss; no GT auxiliary online"
+  },
+  "analysis": {
+    "q_probe": "same 256 expert transitions across all saved Phase 2 A/B checkpoints",
+    "representation_probe": "heldout seed 190000 baseline rollout, 16 environment instances train and 16 test",
+    "heldout": "best and final checkpoints, 64 episodes each, seed 90000 + training seed",
+    "auc": "trapezoidal success-rate integral / 500000 online interactions",
+    "ci": "20000 seed-level bootstrap resamples; exact paired sign-flip p also reported"
+  }
+}

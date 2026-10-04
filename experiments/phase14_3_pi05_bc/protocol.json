@@ -1,0 +1,102 @@
+{
+  "phase": "14.3",
+  "task": "unchanged Panda Door Opening, Isaac Lab, Level2 door0-5deg/fixtureXYZ+-1cm",
+  "arms": {
+    "A": "original MSE BC + S + GT",
+    "B": "original MSE BC + S+R + GT",
+    "C": "OpenPI pi05 + S + GT",
+    "D": "OpenPI pi05 + S+R + GT"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "dataset_manifest": "datasets/phase14_2/prepared_v1/manifest.json",
+  "data_change": false,
+  "images": "none for all arms; state-only pi05 modality ablation, not RGB VLA",
+  "prompt": "open the door",
+  "state_features": "same39 robot26/GT13 measured features and constant target1rad",
+  "state_adaptor": "same frozen train-S z stats; pi05 intrinsic discretization after bounded atan(z). Explicit model-input transform, no new sensors.",
+  "mse_recipe": {
+    "network": [
+      39,
+      256,
+      256,
+      7
+    ],
+    "loss": "single-step MSE",
+    "optimizer": "Adam",
+    "lr": 0.0003,
+    "updates": 20000,
+    "batch": 512,
+    "checkpoints": [
+      1000,
+      5000,
+      10000,
+      15000,
+      20000
+    ]
+  },
+  "pi05_recipe": {
+    "base": "/home/xiaolong/pi05_peg_lwd/checkpoints/pi05_base/model.safetensors",
+    "implementation": "Physical-Intelligence/openpi215abfb217dbac7d5f1273282331b9b1866c0479",
+    "lora_rank": 16,
+    "lora_targets": "both language/action expert qkv/o and mlp gate/up/down; vision frozen and unused",
+    "train_projections": true,
+    "loss": "official flow matching, all32 channels: first7 physical actions +25 known-zero padding; illegal horizon steps masked",
+    "optimizer": "AdamW",
+    "lr_peak": 0.0001,
+    "warmup": 250,
+    "lr_end": 1E-05,
+    "updates": 5000,
+    "batch": 128,
+    "checkpoints": [
+      250,
+      1250,
+      2500,
+      3750,
+      5000
+    ],
+    "chunk": 10,
+    "execute": 5,
+    "flow_steps": 10
+  },
+  "sampling": "uniform transitions, S-only or50%S+50%R; never sample across trajectory boundary",
+  "control": "original60Hz,6relativeEEF+gripper,unchanged scales and IK; pi05 replans every5ticks,discards remaining5predictions,clears chunks on reset/handoff",
+  "cost_fairness": "same data and information, model-specific optimizer/budget; explicitly report unequal compute/anchors and pretrained foundation. Cannot attribute any gain solely to multimodality.",
+  "validation": {
+    "seed": 143501,
+    "fixed": 32,
+    "random": 64,
+    "pressure_each": 32,
+    "cohort_seed_base": 143601,
+    "selection": "lexicographic random success,artificial macro recovery,natural severe recovery,fixed success; MSE diagnostic only"
+  },
+  "test": {
+    "seed": 143502,
+    "fixed": 64,
+    "random": 128,
+    "pressure_each": 64,
+    "cohort_seed_base": 143701,
+    "for_selection": false
+  },
+  "pressure": "same replay/snapshot/charged1warmtick method as Phase14.2; newly generated validation/test cohorts,learned policy only after handoff",
+  "statistics": "5paired training seeds,Student-t95CI,pairedt,exact signflip,Holm4primary comparisons",
+  "comparisons": [
+    "D-B",
+    "C-A",
+    "D-C",
+    "B-A"
+  ],
+  "entry_gate": "one-seed real pretrained forward/backward,saved checkpoint restore,GT sensitivity,full closed-loop protocol pass before multi-seed pi05",
+  "rl_updates": 0,
+  "sources": [
+    "https://github.com/Physical-Intelligence/openpi",
+    "https://github.com/Physical-Intelligence/openpi/blob/main/src/openpi/models_pytorch/pi0_pytorch.py"
+  ],
+  "checkpoint_grid_note": "Before formal pi05 starts: include matched5/25/50/75/100% training-progress checkpoints to retain earlyBC ability. Missing first1k MSE checkpoint deterministically reconstructed;20k budget and original completed files preserved.",
+  "padding_repair": "Before any formal pi05 evaluation: original active7-only flow loss fit archived intact. Because official32dim sampler integrates allchannels, zero-padding flow targets are now supervised too. Full corrected5seed fits use unchanged5000update budget; old trial costs separately reported."
+}

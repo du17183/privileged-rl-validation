@@ -1,0 +1,4 @@
+treatment,control,mean_difference,ci95_low,ci95_high,exact_two_sided_signflip_p
+cap_0p135,raw_stochastic,0.109375,-0.02781078641954446,0.24656078641954446,0.125
+cap_0p05,raw_stochastic,0.45625,0.046434011390138585,0.8660659886098614,0.0625
+cap_0p01,raw_stochastic,0.9625,0.8866125725917794,1.0,0.0625

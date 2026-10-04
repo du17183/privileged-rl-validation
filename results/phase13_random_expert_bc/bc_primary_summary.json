@@ -1,0 +1,354 @@
+{
+  "per_seed": [
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/A_seed0_best.pt",
+      "arm": "A",
+      "model_seed": 0,
+      "evaluation_seed": 13501,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.046875,
+      "mean_max_angle_rad": 0.13248749296948148,
+      "mean_final_angle_rad": 0.051970365249032244,
+      "contact_success": 0.546875,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 114.28483680123463,
+      "physical_reset_checks": 161,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/B_seed0_best.pt",
+      "arm": "B",
+      "model_seed": 0,
+      "evaluation_seed": 13501,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.2890625,
+      "mean_max_angle_rad": 0.3257807547785494,
+      "mean_final_angle_rad": 0.2943556667111718,
+      "contact_success": 0.6328125,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 119.4405591073446,
+      "physical_reset_checks": 169,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/A_seed1_best.pt",
+      "arm": "A",
+      "model_seed": 1,
+      "evaluation_seed": 13502,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.0078125,
+      "mean_max_angle_rad": 0.07166485341979101,
+      "mean_final_angle_rad": 0.012505290294416174,
+      "contact_success": 0.109375,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 108.93379136826843,
+      "physical_reset_checks": 160,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/B_seed1_best.pt",
+      "arm": "B",
+      "model_seed": 1,
+      "evaluation_seed": 13502,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.7265625,
+      "mean_max_angle_rad": 0.7517145955171145,
+      "mean_final_angle_rad": 0.7377258317671076,
+      "contact_success": 0.9296875,
+      "interactions": 68096,
+      "vector_steps": 2128,
+      "elapsed_s": 105.62961413525045,
+      "physical_reset_checks": 182,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/A_seed2_best.pt",
+      "arm": "A",
+      "model_seed": 2,
+      "evaluation_seed": 13503,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.125,
+      "mean_max_angle_rad": 0.16159412011538832,
+      "mean_final_angle_rad": 0.12538805737651607,
+      "contact_success": 0.6796875,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 107.33366886526346,
+      "physical_reset_checks": 161,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/B_seed2_best.pt",
+      "arm": "B",
+      "model_seed": 2,
+      "evaluation_seed": 13503,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.703125,
+      "mean_max_angle_rad": 0.7391689484261974,
+      "mean_final_angle_rad": 0.7051986963699413,
+      "contact_success": 0.90625,
+      "interactions": 68672,
+      "vector_steps": 2146,
+      "elapsed_s": 106.09384350478649,
+      "physical_reset_checks": 180,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/A_seed3_best.pt",
+      "arm": "A",
+      "model_seed": 3,
+      "evaluation_seed": 13504,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.0,
+      "mean_max_angle_rad": 0.051765921719734376,
+      "mean_final_angle_rad": 0.018025881826796826,
+      "contact_success": 0.015625,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 115.97624214179814,
+      "physical_reset_checks": 160,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/B_seed3_best.pt",
+      "arm": "B",
+      "model_seed": 3,
+      "evaluation_seed": 13504,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.21875,
+      "mean_max_angle_rad": 0.28594643097228356,
+      "mean_final_angle_rad": 0.23873900837409967,
+      "contact_success": 0.6328125,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 124.13813737081364,
+      "physical_reset_checks": 165,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/A_seed4_best.pt",
+      "arm": "A",
+      "model_seed": 4,
+      "evaluation_seed": 13505,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.2734375,
+      "mean_max_angle_rad": 0.32959902108194683,
+      "mean_final_angle_rad": 0.2835273267748058,
+      "contact_success": 0.7890625,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 66.42371293064207,
+      "physical_reset_checks": 164,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    },
+    {
+      "checkpoint": "/DATA/disk1/home/xiaolong/privileged_rl_validation/checkpoints/phase13_random_expert_bc/B_seed4_best.pt",
+      "arm": "B",
+      "model_seed": 4,
+      "evaluation_seed": 13505,
+      "level": 2,
+      "mask": "none",
+      "stochastic": false,
+      "episodes": 128,
+      "success": 0.4296875,
+      "mean_max_angle_rad": 0.47733642439015966,
+      "mean_final_angle_rad": 0.44847421519410036,
+      "contact_success": 0.9140625,
+      "interactions": 76800,
+      "vector_steps": 2400,
+      "elapsed_s": 45.414346031844616,
+      "physical_reset_checks": 172,
+      "dataset_sha256": "9711e9504ca2b7daef9268885a3ab7abedab38ac92568daa4a2c955b82744adc"
+    }
+  ],
+  "summary": {
+    "A": {
+      "success": {
+        "mean": 0.090625,
+        "seed_sd": 0.11356376409588138,
+        "n": 5,
+        "ci95": [
+          -0.0503830373783614,
+          0.23163303737836138
+        ]
+      },
+      "mean_max_angle_rad": {
+        "mean": 0.1494222818612684,
+        "seed_sd": 0.11009266600393357,
+        "n": 5,
+        "ci95": [
+          0.012724182017912394,
+          0.2861203817046244
+        ]
+      },
+      "mean_final_angle_rad": {
+        "mean": 0.09828338430431342,
+        "seed_sd": 0.11290928369079782,
+        "n": 5,
+        "ci95": [
+          -0.04191200831752594,
+          0.23847877692615277
+        ]
+      },
+      "contact_success": {
+        "mean": 0.428125,
+        "seed_sd": 0.34620042797218636,
+        "n": 5,
+        "ci95": [
+          -0.0017396075757999951,
+          0.8579896075758
+        ]
+      }
+    },
+    "B": {
+      "success": {
+        "mean": 0.4734375,
+        "seed_sd": 0.23323943655742482,
+        "n": 5,
+        "ci95": [
+          0.1838324886653142,
+          0.7630425113346858
+        ]
+      },
+      "mean_max_angle_rad": {
+        "mean": 0.5159894308168609,
+        "seed_sd": 0.22134171967619434,
+        "n": 5,
+        "ci95": [
+          0.24115738619442012,
+          0.7908214754393017
+        ]
+      },
+      "mean_final_angle_rad": {
+        "mean": 0.48489868368328415,
+        "seed_sd": 0.2295003438819963,
+        "n": 5,
+        "ci95": [
+          0.1999363691096253,
+          0.769860998256943
+        ]
+      },
+      "contact_success": {
+        "mean": 0.803125,
+        "seed_sd": 0.15570216460441388,
+        "n": 5,
+        "ci95": [
+          0.6097952277683025,
+          0.9964547722316974
+        ]
+      }
+    }
+  },
+  "paired": {
+    "success": {
+      "mean": 0.3828125,
+      "seed_sd": 0.24951124097923924,
+      "n": 5,
+      "ci95": [
+        0.07300337492893433,
+        0.6926216250710657
+      ],
+      "per_seed_difference": [
+        0.2421875,
+        0.71875,
+        0.578125,
+        0.21875,
+        0.15625
+      ],
+      "paired_t_p": 0.026518955115548963,
+      "exact_sign_flip_p": 0.0625,
+      "positive_seeds": 5
+    },
+    "mean_max_angle_rad": {
+      "mean": 0.3665671489555925,
+      "seed_sd": 0.24404512741937953,
+      "n": 5,
+      "ci95": [
+        0.06354510030189808,
+        0.6695891976092869
+      ],
+      "per_seed_difference": [
+        0.19329326180906792,
+        0.6800497420973235,
+        0.5775748283108091,
+        0.23418050925254918,
+        0.14773740330821283
+      ],
+      "paired_t_p": 0.028339572456139665,
+      "exact_sign_flip_p": 0.0625,
+      "positive_seeds": 5
+    },
+    "mean_final_angle_rad": {
+      "mean": 0.3866152993789707,
+      "seed_sd": 0.2497201718368168,
+      "n": 5,
+      "ci95": [
+        0.07654675238393716,
+        0.6966838463740043
+      ],
+      "per_seed_difference": [
+        0.24238530146213955,
+        0.7252205414726914,
+        0.5798106389934252,
+        0.22071312654730285,
+        0.16494688841929456
+      ],
+      "paired_t_p": 0.025773851501249615,
+      "exact_sign_flip_p": 0.0625,
+      "positive_seeds": 5
+    },
+    "contact_success": {
+      "mean": 0.375,
+      "seed_sd": 0.32597884445351666,
+      "n": 5,
+      "ci95": [
+        -0.029756195333997204,
+        0.7797561953339972
+      ],
+      "per_seed_difference": [
+        0.0859375,
+        0.8203125,
+        0.2265625,
+        0.6171875,
+        0.125
+      ],
+      "paired_t_p": 0.06182624617588109,
+      "exact_sign_flip_p": 0.0625,
+      "positive_seeds": 5
+    }
+  },
+  "anchor_gate_passed": false,
+  "gate": "B >50%; B-A >=10pp; paired t 95% CI >0; >=4 positive seeds",
+  "inference_note": "n=5; t intervals assume independent approximately normal seed effects. Exact two-sided sign-flip p has minimum .0625; do not claim exact p<.05.",
+  "evaluation_interactions": 751168
+}

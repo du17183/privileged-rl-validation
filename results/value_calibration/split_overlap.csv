@@ -1,0 +1,17 @@
+feature,split_a,split_b,identical_overlap
+sequence,train,test,0
+sequence,train,stress,0
+sequence,validation,test,0
+sequence,validation,stress,0
+early50,train,test,0
+early50,train,stress,0
+early50,validation,test,0
+early50,validation,stress,0
+early100,train,test,0
+early100,train,stress,0
+early100,validation,test,0
+early100,validation,stress,0
+start_robot,train,test,9
+start_robot,train,stress,9
+start_robot,validation,test,9
+start_robot,validation,stress,9

@@ -1,0 +1,2 @@
+variant,seed,mode,stochastic,selected_steps,selection_success_rate,heldout_success_rate,heldout_mean_return,heldout_final_angle_rad,episodes,eval_env_steps,reset_mean_action_std
+B1,0,best,1,0,0.015625,0.390625,19.600661309435964,0.3917357280646813,64,38400,0.1353352963924408

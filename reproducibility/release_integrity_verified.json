@@ -1,0 +1,33 @@
+{
+  "complete": true,
+  "groups": {
+    "historical_and_door_data": {
+      "files": 96,
+      "bytes": 217749104
+    },
+    "datasets": {
+      "files": 280,
+      "bytes": 9333433966
+    },
+    "checkpoints": {
+      "files": 344,
+      "bytes": 786805
+    },
+    "logs": {
+      "files": 2639,
+      "bytes": 98127032
+    },
+    "results": {
+      "files": 51887,
+      "bytes": 7609519726
+    },
+    "third_party": {
+      "files": 1846,
+      "bytes": 48227474
+    }
+  },
+  "files": 57092,
+  "bytes": 17307844107,
+  "elapsed_s": 67.02116370201111,
+  "embedded_weight_archives_sanitized": true
+}

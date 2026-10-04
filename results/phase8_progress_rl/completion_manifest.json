@@ -1,0 +1,23 @@
+{
+  "primary_runs": 20,
+  "training_steps_per_run": 300000,
+  "independent_tests": 80,
+  "independent_episodes": 5120,
+  "input_hashes_preserved": {
+    "door_dataset/door_expert_1000.h5": "a17c857eb760517bd0d59e266c4f008c5fcf980faf8b8052d4343b57c7b069a8",
+    "door_env/door.py": "b9e710e6195d5cfba46fffc23afd8896871e2b70a6c1ae6d8185625dbe68fb69",
+    "door_env/isaac_env.py": "d5efaf1041361547bc6e865ffebca801556eebfcf4306b1bcb3001aad3b80fa6"
+  },
+  "stage_decision": {
+    "D_stability_gate_passed": false,
+    "curriculum_status": "not_run_gate_failed",
+    "initial_randomization_status": "not_run_gate_failed",
+    "drawer_status": "conditional_on_door_and_randomization",
+    "gate_definition": {
+      "mean_raw_final_success_min": 0.8,
+      "minimum_seed_raw_final_success_min": 0.6,
+      "mean_raw_best_final_gap_max": 0.1,
+      "minimum_online_successes_each_seed": 5
+    }
+  }
+}
