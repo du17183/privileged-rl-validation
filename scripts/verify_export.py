@@ -23,7 +23,7 @@ def main(args):
         if any(x in path.parts for x in ['.git','_release_cache','runs','results']) or any(x.startswith('.venv') for x in path.parts):continue
         try: ast.parse(path.read_text(encoding='utf-8'),filename=str(path));syntax+=1
         except (ValueError,SyntaxError,UnicodeError) as exc: errors.append(str(path.relative_to(ROOT))+': '+str(exc))
-    weights=[str(p.relative_to(ROOT)) for p in ROOT.rglob('*') if p.is_file() and p.suffix.lower() in WEIGHTS and 'external_weights' not in p.parts and 'runs' not in p.parts]
+    weights=[str(p.relative_to(ROOT)) for p in ROOT.rglob('*') if p.is_file() and p.suffix.lower() in WEIGHTS and not any(x in p.parts for x in ['external_weights','runs','.git','_release_cache']) and not any(x.startswith('.venv') for x in p.parts)]
     if weights:errors.append('Unexpected policy weight files: '+repr(weights))
     checked=missing=0
     if args.data:

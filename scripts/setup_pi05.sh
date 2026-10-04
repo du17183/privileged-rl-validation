@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+export UV_LINK_MODE=copy
 UV="$(command -v uv)"
 "$UV" venv --python "${PYTHON_BIN:-3.11}" --seed "$ROOT/.venv_pi05"
 PY="$ROOT/.venv_pi05/bin/python"

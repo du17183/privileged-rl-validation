@@ -54,9 +54,9 @@ Phase14.3使用与Isaac隔离的PyTorch环境，通过Unix socket进行推理通
 PYTHON_BIN=3.11 bash scripts/setup_pi05.sh
 ```
 
-脚本只修改新建`.venv_pi05`。Torch及torchvision必须使用匹配的CUDA13.0构建；安装源可通过`PI05_TORCH_INDEX`调整。若指定历史wheel不再可下载，应使用自己保存的同版本wheel或重新审定版本，不能把任意新版本宣称为严格复现。完整环境快照见`reproducibility/pi05-runtime-freeze.txt/json`。
+脚本只修改新建`.venv_pi05`，安装使用uv的copy模式，避免后续模型源码/NVRTC替换影响共享uv缓存。Torch及torchvision必须使用匹配的CUDA13.0构建；安装源可通过`PI05_TORCH_INDEX`调整。若指定历史wheel不再可下载，应使用自己保存的同版本wheel或重新审定版本，不能把任意新版本宣称为严格复现。完整环境快照见`reproducibility/pi05-runtime-freeze.txt/json`。
 
-预训练权重单独从[官方OpenPI](https://github.com/Physical-Intelligence/openpi)的π0.5 PyTorch checkpoint获取，放到：
+预训练权重单独获取。官方OpenPI列出的base是`gs://openpi-assets/checkpoints/pi05_base`；如果拿到的是JAX格式，需要按[官方PyTorch转换说明](https://github.com/Physical-Intelligence/openpi#converting-jax-models-to-pytorch)，在固定OpenPI版本的完整环境中使用`examples/convert_jax_model_to_pytorch.py`转换。不能直接把JAX文件改名为safetensors。本轮使用的是已经转换好的task-independent PyTorch base，放到：
 
 ```text
 external_weights/pi05_base/model.safetensors
@@ -68,7 +68,7 @@ external_weights/pi05_base/model.safetensors
 0eb11ca9587678c1d2ef8cf32807c29f8ce53a2bfdfc1aa4a4c96f16fca59b0f
 ```
 
-不要用其他任务的fine-tuned checkpoint替代。tokenizer是分词资源，不是策略权重，已保留，并有hash。可覆盖的路径变量：`OPENPI_SOURCE`、`PI05_BASE`、`PI05_TOKENIZER`、`PI05_PYTHON`；默认都指向本仓库内的对应位置。
+不要用其他任务的fine-tuned checkpoint替代。严格按同一二进制复现必须匹配上述SHA256；自行转换后的文件若hash不同，需核查转换版本、参数映射和dtype，不能未经核验宣称逐位一致。tokenizer是分词资源，不是策略权重，已保留，并有hash。可覆盖的路径变量：`OPENPI_SOURCE`、`PI05_BASE`、`PI05_TOKENIZER`、`PI05_PYTHON`；默认都指向本仓库内的对应位置。
 
 ## 4. 新实验目录与历史完成标记
 
