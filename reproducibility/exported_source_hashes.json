@@ -189,6 +189,7 @@
   "reproducibility/release_integrity_verified.json": "c660405f2863b0831c10c4fca0b2920097c4bb5f6ed67bf064197cefcad22044",
   "reproducibility/release_manifest.json": "c9699fda7a416387233c6bcbd18838d3521fba98a3e036c7c3bf060f790ae01e",
   "reproducibility/requirements-pi05-model.txt": "e36091ff6e463ac54f5d7c979847c69add488aafd41833b44424397994fe5d4e",
+  "reproducibility/restore_smoke_verified.json": "552d21f317b48bbbdd4d71d7f4998ba5754f42301731d86902102cac77f2d8f8",
   "reproducibility/source_portability.patch": "2652dcc857ca4d36c959921c2b3411a697063f8106f6735023375181b17a7109",
   "results/aggregate_curves.csv": "dca9c12eb6a597938a01a5360a681973538ffaa317e1cc5063f5497b4fba7661",
   "results/environment_report.md": "22386560715023210575d3da39fa2a7d852aeb2b736b679a13d535f97426509b",

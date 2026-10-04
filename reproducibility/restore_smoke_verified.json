@@ -1,0 +1,6 @@
+{
+  "verified_checkpoint_metadata_files": 344,
+  "split_stream_restore": true,
+  "repeat_restore_without_overwrite": true,
+  "GPU_used": false
+}
