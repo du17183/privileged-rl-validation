@@ -2,11 +2,14 @@
 """Restore all non-weight experiment data, metrics and logs from a public Release."""
 import argparse
 import hashlib
+import http.client
 import io
 import json
 import os
 import shutil
 import tarfile
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -44,13 +47,46 @@ def download(url, path, expected):
     if path.exists() and path.stat().st_size == expected['bytes'] and digest(path) == expected['sha256']:
         return
     temporary = path.with_name(path.name + '.download')
-    # Public asset downloads redirect to a signed CDN URL; never forward a PAT.
-    request = urllib.request.Request(url, headers={'User-Agent':'privileged-rl-validation-restore'})
-    with urllib.request.urlopen(request, timeout=120) as response, temporary.open('wb') as output:
-        shutil.copyfileobj(response, output, length=8 << 20)
-    if temporary.stat().st_size != expected['bytes'] or digest(temporary) != expected['sha256']:
-        raise RuntimeError('Size/SHA256 mismatch: ' + path.name)
-    os.replace(temporary, path)
+    for attempt in range(3):
+        offset = temporary.stat().st_size if temporary.exists() else 0
+        if offset > expected['bytes']: offset = 0
+        if offset == expected['bytes']:
+            if digest(temporary) != expected['sha256']:
+                raise RuntimeError('SHA256 mismatch in completed partial file: '+temporary.name)
+            os.replace(temporary, path); return
+        # Public assets redirect to a signed CDN URL; never forward a PAT.
+        headers = {'User-Agent':'privileged-rl-validation-restore'}
+        if offset: headers['Range'] = f'bytes={offset}-'
+        request = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(request, timeout=120) as response:
+                if response.status == 206:
+                    content_range = response.headers.get('Content-Range','')
+                    if not content_range.startswith(f'bytes {offset}-'):
+                        raise RuntimeError('Unexpected byte range: '+path.name)
+                elif response.status == 200:
+                    offset = 0
+                else: raise RuntimeError('Unexpected download status: '+str(response.status))
+                mode = 'ab' if offset else 'wb'; last = time.monotonic()
+                with temporary.open(mode) as output:
+                    read = getattr(response, 'read1', response.read)
+                    while True:
+                        block = read(64 << 10)
+                        if not block: break
+                        output.write(block); offset += len(block)
+                        if time.monotonic()-last >= 20:
+                            output.flush()
+                            print('DOWNLOAD PROGRESS',path.name,offset,'/',expected['bytes'],flush=True)
+                            last = time.monotonic()
+            if temporary.stat().st_size != expected['bytes']:
+                raise http.client.IncompleteRead(b'', expected['bytes']-temporary.stat().st_size)
+            if digest(temporary) != expected['sha256']:
+                raise RuntimeError('SHA256 mismatch: '+path.name)
+            os.replace(temporary, path); return
+        except (TimeoutError, ConnectionError, urllib.error.URLError, http.client.IncompleteRead):
+            if attempt == 2: raise
+            print('DOWNLOAD RETRY',path.name,attempt+1,flush=True)
+            time.sleep(2*(attempt+1))
 
 
 def extract(paths, destination, overwrite):

@@ -17,7 +17,7 @@ python3 scripts/restore_release.py --groups all
 python3 scripts/restore_weights.py --groups all
 ```
 
-默认下载所有Release分卷，核对每卷SHA256，再流式恢复原目录。公开仓库无需token。脚本支持重复执行：已有正确分卷会跳过下载；现有恢复文件必须与归档字节一致，避免无意覆盖新实验。
+默认下载所有Release分卷，核对每卷SHA256，再流式恢复原目录。公开仓库无需token。下载使用小分块并支持HTTP Range断点续传，网络错误自动重试；已有正确分卷会跳过下载。现有恢复文件必须与归档字节一致，避免无意覆盖新实验。
 
 分组：`datasets`、`results`、`logs`、`checkpoints`（只含CSV/JSON等元数据）、`third_party`（Isaac Lab源码）、`historical_and_door_data`（Door专家数据和历史交付包）。
 

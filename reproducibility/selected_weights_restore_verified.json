@@ -1,0 +1,17 @@
+{
+  "release": "https://github.com/du17183/privileged-rl-validation/releases/tag/selected-weights-phase1-14-3-20261004",
+  "published": true,
+  "public_unauthenticated_restore": true,
+  "restore_test_host": "b300-2",
+  "restore_test_group": "core",
+  "restored_models_sha256_verified": 16,
+  "all_original_archive_members_sha256_verified": 81,
+  "all_uploaded_assets_size_state_sha256_verified": 27,
+  "task_checkpoint_payloads_CPU_loaded": 80,
+  "pi05_learned_parameter_models": 10,
+  "shared_base_safetensors_header_checked": true,
+  "local_initial_CDN_read_timeout": "Repaired with small reads, progress, bounded retries and HTTP Range resume; server public restoration subsequently passed.",
+  "GPU_used": false,
+  "training_started": false,
+  "original_server_files_modified": false
+}
