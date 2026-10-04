@@ -1,0 +1,27 @@
+Selected Phase 1-14.3 task weights and shared pi05 base
+
+Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms.
+
+The shared pi05 base and its LoRA derivatives contain Gemma-derived components.
+They are subject to the use restrictions in Section 3.2 of the attached Gemma
+Terms of Use, including the referenced Gemma Prohibited Use Policy. These
+restrictions govern their use and further distribution; this snapshot does
+not remove or supersede the upstream terms.
+
+Copies of the upstream notices accompany this distribution:
+  LICENSE_GEMMA.txt: third_party/openpi/LICENSE_GEMMA.txt
+  LICENSE_OPENPI.txt: third_party/openpi/LICENSE
+
+Modification notices:
+* external_weights/pi05_base/model.safetensors is the already converted
+  PyTorch binary used by the original experiment. It is a format-converted
+  OpenPI pi05 base, not a Door fine-tuned standalone model. Its exact SHA256
+  and source dependency version are recorded in the selected-weight catalog.
+* The Phase14.3 C/D task .pt files contain project-trained rank16 LoRA and
+  trainable action/time projection parameters. They are modified derivatives
+  used in a state-only, no-RGB Door experiment, and require the shared base.
+* Redistribution packaging preserves all selected binary bytes unchanged.
+
+Upstream project: https://github.com/Physical-Intelligence/openpi
+Source version: 215abfb217dbac7d5f1273282331b9b1866c0479
+See docs/WEIGHTS.md for provenance, limitations and reconstruction commands.

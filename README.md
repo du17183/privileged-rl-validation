@@ -10,14 +10,16 @@ Franka Panda Drawer / Door Opening实验框架：验证工装提供的ground tru
 git clone https://github.com/du17183/privileged-rl-validation.git
 cd privileged-rl-validation
 python3 scripts/restore_release.py --groups all
+python3 scripts/restore_weights.py --groups all
 ```
 
-完整步骤：[重建与复现](docs/REPRODUCE.md)。**权重不上传**；需要重新训练任务模型，并单独获取π0.5预训练base。不要直接在恢复的历史完成标记目录启动训练，使用`prepare_run.py`创建干净目录。
+完整步骤：[重建与复现](docs/REPRODUCE.md)及[权重背景与加载说明](docs/WEIGHTS.md)。精简权重Release包含80个任务checkpoint和一份共享π0.5基础模型；无需重新训练即可复测所选模型。不要直接在恢复的历史完成标记目录启动新训练，使用`prepare_run.py`创建干净目录。
 
 ## 数据与结果在哪里
 
 - Git：所有项目源码、配置、报告、关键CSV/JSON摘要、图表、双环境版本快照、OpenPI实际源码及Transformers模型补丁。
 - [Release快照](https://github.com/du17183/privileged-rl-validation/releases/tag/repro-phase14-3-20261004)：所有阶段非权重数据、全部原始指标与日志、逐episode记录、checkpoint元数据、历史源码包和Isaac Lab源码。
+- [精简权重Release](https://github.com/du17183/privileged-rl-validation/releases/tag/selected-weights-phase1-14-3-20261004)：81个模型，未压缩14.71GiB；包括π0.5微调增量与同SHA基础模型。每个文件的任务、方案、seed、训练步数和指标来源见[权重索引](reproducibility/weight_catalog.csv)。
 - 每卷≤512MiB，下载后核对SHA256再恢复；每个原文件的hash在`reproducibility/original_files.json`。
 - 无效实验和历史试跑保留原有命名及报告解释，不能混入正式统计。
 

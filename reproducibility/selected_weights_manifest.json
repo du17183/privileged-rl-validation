@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "tag": "selected-weights-phase1-14-3-20261004",
+  "owner_repo": "du17183/privileged-rl-validation",
+  "file_count": 81,
+  "task_weight_count": 80,
+  "uncompressed_bytes": 15799223865,
+  "task_weight_bytes": 1332057993,
+  "all_member_sha256_verified": true,
+  "groups": {
+    "context": {
+      "file_count": 30,
+      "uncompressed_bytes": 60822390,
+      "parts": [
+        {
+          "name": "context.tar.gz.part000",
+          "bytes": 51254675,
+          "sha256": "d05f36710a716339e21df0f43becff0f8f0ca9ec86de9eac130c9048d7092e44"
+        }
+      ],
+      "all_member_sha256_verified": true
+    },
+    "core": {
+      "file_count": 16,
+      "uncompressed_bytes": 39279673,
+      "parts": [
+        {
+          "name": "core.tar.gz.part000",
+          "bytes": 32740743,
+          "sha256": "2aea635cd159f65bd54499467d21d9781b6de60498f1c03953300d5effba98b4"
+        }
+      ],
+      "all_member_sha256_verified": true
+    },
+    "drawer": {
+      "file_count": 24,
+      "uncompressed_bytes": 81778120,
+      "parts": [
+        {
+          "name": "drawer.tar.gz.part000",
+          "bytes": 72653141,
+          "sha256": "3d171eba5483d369d5759610c9267b5e7da6b19f4bd66a286faadf88e84a71d1"
+        }
+      ],
+      "all_member_sha256_verified": true
+    },
+    "pi05_adapters": {
+      "file_count": 10,
+      "uncompressed_bytes": 1150177810,
+      "parts": [
+        {
+          "name": "pi05_adapters.tar.gz.part000",
+          "bytes": 536870912,
+          "sha256": "0c4007266297684c55c1387d0c81b536306d4115cf59b4307d71d2148a98344c"
+        },
+        {
+          "name": "pi05_adapters.tar.gz.part001",
+          "bytes": 508965790,
+          "sha256": "345232aadcac0cf25428f6ef108ff9d3d7a24a2cd95d04842ffcf6a743047add"
+        }
+      ],
+      "all_member_sha256_verified": true
+    },
+    "pi05_base": {
+      "file_count": 1,
+      "uncompressed_bytes": 14467165872,
+      "parts": [
+        {
+          "name": "pi05_base.tar.gz.part000",
+          "bytes": 536870912,
+          "sha256": "fad225591d0deed9a301506ee8abc2717a2b05b623f9b1ac024c3a608a8f16b9"
+        },
+        {
+          "name": "pi05_base.tar.gz.part001",
+          "bytes": 536870912,
+          "sha256": "0cd49230d4935891df7196e3d3ba0a2b6ec0190cdcb539aa389c6ee271b63eed"
+        },
+        {
+          "name": "pi05_base.tar.gz.part002",
+          "bytes": 536870912,
+          "sha256": "65dcebc79e8f08f487b3126fe2497cc48700bc42a354c32f8036a290dff209a6"
+        },
+        {
+          "name": "pi05_base.tar.gz.part003",
+          "bytes": 536870912,
+          "sha256": "2e47fbd42d8d8a1f897c34ce0e4937e8fd3aa5518ae2f41bbed74f628df0a31b"
+        },
+        {
+          "name": "pi05_base.tar.gz.part004",
+          "bytes": 536870912,
+          "sha256": "110dab59c88499c9801dc6736549fdf64863cd126ef8c4cdde2eae9486082033"
+        },
+        {
+          "name": "pi05_base.tar.gz.part005",
+          "bytes": 536870912,
+          "sha256": "345cdf646c8c6fbe724ead0da721425968bf5694f485451f5550054fad36101a"
+        },
+        {
+          "name": "pi05_base.tar.gz.part006",
+          "bytes": 536870912,
+          "sha256": "11bee3f8eeee069968f0f8f1727fc80c5926192e61320fb8299d59220317bc67"
+        },
+        {
+          "name": "pi05_base.tar.gz.part007",
+          "bytes": 536870912,
+          "sha256": "f272bba3a2463ac7cb47e9e7d44be1c0bae3d96d1ed9ab0901836167a5a94fce"
+        },
+        {
+          "name": "pi05_base.tar.gz.part008",
+          "bytes": 536870912,
+          "sha256": "37aaa2126018cb0e83266681495ce9baa826e0c0cc98e8abb3b13293d59dfce4"
+        },
+        {
+          "name": "pi05_base.tar.gz.part009",
+          "bytes": 536870912,
+          "sha256": "6c01d7f4036c95babc0007423859b957da21aca24c1d1822c596d5fc8e4ce3b3"
+        },
+        {
+          "name": "pi05_base.tar.gz.part010",
+          "bytes": 536870912,
+          "sha256": "35dfcda5b060cdfb77ef141cb086ee0f0c2b97b8deb7e6606f0abab8fa62ed98"
+        },
+        {
+          "name": "pi05_base.tar.gz.part011",
+          "bytes": 536870912,
+          "sha256": "f9f522a07780f889291a6f9d6d3f0826d852cdac3bc9ff14f2c5a5415c73ff10"
+        },
+        {
+          "name": "pi05_base.tar.gz.part012",
+          "bytes": 536870912,
+          "sha256": "b5587b1fe9fc6d3f81de2d604bcbcc852563b8bc43487138a953a489414c44cf"
+        },
+        {
+          "name": "pi05_base.tar.gz.part013",
+          "bytes": 536870912,
+          "sha256": "4dfcc84556517a762a50a0edf7b780290d803e2a53c70e6a47491113d46ba504"
+        },
+        {
+          "name": "pi05_base.tar.gz.part014",
+          "bytes": 217283631,
+          "sha256": "99331ce544e29d03ab14b697ba757c89caeda4e19458c6c947c6336ec15a1efd"
+        }
+      ],
+      "all_member_sha256_verified": true
+    }
+  },
+  "created": 1791094450.161639,
+  "compressed_bytes": 8935961660
+}

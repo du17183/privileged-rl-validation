@@ -1,0 +1,169 @@
+{
+  "all_assets_size_state_sha256_verified": true,
+  "asset_count": 27,
+  "bytes": 8936150055,
+  "assets": [
+    {
+      "name": "context.tar.gz.part000",
+      "bytes": 51254675,
+      "digest": "sha256:d05f36710a716339e21df0f43becff0f8f0ca9ec86de9eac130c9048d7092e44",
+      "id": 609257712
+    },
+    {
+      "name": "core.tar.gz.part000",
+      "bytes": 32740743,
+      "digest": "sha256:2aea635cd159f65bd54499467d21d9781b6de60498f1c03953300d5effba98b4",
+      "id": 609257718
+    },
+    {
+      "name": "drawer.tar.gz.part000",
+      "bytes": 72653141,
+      "digest": "sha256:3d171eba5483d369d5759610c9267b5e7da6b19f4bd66a286faadf88e84a71d1",
+      "id": 609257719
+    },
+    {
+      "name": "pi05_adapters.tar.gz.part000",
+      "bytes": 536870912,
+      "digest": "sha256:0c4007266297684c55c1387d0c81b536306d4115cf59b4307d71d2148a98344c",
+      "id": 609257964
+    },
+    {
+      "name": "pi05_adapters.tar.gz.part001",
+      "bytes": 508965790,
+      "digest": "sha256:345232aadcac0cf25428f6ef108ff9d3d7a24a2cd95d04842ffcf6a743047add",
+      "id": 609257969
+    },
+    {
+      "name": "pi05_base.tar.gz.part000",
+      "bytes": 536870912,
+      "digest": "sha256:fad225591d0deed9a301506ee8abc2717a2b05b623f9b1ac024c3a608a8f16b9",
+      "id": 609260614
+    },
+    {
+      "name": "pi05_base.tar.gz.part001",
+      "bytes": 536870912,
+      "digest": "sha256:0cd49230d4935891df7196e3d3ba0a2b6ec0190cdcb539aa389c6ee271b63eed",
+      "id": 609260617
+    },
+    {
+      "name": "pi05_base.tar.gz.part002",
+      "bytes": 536870912,
+      "digest": "sha256:65dcebc79e8f08f487b3126fe2497cc48700bc42a354c32f8036a290dff209a6",
+      "id": 609260619
+    },
+    {
+      "name": "pi05_base.tar.gz.part003",
+      "bytes": 536870912,
+      "digest": "sha256:2e47fbd42d8d8a1f897c34ce0e4937e8fd3aa5518ae2f41bbed74f628df0a31b",
+      "id": 609260616
+    },
+    {
+      "name": "pi05_base.tar.gz.part004",
+      "bytes": 536870912,
+      "digest": "sha256:110dab59c88499c9801dc6736549fdf64863cd126ef8c4cdde2eae9486082033",
+      "id": 609261944
+    },
+    {
+      "name": "pi05_base.tar.gz.part005",
+      "bytes": 536870912,
+      "digest": "sha256:345cdf646c8c6fbe724ead0da721425968bf5694f485451f5550054fad36101a",
+      "id": 609262332
+    },
+    {
+      "name": "pi05_base.tar.gz.part006",
+      "bytes": 536870912,
+      "digest": "sha256:11bee3f8eeee069968f0f8f1727fc80c5926192e61320fb8299d59220317bc67",
+      "id": 609262551
+    },
+    {
+      "name": "pi05_base.tar.gz.part007",
+      "bytes": 536870912,
+      "digest": "sha256:f272bba3a2463ac7cb47e9e7d44be1c0bae3d96d1ed9ab0901836167a5a94fce",
+      "id": 609263668
+    },
+    {
+      "name": "pi05_base.tar.gz.part008",
+      "bytes": 536870912,
+      "digest": "sha256:37aaa2126018cb0e83266681495ce9baa826e0c0cc98e8abb3b13293d59dfce4",
+      "id": 609263830
+    },
+    {
+      "name": "pi05_base.tar.gz.part009",
+      "bytes": 536870912,
+      "digest": "sha256:6c01d7f4036c95babc0007423859b957da21aca24c1d1822c596d5fc8e4ce3b3",
+      "id": 609264309
+    },
+    {
+      "name": "pi05_base.tar.gz.part010",
+      "bytes": 536870912,
+      "digest": "sha256:35dfcda5b060cdfb77ef141cb086ee0f0c2b97b8deb7e6606f0abab8fa62ed98",
+      "id": 609265605
+    },
+    {
+      "name": "pi05_base.tar.gz.part011",
+      "bytes": 536870912,
+      "digest": "sha256:f9f522a07780f889291a6f9d6d3f0826d852cdac3bc9ff14f2c5a5415c73ff10",
+      "id": 609265898
+    },
+    {
+      "name": "pi05_base.tar.gz.part012",
+      "bytes": 536870912,
+      "digest": "sha256:b5587b1fe9fc6d3f81de2d604bcbcc852563b8bc43487138a953a489414c44cf",
+      "id": 609266965
+    },
+    {
+      "name": "pi05_base.tar.gz.part013",
+      "bytes": 536870912,
+      "digest": "sha256:4dfcc84556517a762a50a0edf7b780290d803e2a53c70e6a47491113d46ba504",
+      "id": 609267052
+    },
+    {
+      "name": "pi05_base.tar.gz.part014",
+      "bytes": 217283631,
+      "digest": "sha256:99331ce544e29d03ab14b697ba757c89caeda4e19458c6c947c6336ec15a1efd",
+      "id": 609267343
+    },
+    {
+      "name": "selected_weights_catalog.jsonl",
+      "bytes": 85456,
+      "digest": "sha256:65107af05c35789369217ef0663c133d9a2a3e84c2c68f8dd2a3329b681ce1c8",
+      "id": 609268172
+    },
+    {
+      "name": "selected_weights_manifest.json",
+      "bytes": 4811,
+      "digest": "sha256:b42bf1c8b19374e98a50ec14646ebf3fe4ee9f9010d7ed7f2d7169ae06365750",
+      "id": 609268150
+    },
+    {
+      "name": "WEIGHTS.md",
+      "bytes": 9766,
+      "digest": "sha256:a01e9fe749e68856513000602e3b0c8b43ce39dc524b5930e7cd03700234de45",
+      "id": 609276245
+    },
+    {
+      "name": "WEIGHT_NOTICE.txt",
+      "bytes": 1503,
+      "digest": "sha256:7998a1c24d7e9ea89e3ac48cdaef529e9b99a5ab3be7ccc6d59af7bedf609af8",
+      "id": 609276289
+    },
+    {
+      "name": "LICENSE_OPENPI.txt",
+      "bytes": 11356,
+      "digest": "sha256:43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "id": 609276317
+    },
+    {
+      "name": "LICENSE_GEMMA.txt",
+      "bytes": 8431,
+      "digest": "sha256:3e2c24001f9ef57bf7ec959a3658fbb49cdad113cdf394c264da9d16f9bdd132",
+      "id": 609276345
+    },
+    {
+      "name": "weight_catalog.csv",
+      "bytes": 67072,
+      "digest": "sha256:e2b1f86a672c2afec2211247a290e34b6a2824dc351f1cccc45c3685a4e5e73a",
+      "id": 609276370
+    }
+  ]
+}

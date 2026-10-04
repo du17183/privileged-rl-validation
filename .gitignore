@@ -19,6 +19,7 @@ __pycache__/
 !.env.example
 external_weights/
 _release_cache/
+_weight_release_cache/
 runs/
 datasets/
 checkpoints/

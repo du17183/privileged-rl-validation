@@ -97,7 +97,7 @@ def main(args):
         if not args.download_only:
             print('RESTORE', group, available[group]['file_count'], 'files', flush=True)
             extract(paths, destination, args.overwrite)
-    print('RESTORE COMPLETE; no policy weights are present.', flush=True)
+    print('DATA RELEASE RESTORED; selected models are restored by restore_weights.py.', flush=True)
 
 
 if __name__ == '__main__':

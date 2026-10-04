@@ -4,9 +4,9 @@
 
 此仓库覆盖Phase1–14.3的代码、配置和报告。Release保留全部非权重数据、指标、逐episode结果、图表、日志和历史源码包；无效实验保留原有目录标记，不混入有效结论。
 
-不包含：任务checkpoint、π0.5预训练权重、虚拟环境、Python缓存、旧PID/socket/lock、嵌套Git对象和旧NVRTC备份。原服务器文件未改动。两个旧交付压缩包中的权重已经移除；修改后的hash及原始hash记录在`reproducibility/original_files.json`。
+原数据Release不包含权重；新增精简权重Release包含80个已选任务checkpoint和1份共享π0.5预训练base，背景及索引见[WEIGHTS.md](WEIGHTS.md)。虚拟环境、Python缓存、旧PID/socket/lock、嵌套Git对象和旧NVRTC备份不上传。原服务器文件未改动。两个旧交付压缩包中的权重已移除；修改后的hash及原始hash记录在`reproducibility/original_files.json`。
 
-**不带权重的仓库支持重新训练复现，不能直接复测以前的checkpoint。**
+恢复精简权重后可直接复测所选模型；其余历史模型仍需重新训练。Git保存源码和索引，模型二进制只在Release。
 
 ## 1. 克隆并恢复所有数据、指标和日志
 
@@ -14,11 +14,14 @@
 git clone https://github.com/du17183/privileged-rl-validation.git
 cd privileged-rl-validation
 python3 scripts/restore_release.py --groups all
+python3 scripts/restore_weights.py --groups all
 ```
 
 默认下载所有Release分卷，核对每卷SHA256，再流式恢复原目录。公开仓库无需token。脚本支持重复执行：已有正确分卷会跳过下载；现有恢复文件必须与归档字节一致，避免无意覆盖新实验。
 
 分组：`datasets`、`results`、`logs`、`checkpoints`（只含CSV/JSON等元数据）、`third_party`（Isaac Lab源码）、`historical_and_door_data`（Door专家数据和历史交付包）。
+
+权重分组：`core`（16）、`context`（30）、`drawer`（24）、`pi05_adapters`（10）、`pi05_base`（1）。只运行小模型可先恢复`core,context,drawer`。每个恢复的模型也核对原文件SHA256，并保留原checkpoint路径。
 
 原始数据/结果/日志约16GiB，下载缓存另占压缩分卷体积。Isaac、π0.5环境、预训练权重和新训练checkpoint需要额外空间。完整迁移建议预留100GiB以上；重跑所有历史实验还需为新checkpoint预留空间。
 
@@ -27,6 +30,8 @@ python3 scripts/restore_release.py --groups all
 python3 scripts/verify_export.py
 # 恢复全部分组后，对所有归档文件做完整SHA256核对
 python3 scripts/verify_export.py --data
+# 恢复全部权重后，检查81个模型原文件SHA256
+python3 scripts/verify_export.py --weights
 ```
 
 ## 2. Isaac运行环境
@@ -56,7 +61,7 @@ PYTHON_BIN=3.11 bash scripts/setup_pi05.sh
 
 脚本只修改新建`.venv_pi05`，安装使用uv的copy模式，避免后续模型源码/NVRTC替换影响共享uv缓存。Torch及torchvision必须使用匹配的CUDA13.0构建；安装源可通过`PI05_TORCH_INDEX`调整。若指定历史wheel不再可下载，应使用自己保存的同版本wheel或重新审定版本，不能把任意新版本宣称为严格复现。完整环境快照见`reproducibility/pi05-runtime-freeze.txt/json`。
 
-预训练权重单独获取。官方OpenPI列出的base是`gs://openpi-assets/checkpoints/pi05_base`；如果拿到的是JAX格式，需要按[官方PyTorch转换说明](https://github.com/Physical-Intelligence/openpi#converting-jax-models-to-pytorch)，在固定OpenPI版本的完整环境中使用`examples/convert_jax_model_to_pytorch.py`转换。不能直接把JAX文件改名为safetensors。本轮使用的是已经转换好的task-independent PyTorch base，放到：
+精简权重Release已提供本实验使用的同SHA转换base，`restore_weights.py --groups all`会恢复它及许可证。也可另行获取：官方OpenPI列出的base是`gs://openpi-assets/checkpoints/pi05_base`；如果拿到的是JAX格式，需要按[官方PyTorch转换说明](https://github.com/Physical-Intelligence/openpi#converting-jax-models-to-pytorch)，在固定OpenPI版本的完整环境中使用`examples/convert_jax_model_to_pytorch.py`转换。不能直接把JAX文件改名为safetensors。本轮使用的是已经转换好的task-independent PyTorch base，放到：
 
 ```text
 external_weights/pi05_base/model.safetensors
@@ -72,7 +77,7 @@ external_weights/pi05_base/model.safetensors
 
 ## 4. 新实验目录与历史完成标记
 
-恢复的结果包含旧实验完成标记，而权重被排除。**不能直接在历史目录运行旧总控脚本**：它可能依据完成标记跳过已经缺失的模型。必须创建干净的重跑目录。
+恢复的结果包含旧实验完成标记，而精简包只含所选权重。**不能直接在历史目录运行旧训练总控脚本**：它可能依据完成标记跳过未包含的其他模型。重新训练必须创建干净的重跑目录；直接复测所选模型按WEIGHTS.md的评估接口执行。
 
 ```bash
 python3 scripts/prepare_run.py --name phase14-3-retrain --dry-run
@@ -88,7 +93,7 @@ Phase14.3可分步骤运行：
 ```bash
 # 如已恢复派生chunks，此步骤可省略；需要重建时使用π0.5环境
 .venv_pi05/bin/python -m pi05.data_adapter
-# 单链路预检查，需GPU与独立下载的base
+# 单链路预检查，需GPU与已恢复的base
 .venv_pi05/bin/python -m experiments.phase14_3_pi05_bc.preflight
 # 总控：训练→validation选模→独立test；默认使用8GPU
 .venv/bin/python -u -m experiments.phase14_3_pi05_bc.run
@@ -96,9 +101,9 @@ Phase14.3可分步骤运行：
 .venv/bin/python -u -m experiments.phase14_3_pi05_bc.finalize
 ```
 
-恢复的cohort含动作history、初始参数和接管状态，因此这轮可以复用原独立压力分布，不依赖未上传的Phase13 Anchor。若重新生成cohort，必须先重训该Anchor，并保持validation/test独立。不要用本次测试结果重新选超参数。
+恢复的cohort含动作history、初始参数和接管状态，因此可以复用原独立压力分布。若重新生成cohort，精简包提供原Phase13参考Anchor；保持validation/test独立。不要用本次测试结果重新选超参数。
 
-早期各阶段入口位于各自`experiments/`目录、`train/`和`evaluation/`中；阶段协议与完整报告见`docs/`。依赖前一阶段Anchor的实验必须先重新训练前一阶段或由你另行提供权重。
+早期各阶段入口位于各自`experiments/`目录、`train/`和`evaluation/`中；阶段协议与完整报告见`docs/`。精简包提供Phase8 B及Phase13参考Anchor；依赖其余未包含前置模型的实验仍需先重训。
 
 ## 5. 结果解释与验证边界
 
@@ -106,4 +111,4 @@ Phase14.3是state-only π0.5 LoRA与单步MSE BC配方比较，不是完整视�
 
 导出只修改部署路径和无`.git`依赖的provenance读取；diff见`reproducibility/source_portability.patch`。没有改动任务、reward、reset、动作/观测、训练loss、seed或预算。历史报告记录的是原服务器源码hash；导出源码hash另行记录。
 
-迁移包已做源码语法、权重排除、归档完整性和路径校验。**没有在第二台服务器重新跑完整训练**，跨驱动/GPU结果也不能保证逐位一致。
+迁移包已做源码语法、Git二进制排除、归档完整性、原文件SHA256、所选checkpoint CPU载荷及路径校验。**没有在第二台服务器重新跑完整训练**，跨驱动/GPU结果也不能保证逐位一致。
