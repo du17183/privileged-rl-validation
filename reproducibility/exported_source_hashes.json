@@ -235,7 +235,7 @@
   "safe_online/std_schedule.py": "5879c674d1277b380f62f830413b6435ea66aee7af33379aa86961881341b5ba",
   "safe_online/__init__.py": "8e5d297360bfffb9f332f913fd8baea33eba0dc43d09f9f00a9aae5041b98afc",
   "scripts/prepare_run.py": "8a0b01146c7ad91336ed0498e976cd2548e97da6bb33128a6f003659d3571b14",
-  "scripts/restore_release.py": "b00dc8414f1118196d17cbbd8628bc4623ba70807b1f38b8d5ecbed69507bc24",
+  "scripts/restore_release.py": "b0ae5e75b47568b65a441641c513d7279a0250bde94946acfd54776bcf2d7681",
   "scripts/setup_pi05.sh": "80b5d5c2d30b1a2aa4a35c82cb89fedfa6226f95bfd749a6aac6951a8c64cfbd",
   "scripts/verify_export.py": "1027262f39c55eb6644e2344017b611c10f5df5ba15384a15d44079fd7dbd72a",
   "stability/bc_regularization.py": "be34e71b5c1f9155c7c477bb4b557179ee29c896026a5cb3135bda2ce222b54d",

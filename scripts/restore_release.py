@@ -14,13 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 OWNER_REPO = 'du17183/privileged-rl-validation'
 
 
-def headers():
-    result = {'User-Agent': 'privileged-rl-validation-restore', 'Accept': 'application/vnd.github+json'}
-    token = os.environ.get('GITHUB_TOKEN')
-    if token: result['Authorization'] = 'Bearer ' + token
-    return result
-
-
 def digest(path):
     value = hashlib.sha256()
     with path.open('rb') as stream:
@@ -90,10 +83,9 @@ def main(args):
     available = manifest['groups']
     groups = list(available) if args.groups == 'all' else args.groups.split(',')
     if any(group not in available for group in groups): raise ValueError('Unknown group; valid groups: ' + ','.join(available))
-    api = f"https://api.github.com/repos/{OWNER_REPO}/releases/tags/{manifest['tag']}"
-    with urllib.request.urlopen(urllib.request.Request(api, headers=headers()), timeout=60) as response:
-        release = json.load(response)
-    assets = {item['name']:item['browser_download_url'] for item in release['assets']}
+    # The committed manifest already names each public asset. Avoid anonymous
+    # GitHub API limits by using the stable browser download URLs directly.
+    base = f"https://github.com/{OWNER_REPO}/releases/download/{manifest['tag']}/"
     cache = ROOT / '_release_cache'; cache.mkdir(exist_ok=True)
     destination = Path(args.destination).resolve(); destination.mkdir(parents=True, exist_ok=True)
     for group in groups:
@@ -101,7 +93,7 @@ def main(args):
         for part in parts:
             path = cache / part['name']; paths.append(path)
             print('DOWNLOAD/VERIFY', part['name'], part['bytes'], flush=True)
-            download(assets[part['name']], path, part)
+            download(base + part['name'], path, part)
         if not args.download_only:
             print('RESTORE', group, available[group]['file_count'], 'files', flush=True)
             extract(paths, destination, args.overwrite)
