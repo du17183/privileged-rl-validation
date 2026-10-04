@@ -6,7 +6,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKIP = {'datasets','checkpoints','results','logs','third_party','external_weights','_release_cache','runs','reproducibility','.git'}
+SKIP = {'datasets','checkpoints','results','logs','third_party','external_weights','_release_cache','_weight_release_cache','runs','reproducibility','.git'}
 
 
 def main(args):
@@ -26,6 +26,7 @@ def main(args):
     for name in ['datasets','third_party','external_weights','.venv','.venv_pi05']:
         (run/name).symlink_to(ROOT/name, target_is_directory=True)
     for name in ['logs','checkpoints','results','docs']: (run/name).mkdir(exist_ok=True)
+    shutil.copytree(ROOT/'reproducibility', run/'reproducibility')
     destination = run / 'results/phase14_3_pi05_bc/cohorts'
     shutil.copytree(cohorts, destination)
     print('Clean run created:', run)

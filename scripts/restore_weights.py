@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Download, SHA256-check and restore selected task models and shared pi05 base."""
+"""Restore selected task models, shared pi05 base and additive historical controls."""
 import argparse
 import json
-import shutil
 from pathlib import Path
 from restore_release import download, extract, digest
 
@@ -10,15 +9,28 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main(args):
-    manifest = json.loads((ROOT/'reproducibility/selected_weights_manifest.json').read_text())
-    records = [json.loads(line) for line in (ROOT/'reproducibility/selected_weights_catalog.jsonl').read_text().splitlines() if line]
-    available = manifest['groups']
+    available = {}; records = []
+    for prefix in ('selected_weights', 'historical_door_weights'):
+        manifest_path = ROOT/'reproducibility'/f'{prefix}_manifest.json'
+        catalog_path = ROOT/'reproducibility'/f'{prefix}_catalog.jsonl'
+        if not manifest_path.exists() and not catalog_path.exists() and prefix != 'selected_weights':
+            continue
+        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        catalog = [json.loads(line) for line in catalog_path.read_text(encoding='utf-8').splitlines() if line]
+        if len(catalog) != manifest['file_count']:
+            raise ValueError('Catalog count mismatch: '+prefix)
+        for group, info in manifest['groups'].items():
+            if group in available: raise ValueError('Duplicate archive group: '+group)
+            available[group] = dict(info, base_url=f"https://github.com/{manifest['owner_repo']}/releases/download/{manifest['tag']}/")
+        records.extend(catalog)
+    if len({r['path'] for r in records}) != len(records):
+        raise ValueError('Duplicate model paths across releases')
     groups = list(available) if args.groups == 'all' else args.groups.split(',')
     if any(g not in available for g in groups): raise ValueError('Valid groups: '+','.join(available))
     destination = Path(args.destination).resolve(); destination.mkdir(parents=True, exist_ok=True)
     cache = ROOT/'_weight_release_cache'; cache.mkdir(exist_ok=True)
-    base = f"https://github.com/{manifest['owner_repo']}/releases/download/{manifest['tag']}/"
     for group in groups:
+        base = available[group]['base_url']
         parts = available[group]['parts']; paths = []
         for item in parts:
             path = cache/item['name']; paths.append(path)

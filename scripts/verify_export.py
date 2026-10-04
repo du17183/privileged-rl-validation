@@ -23,10 +23,14 @@ def main(args):
         if any(x in path.parts for x in ['.git','_release_cache','runs','results']) or any(x.startswith('.venv') for x in path.parts):continue
         try: ast.parse(path.read_text(encoding='utf-8'),filename=str(path));syntax+=1
         except (ValueError,SyntaxError,UnicodeError) as exc: errors.append(str(path.relative_to(ROOT))+': '+str(exc))
-    catalog_path=ROOT/'reproducibility/selected_weights_catalog.jsonl'
-    models=[json.loads(line) for line in catalog_path.read_text().splitlines() if line] if catalog_path.exists() else []
+    models=[]
+    for name in ('selected_weights_catalog.jsonl','historical_door_weights_catalog.jsonl'):
+        catalog_path=ROOT/'reproducibility'/name
+        if catalog_path.exists():
+            models.extend(json.loads(line) for line in catalog_path.read_text(encoding='utf-8').splitlines() if line)
     declared={item['path'] for item in models}
-    weights=[str(p.relative_to(ROOT)) for p in ROOT.rglob('*') if p.is_file() and p.suffix.lower() in WEIGHTS and str(p.relative_to(ROOT)) not in declared and not any(x in p.parts for x in ['external_weights','runs','.git','_release_cache','_weight_release_cache']) and not any(x.startswith('.venv') for x in p.parts)]
+    if len(declared)!=len(models):errors.append('Duplicate declared model paths across catalogs')
+    weights=[p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*') if p.is_file() and p.suffix.lower() in WEIGHTS and p.relative_to(ROOT).as_posix() not in declared and not any(x in p.parts for x in ['external_weights','runs','.git','_release_cache','_weight_release_cache']) and not any(x.startswith('.venv') for x in p.parts)]
     if weights:errors.append('Unexpected policy weight files: '+repr(weights))
     checked=missing=0
     if args.data:

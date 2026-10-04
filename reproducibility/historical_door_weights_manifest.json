@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "owner_repo": "du17183/privileged-rl-validation",
+  "tag": "historical-door-weights-20261005",
+  "file_count": 30,
+  "task_weight_count": 30,
+  "uncompressed_bytes": 105023832,
+  "all_member_sha256_verified": true,
+  "all_source_sha256_rechecked": true,
+  "groups": {
+    "history_door_privileged": {
+      "file_count": 10,
+      "uncompressed_bytes": 34261216,
+      "parts": [
+        {
+          "name": "history_door_privileged.tar.gz.part000",
+          "bytes": 30539620,
+          "sha256": "041c45140ef6c38510d4ef72bf78ee345e38b82db3bc173adf6f745735d229d2"
+        }
+      ],
+      "all_member_sha256_verified": true
+    },
+    "history_door_sac": {
+      "file_count": 10,
+      "uncompressed_bytes": 33360096,
+      "parts": [
+        {
+          "name": "history_door_sac.tar.gz.part000",
+          "bytes": 29770823,
+          "sha256": "665c1f42fe7ff232f8edc1ef7748e956e4636c24ff418d89e070c742024e48f6"
+        }
+      ],
+      "all_member_sha256_verified": true
+    },
+    "history_gt_e2": {
+      "file_count": 10,
+      "uncompressed_bytes": 37402520,
+      "parts": [
+        {
+          "name": "history_gt_e2.tar.gz.part000",
+          "bytes": 33529118,
+          "sha256": "832deccd77c71416c58f638d2ee1ca98b77a3c824ef93464b9f3c92ae8485922"
+        }
+      ],
+      "all_member_sha256_verified": true
+    }
+  },
+  "created": 1791133765.198156,
+  "compressed_bytes": 93839561
+}

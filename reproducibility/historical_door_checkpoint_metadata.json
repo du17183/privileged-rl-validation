@@ -1,0 +1,3897 @@
+{
+  "cpu_only": true,
+  "cuda_allocations_requested": false,
+  "file_count": 30,
+  "files": [
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 75008,
+      "seed": 0,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 0,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed0/step_75008.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.616078853607178
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 500000,
+      "seed": 0,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 0,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed0/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.027631759643555
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 425024,
+      "seed": 1,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 1,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed1/step_425024.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.942828178405762
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 500000,
+      "seed": 1,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 1,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed1/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.105798244476318
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 450016,
+      "seed": 2,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 2,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed2/step_450016.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.77709436416626
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 500000,
+      "seed": 2,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 2,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed2/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.835851192474365
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 150016,
+      "seed": 3,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 3,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed3/step_150016.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.9557271003723145
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 500000,
+      "seed": 3,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 3,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed3/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.756778240203857
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 375008,
+      "seed": 4,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 4,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed4/step_375008.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.915428161621094
+    },
+    {
+      "variant": "A",
+      "variant_label": "A",
+      "env_steps": 500000,
+      "seed": 4,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "A",
+        "seed": 4,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/A_seed4/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.842132568359375
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 50016,
+      "seed": 0,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 0,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed0/step_50016.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -4.890892028808594
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 500000,
+      "seed": 0,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 0,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed0/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -0.10615663230419159
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 275008,
+      "seed": 1,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 1,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed1/step_275008.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.7266998291015625
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 500000,
+      "seed": 1,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 1,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed1/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.239596366882324
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 100000,
+      "seed": 2,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 2,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed2/step_100000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.312795162200928
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 500000,
+      "seed": 2,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 2,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed2/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.2474260330200195
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 175008,
+      "seed": 3,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 3,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed3/step_175008.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.703098297119141
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 500000,
+      "seed": 3,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 3,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed3/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.93628454208374
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 400000,
+      "seed": 4,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 4,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed4/step_400000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.151989936828613
+    },
+    {
+      "variant": "B",
+      "variant_label": "B",
+      "env_steps": 500000,
+      "seed": 4,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "B",
+        "seed": 4,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "headless": true,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10
+      },
+      "path": "checkpoints/door/B_seed4/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 44,
+      "actor_parameter_count": 76302,
+      "actor_tensor_shapes": {
+        "net.0.weight": [
+          256,
+          26
+        ],
+        "net.0.bias": [
+          256
+        ],
+        "net.2.weight": [
+          256,
+          256
+        ],
+        "net.2.bias": [
+          256
+        ],
+        "net.4.weight": [
+          14,
+          256
+        ],
+        "net.4.bias": [
+          14
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          44
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          44
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -4.848352432250977
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 100000,
+      "seed": 0,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 0,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed0/step_100000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.892242431640625
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 500000,
+      "seed": 0,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 0,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed0/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.140682220458984
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 150016,
+      "seed": 1,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 1,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed1/step_150016.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.9515204429626465
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 500000,
+      "seed": 1,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 1,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed1/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.067172527313232
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 75008,
+      "seed": 2,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 2,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed2/step_75008.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.587785243988037
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 500000,
+      "seed": 2,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 2,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed2/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.845600605010986
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 125024,
+      "seed": 3,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 3,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed3/step_125024.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -5.934469223022461
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 500000,
+      "seed": 3,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 3,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed3/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.014492988586426
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 400000,
+      "seed": 4,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 4,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed4/step_400000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.012455940246582
+    },
+    {
+      "variant": "A",
+      "variant_label": "E2",
+      "env_steps": 500000,
+      "seed": 4,
+      "success_angle_rad": 1.0,
+      "training_config": {
+        "variant": "E2",
+        "seed": 4,
+        "steps": 500000,
+        "num_envs": 32,
+        "eval_every": 25000,
+        "eval_rounds": 2,
+        "bc_updates": 3000,
+        "offline_critic_updates": 1000,
+        "updates_per_vector_step": 4,
+        "batch_size": 256,
+        "offline_fraction": 0.25,
+        "actor_bc_weight": 10.0,
+        "demo_file": "door_dataset/door_expert_1000.h5",
+        "aux_weight": 0.1,
+        "distill_updates": 1000,
+        "headless": false,
+        "livestream": -1,
+        "enable_cameras": false,
+        "xr": false,
+        "device": "cuda:0",
+        "cpu": false,
+        "verbose": false,
+        "info": false,
+        "experience": "",
+        "rendering_mode": null,
+        "kit_args": "",
+        "anim_recording_enabled": false,
+        "anim_recording_start_time": 0,
+        "anim_recording_stop_time": 10,
+        "device_explicit": true
+      },
+      "path": "checkpoints/door_privileged_ablation/E2_seed4/step_500000.pt",
+      "load_device": "cpu",
+      "actor_input_width": 26,
+      "critic_input_width": 33,
+      "actor_parameter_count": 109585,
+      "actor_tensor_shapes": {
+        "encoder.0.weight": [
+          256,
+          26
+        ],
+        "encoder.0.bias": [
+          256
+        ],
+        "encoder.2.weight": [
+          256,
+          256
+        ],
+        "encoder.2.bias": [
+          256
+        ],
+        "policy_head.weight": [
+          14,
+          256
+        ],
+        "policy_head.bias": [
+          14
+        ],
+        "gt_head.0.weight": [
+          128,
+          256
+        ],
+        "gt_head.0.bias": [
+          128
+        ],
+        "gt_head.2.weight": [
+          3,
+          128
+        ],
+        "gt_head.2.bias": [
+          3
+        ]
+      },
+      "critic_tensor_shapes": {
+        "q1.0.weight": [
+          256,
+          33
+        ],
+        "q1.0.bias": [
+          256
+        ],
+        "q1.2.weight": [
+          256,
+          256
+        ],
+        "q1.2.bias": [
+          256
+        ],
+        "q1.4.weight": [
+          1,
+          256
+        ],
+        "q1.4.bias": [
+          1
+        ],
+        "q2.0.weight": [
+          256,
+          33
+        ],
+        "q2.0.bias": [
+          256
+        ],
+        "q2.2.weight": [
+          256,
+          256
+        ],
+        "q2.2.bias": [
+          256
+        ],
+        "q2.4.weight": [
+          1,
+          256
+        ],
+        "q2.4.bias": [
+          1
+        ]
+      },
+      "payload_keys": [
+        "actor",
+        "actor_opt",
+        "alpha_opt",
+        "critic",
+        "critic_opt",
+        "env_steps",
+        "log_alpha",
+        "seed",
+        "success_angle_rad",
+        "target_critic",
+        "training_config",
+        "variant",
+        "variant_label"
+      ],
+      "scalar_log_alpha": -6.045240879058838
+    }
+  ]
+}

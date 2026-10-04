@@ -6,7 +6,7 @@
 
 Phase1是抽屉打开，之后是Panda Door Opening。先测试GT直接输入Critic，再研究GT辅助表示、BC约束、进度奖励、探索噪声与Anchor保护，最后生成随机工位和失败恢复专家，比较参数条件BC与state-only π0.5。
 
-本Release只保存原实验选中的模型和关键对照：**80个任务checkpoint + 1个共享π0.5基础模型**。它不是全部历史模型，也不是重新训练结果。所有二进制保持原字节；原服务器、数据Release和科学报告没有被覆盖。
+原精简Release保存**80个任务checkpoint + 1个共享π0.5基础模型**，附件保持原样。2026-10-05追加独立历史Door Release，提供30个原始SAC/Privileged Critic/GT辅助E2的Best/Final；两份合计**110个任务checkpoint + 1个base = 111个模型**。它们不是全部历史模型，也不是重新训练结果。所有二进制保持原字节；原服务器、数据Release和科学报告没有被覆盖。
 
 ## 2. 保存哪些模型，为什么
 
@@ -20,10 +20,13 @@ Phase1是抽屉打开，之后是Panda Door Opening。先测试GT直接输入Cri
 | Phase14.3 C/D已选π0.5增量模型 | 10 | 1.07GiB | 随机Door；state-only π0.5，S与S+R数据对照 |
 | Phase1 Drawer A/B/C Final | 24 | 77.99MiB | 抽屉；Robot-only、Privileged Critic、Privileged Policy各8seed终点对照 |
 | 共享π0.5基础模型 | 1 | 13.47GiB | 所有10个π0.5微调模型共同依赖的一份已转换PyTorch base；本身不是Door策略 |
+| Phase2 Door A Best + Final | 10 | 31.81MiB | 原始机器人观测BC+SAC，后期退化与普通Critic对照 |
+| Phase2 Door B Best + Final | 10 | 32.67MiB | 完整GT Critic，直接GT路线与Q稳定性对照 |
+| Phase3 E2 Best + Final | 10 | 35.67MiB | 前100k GT辅助监督，早期高成功率与500k退化对照 |
 
-任务权重80个共1,332,057,993 bytes（1.24GiB）；含base共15,799,223,865 bytes（14.71GiB）。压缩分卷的准确大小见`reproducibility/selected_weights_manifest.json`。同一个参考Anchor与别名checkpoint可能字节相同；保留原路径满足既有流程。
+原81模型共15,799,223,865 bytes（14.71GiB），追加30模型105,023,832 bytes（100.16MiB），合计15,904,247,697 bytes（约14.81GiB）。压缩分卷的准确大小见`reproducibility/selected_weights_manifest.json`及`historical_door_weights_manifest.json`。同一个参考Anchor与别名checkpoint可能字节相同；保留原路径满足既有流程。
 
-模型索引：[`weight_catalog.csv`](../reproducibility/weight_catalog.csv)。每行记录原路径、SHA256、任务/阶段/方案、seed、checkpoint实际训练步数、输入边界、数据来源、报告/指标/选模来源及依赖。原始归档索引为`selected_weights_catalog.jsonl`；CPU载荷检查结果为`selected_checkpoint_metadata.json`。
+模型索引：[`weight_catalog.csv`](../reproducibility/weight_catalog.csv)，共111行。每行记录原路径、SHA256、任务/阶段/方案、seed、checkpoint实际训练步数、输入边界、数据来源、报告/指标/选模来源及依赖，`release_tag`区分来源。原81归档与CPU索引保持不变；历史补充对应`historical_door_weights_catalog.jsonl`、`historical_door_checkpoint_metadata.json`及`historical_door_metrics.csv`。详细历史背景、原奖励和逐seedBest/Final见[HISTORICAL_DOOR_WEIGHTS.md](HISTORICAL_DOOR_WEIGHTS.md)。
 
 注意：Phase8/9 SAC载荷中的`variant=A`是沿用的网络结构标识，**不能据此把P8B或P9C误认为实验A**。真实实验方案由索引的`experiment_arm`、目录和阶段协议确定，`payload_variant`单独保留。
 
@@ -84,15 +87,15 @@ git clone https://github.com/du17183/privileged-rl-validation.git
 cd privileged-rl-validation
 # 原科学数据、指标、日志和依赖源码
 python3 scripts/restore_release.py --groups all
-# 全部81个已选模型，包含共享base
+# 全部111个已选模型，包含共享base与历史Door补充
 python3 scripts/restore_weights.py --groups all
 # CPU校验；不启动训练或GPU实验
 python3 scripts/verify_export.py --data --weights
 ```
 
-只需要小模型时：`--groups core,context,drawer`；π0.5另外恢复`pi05_adapters,pi05_base`。分卷无需手工拼接；每卷及每个恢复模型都核对SHA256。已有正确文件可以复用，不同字节的现有文件默认拒绝覆盖。
+只需要原小模型时：`--groups core,context,drawer`；π0.5另外恢复`pi05_adapters,pi05_base`。新增历史组为`history_door_sac,history_door_privileged,history_gt_e2`，可单独下载；`all`恢复两份Release。分卷无需手工拼接；每卷及每个恢复模型都核对SHA256。已有正确文件可以复用，不同字节的现有文件默认拒绝覆盖。
 
-原运行环境的重建见[`REPRODUCE.md`](REPRODUCE.md)。权重不进入Git对象，仅在[精简权重Release](https://github.com/du17183/privileged-rl-validation/releases/tag/selected-weights-phase1-14-3-20261004)中；代码、索引和说明进入Git。
+原运行环境的重建见[`REPRODUCE.md`](REPRODUCE.md)。权重不进入Git对象，原81在[精简权重Release](https://github.com/du17183/privileged-rl-validation/releases/tag/selected-weights-phase1-14-3-20261004)，新增30在[历史Door Release](https://github.com/du17183/privileged-rl-validation/releases/tag/historical-door-weights-20261005)；代码、索引和说明进入Git。
 
 独立复测Phase14.3时只生成所选20个模型的evaluation jobs，复用原test cohort、test reset seed=143502，使用已有`pi05.inference.server`及`evaluation.pi05_closed_loop_eval`接口。其job字段见`experiments/phase14_3_pi05_bc/run.py`的`job()`。不要启动训练总控来“评估”已经恢复的模型，也不要用test结果重新选checkpoint。
 

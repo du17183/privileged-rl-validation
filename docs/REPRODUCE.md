@@ -4,7 +4,7 @@
 
 此仓库覆盖Phase1–14.3的代码、配置和报告。Release保留全部非权重数据、指标、逐episode结果、图表、日志和历史源码包；无效实验保留原有目录标记，不混入有效结论。
 
-原数据Release不包含权重；新增精简权重Release包含80个已选任务checkpoint和1份共享π0.5预训练base，背景及索引见[WEIGHTS.md](WEIGHTS.md)。虚拟环境、Python缓存、旧PID/socket/lock、嵌套Git对象和旧NVRTC备份不上传。原服务器文件未改动。两个旧交付压缩包中的权重已移除；修改后的hash及原始hash记录在`reproducibility/original_files.json`。
+原数据Release不包含权重；原精简权重Release包含80个已选任务checkpoint和1份共享π0.5预训练base；2026-10-05独立补充30个早期Door SAC/Privileged Critic/GT辅助E2的Best/Final，两份权重Release合计111模型。背景及索引见[WEIGHTS.md](WEIGHTS.md)与[历史Door说明](HISTORICAL_DOOR_WEIGHTS.md)。虚拟环境、Python缓存、旧PID/socket/lock、嵌套Git对象和旧NVRTC备份不上传。原服务器文件未改动。两个旧交付压缩包中的权重已移除；修改后的hash及原始hash记录在`reproducibility/original_files.json`。
 
 恢复精简权重后可直接复测所选模型；其余历史模型仍需重新训练。Git保存源码和索引，模型二进制只在Release。
 
@@ -21,7 +21,7 @@ python3 scripts/restore_weights.py --groups all
 
 分组：`datasets`、`results`、`logs`、`checkpoints`（只含CSV/JSON等元数据）、`third_party`（Isaac Lab源码）、`historical_and_door_data`（Door专家数据和历史交付包）。
 
-权重分组：`core`（16）、`context`（30）、`drawer`（24）、`pi05_adapters`（10）、`pi05_base`（1）。只运行小模型可先恢复`core,context,drawer`。每个恢复的模型也核对原文件SHA256，并保留原checkpoint路径。
+权重分组：`core`（16）、`context`（30）、`drawer`（24）、`pi05_adapters`（10）、`pi05_base`（1）；历史补充为`history_door_sac`（10）、`history_door_privileged`（10）、`history_gt_e2`（10）。`--groups all`读取两份Release；只运行原小模型可先恢复`core,context,drawer`。每个恢复的模型也核对原文件SHA256，并保留原checkpoint路径。
 
 原始数据/结果/日志约16GiB，下载缓存另占压缩分卷体积。Isaac、π0.5环境、预训练权重和新训练checkpoint需要额外空间。完整迁移建议预留100GiB以上；重跑所有历史实验还需为新checkpoint预留空间。
 
@@ -30,7 +30,7 @@ python3 scripts/restore_weights.py --groups all
 python3 scripts/verify_export.py
 # 恢复全部分组后，对所有归档文件做完整SHA256核对
 python3 scripts/verify_export.py --data
-# 恢复全部权重后，检查81个模型原文件SHA256
+# 恢复全部权重后，检查111个模型原文件SHA256
 python3 scripts/verify_export.py --weights
 ```
 
