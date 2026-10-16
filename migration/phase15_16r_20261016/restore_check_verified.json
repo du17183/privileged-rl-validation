@@ -1,0 +1,11 @@
+{
+  "time_utc": "2026-10-16T14:38:01.393034+00:00",
+  "actual_restore_tool_executed": true,
+  "archive_and_all_restored_file_sha_verified": true,
+  "restored_files": 15450,
+  "manifest_sha256": "10939fd5bfff9620354cef8dcfb124e09e8e22b389076523faf125903bb22567",
+  "source": "new local migration archive parts; public download independently checked after publish",
+  "external_dependencies_checked_separately_in_source_snapshot": true,
+  "runtime_or_experiments_started": false,
+  "old_experiment_files_modified": false
+}

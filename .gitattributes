@@ -12,3 +12,6 @@
 
 # Keep archived metrics byte-identical for SHA256 verification.
 results/** -text
+
+# Preserve original migration source/audit bytes, including historical CRLF.
+migration/** -text

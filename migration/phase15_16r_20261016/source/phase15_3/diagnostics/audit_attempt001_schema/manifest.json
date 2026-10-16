@@ -1,0 +1,8 @@
+{
+  "source_sha256": "eeff1d74b589cfa78575a94b9623e109f9e5a9e197ab0db33d5801ac37e0adcc",
+  "failure": "root training_labels absent; group training_labels is the explicit collection schema",
+  "log_directory": "phase15_3/results/analysis_runs/20261009T025743Z",
+  "logs": [
+    "phase15_3/results/analysis_runs/20261009T025740Z/final_audit_initial.stderr"
+  ]
+}

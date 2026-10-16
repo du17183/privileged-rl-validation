@@ -1,0 +1,12 @@
+{
+  "time_utc": "2026-10-16T14:31:23.897893+00:00",
+  "manifest_sha256": "10939fd5bfff9620354cef8dcfb124e09e8e22b389076523faf125903bb22567",
+  "nested_archives_checked": 75,
+  "nested_text_members_scanned": 17820,
+  "nested_request_members_retained_as_historical_archive_provenance": 21,
+  "credential_literal_patterns_passed": true,
+  "github_source_subset_files": 192,
+  "weight_files": 212,
+  "checkpoint_binaries": 104,
+  "source_files_unchanged": true
+}

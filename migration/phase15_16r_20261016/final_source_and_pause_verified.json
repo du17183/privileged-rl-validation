@@ -1,0 +1,90 @@
+{
+  "time_utc": "2026-10-16T14:46:23.429035+00:00",
+  "original_files_rehashed": 15450,
+  "all_original_files_sha256_still_equal": true,
+  "frozen_base_sha256": "0eb11ca9587678c1d2ef8cf32807c29f8ce53a2bfdfc1aa4a4c96f16fca59b0f",
+  "current_owned_processes": [
+    {
+      "pid": 1731660,
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-m",
+        "experiments.phase16_r_residual_sac.monitor_watch_v5"
+      ],
+      "cwd": "/DATA/disk1/home/xiaolong/privileged_rl_validation",
+      "state": "T",
+      "ppid": 1,
+      "birth_ticks": 1025401427
+    },
+    {
+      "pid": 2498588,
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-"
+      ],
+      "cwd": "/DATA/disk1/home/xiaolong/privileged_rl_validation",
+      "state": "T",
+      "ppid": 1,
+      "birth_ticks": 1025773974
+    }
+  ],
+  "active_experiment_processes": 0,
+  "old_experiment_signals_this_migration": [],
+  "experiments_resumed_or_started": false,
+  "manifest_sha256": "10939fd5bfff9620354cef8dcfb124e09e8e22b389076523faf125903bb22567",
+  "historical_pause_identity_records_for_remaining_readers": [
+    {
+      "pid": 1731660,
+      "start_ticks": 1025401427,
+      "ppid": 1731650,
+      "argv": ".venv/bin/python -u -m experiments.phase16_r_residual_sac.monitor_watch_v5",
+      "signal": "SIGSTOP",
+      "utc": "2026-10-09T07:28:46.518384+00:00"
+    },
+    {
+      "pid": 2498588,
+      "start_ticks": 1025773974,
+      "ppid": 2498586,
+      "argv": ".venv/bin/python -u -",
+      "signal": "SIGSTOP",
+      "utc": "2026-10-09T07:28:46.518763+00:00"
+    },
+    {
+      "pid": 1731660,
+      "state": "S",
+      "ppid": 1731650,
+      "start_ticks": 1025401427,
+      "argv": ".venv/bin/python -u -m experiments.phase16_r_residual_sac.monitor_watch_v5",
+      "alive": true
+    },
+    {
+      "pid": 2498588,
+      "state": "S",
+      "ppid": 2498586,
+      "start_ticks": 1025773974,
+      "argv": ".venv/bin/python -u -",
+      "alive": true
+    },
+    {
+      "pid": 1731660,
+      "state": "T",
+      "ppid": 1731650,
+      "start_ticks": 1025401427,
+      "argv": ".venv/bin/python -u -m experiments.phase16_r_residual_sac.monitor_watch_v5",
+      "alive": true
+    },
+    {
+      "pid": 2498588,
+      "state": "T",
+      "ppid": 2498586,
+      "start_ticks": 1025773974,
+      "argv": ".venv/bin/python -u -",
+      "alive": true
+    }
+  ],
+  "initial_before_after_scan_scope": "absolute project path in argv only; final process scan additionally covers module names and cwd",
+  "historical_pause_record_pointer_sha256_verified": true,
+  "remaining_paused_identity_birth_argv_matches_original": true
+}

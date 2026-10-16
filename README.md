@@ -2,7 +2,19 @@
 
 Franka Panda Drawer / Door Opening实验框架：验证工装提供的ground truth、任务进度和恢复数据如何用于机器人在线学习。
 
-覆盖 **Phase1–14.3**：SAC对照、Privileged Critic、GT辅助表示、轨迹质量、稳定在线更新、Progress Reward、随机工位BC、自动恢复专家、恢复BC与state-only π0.5。
+主目录覆盖 **Phase1–14.3**：SAC对照、Privileged Critic、GT辅助表示、轨迹质量、稳定在线更新、Progress Reward、随机工位BC、自动恢复专家、恢复BC与state-only π0.5。Phase15–16-R 最新暂停快照见下方迁移入口。
+
+## Phase15–16-R 最新暂停快照（2026-10-16）
+
+已补充 b300-1 的 Phase15、15.1、15.2、15.3 和未完成 Phase16-R 迁移包，包含最新阶段源码、配置、全部现有权重、冻结输入、原始结果/日志及审计证据。旧 Phase1–14.3 Release 保持不变。Phase16-R 保持暂停，没有证明可靠 Anchor 或多 seed RL 净提升。
+
+- [迁移与恢复说明](docs/MIGRATE_PHASE15_16R.md)
+- [迁移 Release](https://github.com/du17183/privileged-rl-validation/releases/tag/migration-phase15-16r-20261016)
+- [可浏览阶段源码](migration/phase15_16r_20261016/source/)
+- [逐文件 SHA 清单](migration/phase15_16r_20261016/migration_manifest.json)
+- [奖励与 Residual SAC 审计](migration/phase15_16r_20261016/reward_chain_audit_20261016/audit_summary.json)
+
+使用 `scripts/restore_phase15_16r.py` 恢复到新目录；该工具不会安装环境或启动实验。原 Isaac Sim5.1 不官方支持 A100，需先验证新服务器运行条件。
 
 ## 新服务器重建
 
@@ -38,7 +50,7 @@ python3 scripts/restore_weights.py --groups all
 | `configs/`, `scripts/`, `reproducibility/` | 配置、恢复/安装、版本和完整性记录 |
 | `docs/`, `results/` | 完整报告及可浏览的结果摘要；全量结果见Release |
 
-## 最新结果：Phase14.3
+## Phase14.3 历史结果
 
 五seed独立评测的成功率均值（%）；S为随机成功专家，R为恢复专家。四组同为Robot+GT、无RGB。
 
