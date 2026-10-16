@@ -1,0 +1,21 @@
+{
+  "time_utc": "2026-10-16T15:10:10.329942+00:00",
+  "migration_delivery_complete": true,
+  "release_url": "https://github.com/du17183/privileged-rl-validation/releases/tag/migration-phase15-16r-20261016",
+  "release_source_commit": "7b510cc8cb8444f5a88370d2e7a2222572937480",
+  "manifest_sha256": "10939fd5bfff9620354cef8dcfb124e09e8e22b389076523faf125903bb22567",
+  "archive_parts": 22,
+  "release_assets": 24,
+  "files_full_restore_sha256_verified": 15450,
+  "github_server_full_asset_sha256_verified": 24,
+  "public_asset_urls_prefix_and_total_size_verified": 24,
+  "full_anonymous_asset_download_sha256_samples": 8,
+  "full_anonymous_all_asset_download_claimed": false,
+  "old_task_still_paused": true,
+  "new_training_or_physics_started": false,
+  "phase16_r_scientific_comparison_complete": false,
+  "receipt_sha256": {
+    "public_access_verified.json": "c892dffb1896acc159248d887fa46ba1959cca480db4305bc01d187dec0974e0",
+    "delivery_pause_verified.json": "4977c568b9c1b267037a80309dbebcb7a6c3a03738d5ae413856cc2f6c82def5"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "time_utc": "2026-10-16T15:09:12.431526+00:00",
+  "same_boot_as_original_pause": true,
+  "same_argv_and_birth_ticks_as_original_pause": true,
+  "remaining_original_processes_still_T": [
+    {
+      "pid": 1731660,
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-m",
+        "experiments.phase16_r_residual_sac.monitor_watch_v5"
+      ],
+      "birth_ticks": 1025401427,
+      "ppid": 1,
+      "state": "T"
+    },
+    {
+      "pid": 2498588,
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-"
+      ],
+      "birth_ticks": 1025773974,
+      "ppid": 1,
+      "state": "T"
+    }
+  ],
+  "old_experiment_resumed": false,
+  "old_experiment_signals_this_migration": []
+}

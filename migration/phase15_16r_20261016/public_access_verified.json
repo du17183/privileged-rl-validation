@@ -1,0 +1,230 @@
+{
+  "time_utc": "2026-10-16T15:08:13.950262+00:00",
+  "all_24_public_urls_anonymously_accessible_and_exact_byte_prefix_size_verified": true,
+  "all_24_github_server_full_sha256_verified": true,
+  "all_15450_files_full_local_restore_sha256_verified": true,
+  "full_anonymous_asset_downloads_verified": 8,
+  "full_anonymous_all_asset_download_claimed": false,
+  "verification_scope": "Every archive/metadata asset has its complete GitHub server SHA checked against local SHA; every original file was independently extracted and fully rehashed; every public URL has exact prefix and total size checked; completed anonymous whole-file samples are separately counted. Redundant full anonymous download of all assets was stopped after these sufficient gates.",
+  "manifest_sha256": "10939fd5bfff9620354cef8dcfb124e09e8e22b389076523faf125903bb22567",
+  "assets": [
+    {
+      "name": "source.tar.gz.part000",
+      "bytes": 122163198,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "475e2e662097f5468293a556b795038cfd9aba60fe7ed402fcfb09a1b6ec6613",
+      "full_anonymous_download_sha256_verified": true
+    },
+    {
+      "name": "evidence.tar.gz.part000",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "8f771b37e6fa3cfdb968b94f06ab75f43ecc8df2610fec10223880dcacbc9bd3",
+      "full_anonymous_download_sha256_verified": true
+    },
+    {
+      "name": "evidence.tar.gz.part001",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "71314e65b05ad3fafb7b74845dd31e821012eb309cdeee11cd97b76c825e6175",
+      "full_anonymous_download_sha256_verified": true
+    },
+    {
+      "name": "evidence.tar.gz.part002",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "0bb9fe5ea73ed662dc167c11aec8b00c7b60dde905eda381696782407e122434",
+      "full_anonymous_download_sha256_verified": true
+    },
+    {
+      "name": "evidence.tar.gz.part003",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "fa0783ae9f3cb5939d8b54d0e4e74998aaa6becf03d7747175a7ed50941aae8a",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "evidence.tar.gz.part004",
+      "bytes": 175227365,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "c1f1d8de3c632b2abca3df7d2265f987f129f399f334c8e7dd980ea7708a6d05",
+      "full_anonymous_download_sha256_verified": true
+    },
+    {
+      "name": "weights.tar.gz.part000",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "c7269641b2c4c8f2cbe9c0b92342666b4e3f703429023367c23533d55b7ef8cf",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part001",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "ee0022fb6e5a8eeeb2737a4c6504b3d48c2dbdbc4625b96815876229eb9cfd65",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part002",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "fa338f44b14a5b463b68ca46e3610f70582f1168b97a7fdd23cfa99ddaa6adda",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part003",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "52df8d770aaf9d887278e36fd81ba16ce60a3b7823f4e580219b42aac7a5c9dc",
+      "full_anonymous_download_sha256_verified": true
+    },
+    {
+      "name": "weights.tar.gz.part004",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "a1016856a9eea0e4995c19fa93cbb705dae90f35ffe7bc4db4b050bbdb5471fd",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part005",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "d796211adad67801408660388da7c0ee9e990058e0a61ae5994fa29145015a3b",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part006",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "c180666022a733b293501cd04b74e79b90d10a4b0b91aa66bcaab0f586c86eb9",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part007",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "5cb5f5083352c76c8b5db7fb62f7aa4cf9cab00cfca53250215aeb4730c5a932",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part008",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "6b423b56af1dbd9c313ba0d09b7dca1c6b3abe3e72b1bc73e5679f1b9ef6bb9e",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part009",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "d21bc379550062d8071f6005885381b624cae5ba037a3109f0ded638931e9670",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part010",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "48471494eb180cc93ec2ef1c157a4fd0dafd21af1da6c132c13b4b3b832ac80d",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part011",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "cf19d6917d1e892f9b08d6d698097d69e441f209edec9574e5ecda2a7fc5d9e1",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part012",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "1ed3d4aeeb0e8d0291a930fdd8bdccbb35d3d982e6520662f912a73f3d760ea2",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part013",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "d67c8db23a9c2f3c20b1e8407ac3a81869d4e9896f19b0b978acc348a42d3f93",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part014",
+      "bytes": 536870912,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "3ab02e431ed7900a5b17aae077e0a44be97f9a8cd30c451d10e297b5ff899608",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "weights.tar.gz.part015",
+      "bytes": 469906558,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "00e857b9b7e4dfec70b62da64350bcd323e223948fa2fc11825b04a3478a9b20",
+      "full_anonymous_download_sha256_verified": false
+    },
+    {
+      "name": "migration_manifest.json",
+      "bytes": 3544466,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "10939fd5bfff9620354cef8dcfb124e09e8e22b389076523faf125903bb22567",
+      "full_anonymous_download_sha256_verified": true
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 2052,
+      "public_url_accessible_anonymously": true,
+      "public_exact_prefix_and_total_size_verified": true,
+      "github_server_full_sha256_verified": true,
+      "sha256": "02df3e4a6f8fc32ea7740391d5a50ae4b8f00c07dfb46bde794a8e6b07bad6b6",
+      "full_anonymous_download_sha256_verified": true
+    }
+  ],
+  "credentials_used": false,
+  "experiments_started": false
+}

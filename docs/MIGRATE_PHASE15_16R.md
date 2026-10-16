@@ -76,6 +76,17 @@ python3 scripts/restore_phase15_16r.py \
 
 迁移元数据目录包含：逐文件清单、分卷 `SHA256SUMS`、权重路径/SHA索引、打包前后进程记录、源文件前后复核结果及 GitHub/独立恢复验证凭据。文件完整性通过不等于新的科学结论通过；本次没有重跑历史物理评估，也没有把未完成的 Phase16-R 标成完整审计通过。
 
+### 已完成的交付验收
+
+- 全部24个 Release 资产的完整服务端 SHA256 与本地一致。
+- 实际恢复并完整重算15,450个原路径文件的 SHA256，全部一致。
+- 全部24个公开下载链接无需登录可访问，实际返回字节前缀及完整大小与原件一致。
+- 另有8个资产完成匿名整文件下载与 SHA256 抽检；未声称匿名整文件重下全部24项。
+- 192个可浏览源码的 Git blob 字节 SHA 与服务器原件一致。
+- 交付时两个剩余历史监测/读取进程仍为T，boot_id、argv与出生时刻匹配原暂停记录。
+
+最终范围与凭据见 [`delivery_verification.json`](../migration/phase15_16r_20261016/delivery_verification.json)、[`public_access_verified.json`](../migration/phase15_16r_20261016/public_access_verified.json) 和 [`delivery_pause_verified.json`](../migration/phase15_16r_20261016/delivery_pause_verified.json)。
+
 ## 5. A100 上的运行前检查
 
 原版本为 Isaac Sim5.1、固定 Isaac Lab、两个独立 Python 环境。NVIDIA 官方要求列明 A100/H100 因无 RT Core 不受支持：[Isaac Sim5.1 requirements](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html)。本快照没有声称已完成 A100 运行验证。
